@@ -1,0 +1,8 @@
+.review__container{
+ display: flex;
+ justify-content: center;
+ height: 80vh;
+}
+.review__container > h2{
+    color: rgba(255, 255, 255, 0.659);
+}

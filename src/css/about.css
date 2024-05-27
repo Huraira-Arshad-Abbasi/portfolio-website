@@ -1,0 +1,21 @@
+.about__section{
+    min-height: 80vh;
+    text-align: center;
+}
+.about__section > h2{
+    color: rgba(255, 255, 255, 0.659);
+    display: none;
+}
+.about__section > p{
+    max-width: 100%;
+    /* letter-spacing: 2px; */
+    /* font-size: larger; */
+
+    font-family: "Roboto Serif", serif;
+    font-family: Arial, Helvetica, serif;
+    /* line-height: 1.5rem; */
+    color: rgba(255, 255, 255, 0.659);
+    padding: 0 6rem;
+    line-height: 30px;
+    text-align: start;
+}

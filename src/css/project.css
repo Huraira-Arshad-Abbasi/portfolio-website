@@ -1,0 +1,7 @@
+.project__section{
+    height: 80vh;
+    text-align: center;
+}
+.project__section > h2{
+    color: rgba(255, 255, 255, 0.659);
+}

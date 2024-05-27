@@ -1,0 +1,24 @@
+footer {
+    max-width: 1280px;
+    background-color: rgba(127, 255, 212, 0.805);
+    padding: 0 3rem;
+    color: rgb(132, 83, 83);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+footer>.footer__links>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer>.footer__links>ul>li>a {
+    /* text-decoration: none; */
+    margin: 0 1rem;
+    color: unset;
+}
