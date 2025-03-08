@@ -41,7 +41,7 @@ main {
     background: url(../assets/myPic.jpg);
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0px 0px 20px 2px  blue;
+    box-shadow: 0px 0px 20px 2px blue;
     border: 2px solid rgb(79, 92, 169);
 }
 
@@ -146,9 +146,89 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
 }
+
+.education__section>h2 {
+    font-size: 3vw;
+    font-family: "Yeseva One", serif;
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+/* .education__section img {
+    width: 100%;
+} */
 
 .education__section>p {
     width: 50%;
     text-align: center;
+}
+
+.education__section>.education__content {
+    /* border: 2px solid rgb(17, 0, 255); */
+    /* background: #271e1e; */
+    width: 100%;
+    margin: 1rem;
+}
+
+.education__content>.degree {
+    width: 80%;
+    background: #d7787825;
+    /* width: fit-content; */
+    background: #271e1e;
+    background: #23212e79;
+    border-radius: 5px;
+    padding: 2vw 4vw;
+    margin: .5rem auto;
+}
+
+.degree>h3 {
+    font-size: 3vw;
+    font-family: "Oswald", serif;
+    font-family: "Alfa Slab One", serif;
+    color: #c1ff72;
+    color: #c2ff72eb;
+    margin: 0;
+}
+
+.degree>.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    color: #5ce1e6;
+    color: #5ce1e6ec;
+}
+
+.details>h4 {
+    /* font-family: "Bodoni Moda", serif; */
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 300;
+    margin: 0;
+
+}
+
+.details>p {
+    font-family: "Racing Sans One", serif;
+    font-size: 2vw;
+    font-weight: 800;
+    padding: 0 1rem;
+    margin: 0;
+    margin-right: 5vw;
+    font-style: italic;
+}
+
+.degree>ul {
+    font-family: "Old Standard", serif;
+    padding: 0;
+    margin: 1rem 10rem;
+}
+
+.degree>ul>li {
+    font-size: 1.5vw;
+    font-weight: 300;
+    /* margin: .5rem 0; */
 }

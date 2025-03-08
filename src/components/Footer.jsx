@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div>
       <footer>
-        <p>Hurairaabbasi647@gmail.com</p>
+        <a href="mailto:hurairaabbasi647@gmail.com?subject=Hello&body=I%20want%20to%20contact%20you.">Hurairaabbasi647@gmail.com</a >
         <div className="footer__links">
           <ul>
             <li><Link target="_blank" to="https://github.com/Huraira-Arshad-Abbasi">GitHUb</Link></li>
