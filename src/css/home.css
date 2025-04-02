@@ -41,8 +41,9 @@ main {
     background: url(../assets/myPic.jpg);
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0px 0px 20px 2px blue;
-    border: 2px solid rgb(79, 92, 169);
+    /* box-shadow: 0px 0px 20px 2px blue;
+    border: 2px solid rgb(79, 92, 169); */
+    border: 2px solid #000000;
 }
 
 /* .section__1 > .img > img{
@@ -64,7 +65,8 @@ main {
     font-weight: 600;
     font-size: 2vw;
     margin-bottom: 4vw;
-    font-family: 'Lucida Sans', Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', Verdana, sans-serif; */
+    font-family: "Bodoni Moda", serif;
     /* color: rgb(160, 132, 38); */
 }
 
@@ -78,24 +80,29 @@ main {
 
 .content>h1>span {
     color: rgb(255, 255, 255);
+
 }
 
 .content>h2 {
     color: rgb(146, 164, 255);
     letter-spacing: 2pt;
     font-family: 'Lucida Sans', Verdana, sans-serif;
+    font-family: "Yeseva One", serif;
     font-size: 2.5vw;
 }
 
 .content>p {
     cursor: pointer;
     margin-top: 4vw;
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
     line-height: 20pt;
     width: 80%;
     font-weight: 400;
     letter-spacing: 1px;
     font-family: Arial, Helvetica, serif;
+    color: #ffffff;
+    font-family: "Bodoni Moda", serif;
+    /* font-style: italic; */
 }
 
 .break__line {
@@ -104,7 +111,12 @@ main {
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.615);
     background-color: rgb(33, 24, 61);
 }
-
+.skill__section > h2 {
+    font-size: 3vw;
+    font-family: "Yeseva One", serif;
+    /* font-weight: 800; */
+    font-style: normal;
+}
 .skill__section {
     min-height: 55vh;
     display: flex;
@@ -142,6 +154,7 @@ main {
 
 .education__section {
     min-height: 40vh;
+    margin: 10rem auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -184,11 +197,12 @@ main {
 }
 
 .degree>h3 {
-    font-size: 3vw;
+    font-size: 2.2rem;
     font-family: "Oswald", serif;
     font-family: "Alfa Slab One", serif;
     color: #c1ff72;
     color: #c2ff72eb;
+    color: #5271ff;
     margin: 0;
 }
 
@@ -217,6 +231,7 @@ main {
     font-weight: 800;
     padding: 0 1rem;
     margin: 0;
+    color: #f857a6;
     margin-right: 5vw;
     font-style: italic;
 }

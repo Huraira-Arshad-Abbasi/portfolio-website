@@ -9,4 +9,5 @@ import mongodb from './mongodb.png';
 import nodeJs from './nodeJs.png';
 import edu from './education-section-layout.png';
 import contact_layout from './contact-layout.png';
-export {html, css, js, bootstrap, taiwind, react,ex, mongodb, nodeJs, edu, contact_layout}
+import project_layout from './project-section-layout.png';
+export {html, css, js, bootstrap, taiwind, react,ex, mongodb, nodeJs, edu, contact_layout, project_layout}

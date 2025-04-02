@@ -28,12 +28,12 @@ const Contact = () => {
               <div className='contact__info'>
                 <p>hurairaabbasi647@gmail.com</p>
                 <p>+92 316 7714957</p>
-                <p>Islamabad, Pakistan</p>
+                <p>Rawalpindi, Pakistan</p>
               </div>
             </div>
             <div className='contact__buttons'>
             <a href="mailto:hurairaabbasi647@gmail.com?subject=Hello&body=I%20want%20to%20contact%20you." target='_blank'>Email me</a >
-                <a href="https://wa.me/923167714957" target="_blank">WhatsApp me</a>
+                <a href="https://wa.me/923167714957" target="_blank">WhatsApp</a>
                 <a href="https://linkedin.com/in/huraira-arshad-abbasi/" target="_blank">LinkedIn</a>
             </div>
           </div>
