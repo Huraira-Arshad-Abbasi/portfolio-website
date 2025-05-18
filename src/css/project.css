@@ -23,7 +23,7 @@
     padding: .5rem 2rem;
     background-color: #23212e79;
 }
-
+ 
 .Porject__Card:nth-child(2n+1) {
     margin-left: auto;
 }

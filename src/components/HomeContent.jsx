@@ -41,7 +41,7 @@ export default function HomeContent() {
                 </div>
                 <div className='break__line'></div>
                 <div className='skill__section'>
-                    <h2>My Skills</h2>
+                    <h2>My Expertise</h2>
                     <div className='img__content'>
                         <div className=''>
                             <img src={html} alt='html' />
@@ -93,7 +93,7 @@ export default function HomeContent() {
                             <h3>Bacheler in Software Engineering</h3>
                             <div className='details'>
                                 <h4>(Virtual University of Pakistan)</h4>
-                                <p>2023 - present*</p>
+                                <p>2023 - *2027*</p>
                             </div>
                             <ul>
                                 <li>Completed 3 semester</li>

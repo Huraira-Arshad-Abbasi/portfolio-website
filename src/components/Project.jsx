@@ -8,9 +8,9 @@ export default function Project () {
         {/* <img src={project_layout} alt="" /> */}
         <h2>My Projects</h2>
         <div className='Porject__Card'>
-        <Link target="_blank" to="https://github.com/Huraira-Arshad-Abbasi/TodoApp">
+        <Link target="_blank" to="https://github.com/Huraira-Arshad-Abbasi/TodoSync">
           <div className='heading'>
-            <h2>Sticky Notes(Todo app)</h2>
+            <h2>TodoSync(Task manager app)</h2>
             <p>(React, Epress, Mongodb)</p>
           </div>
           <div className='description'>
@@ -25,7 +25,7 @@ export default function Project () {
         <div className='Porject__Card'>
         <Link target="_blank" to="https://github.com/Huraira-Arshad-Abbasi">
           <div className='heading'>
-            <h2>Sticky Notes(Todo app)</h2>
+            <h2>Media Hub(collection of images, videos and audios)</h2>
             <p>(React, Epress, Mongodb)</p>
           </div>
           <div className='description'>
