@@ -1,14 +1,14 @@
 footer {
-    max-width: 1280px;
-    background-color: rgba(127, 255, 212, 0.805);
+    width: 100%;
     background-color: #00bf63;
-    padding: 0 3rem;
+    padding:1rem 2rem;
     margin-top: 4rem;
     color: rgb(132, 83, 83);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: serif;
+    font-weight: bolder;
     
 }
 footer > a{
@@ -27,4 +27,15 @@ footer>.footer__links>ul>li>a {
     /* text-decoration: none; */
     margin: 0 1rem;
     color: unset;
+}
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer>.footer__links>ul {
+       margin-top: 1rem;
+    }
+    
 }
