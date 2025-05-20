@@ -3,12 +3,6 @@ import '../css/contact.css'
 const Contact = () => {
   return (
     <>
-      {/* <div className='contact__section'>
-        <h2>Contact</h2>
-                the is the contact page
-                <a href="mailto:hurairaabbasi647@gmail.com?subject=Hello&body=I%20want%20to%20contact%20you.">Email me</a>
-        <img src={contact_layout} alt='contact' />
-      </div> */}
       <div className='contact__section'>
         <h2>Contact me</h2>
         <p>{`I'm open to internship opportunities and fresh roles in web development. Whether you have a project, job opportunity, or just want to connect, feel free to reach out!`}</p>

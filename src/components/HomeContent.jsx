@@ -39,6 +39,7 @@ export default function HomeContent() {
                         </p>
                     </div>
                 </div>
+
                 <div className='break__line'></div>
                 <div className='skill__section'>
                     <h2>My Expertise</h2>
@@ -85,9 +86,6 @@ export default function HomeContent() {
 
                 <div className='education__section'>
                     <h2>Education</h2>
-                    {/* <div className=''>
-                        <img src={edu} alt='education picture' />
-                    </div> */}
                     <div className='education__content'>
                         <div className='degree'>
                             <h3>Bacheler in Software Engineering</h3>
@@ -121,7 +119,6 @@ export default function HomeContent() {
                             </ul>
                         </div>
                     </div>
-                    {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos consectetur sit voluptatibus maxime, velit adipisci laudantium architecto dicta consequuntur illum rem veritatis numquam similique. Ducimus dolorem illo repellat iusto quam!</p> */}
                 </div>
 
                 <div className='break__line'></div>

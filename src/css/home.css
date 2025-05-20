@@ -95,22 +95,31 @@ main {
 
 .content>p {
     font-weight: 200;
+    font-size: smaller;
 }
 
+
+/* Break line */
 .break__line {
     width: 100%;
-    height: 8px;
+    height: 1px;
+    margin-bottom: 5vw;
     /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.615); */
-    background-color: rgba(131, 112, 188, 0.421);
+    background-color: rgb(119, 102, 171);
 }
+
+
+
+
+/* Section 2: */
 .skill__section > h2 {
-    font-size: 3vw;
-    font-family: "Yeseva One", serif;
+    /* font-size: 3vw; */
+    /* font-family: "Yeseva One", serif; */
     /* font-weight: 800; */
+    margin: 3rem 0;
     font-style: normal;
 }
 .skill__section {
-    
     min-height: 55vh;
     display: flex;
     flex-direction: column;
@@ -123,6 +132,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 3vw;
 }
 
 .skill__section>.img__content>div {
@@ -131,24 +141,30 @@ main {
     justify-content: center;
     align-items: center;
     gap: 2px;
-    margin: 0 2rem;
+    /* background: #000;
+    height: 10rem;
+    width: 8rem; */
+    padding: 1.5rem;
 }
 
 .skill__section>.img__content img {
-    width: 50px;
+    width: 60px;
     border-radius: 2pt;
 }
 
 .skill__section>.img__content p {
     font-family: sans-serif;
-    /* font-weight: bolder; */
+    margin-top: .5rem;
+    font-size: 10px;
     font-size: larger;
 }
 
+
+
+
+/* Secction 3: */
+
 .education__section {
-    
-    min-height: 40vh;
-    margin: 10rem auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -157,46 +173,33 @@ main {
 }
 
 .education__section>h2 {
-    font-size: 3vw;
-    font-family: "Yeseva One", serif;
-    /* font-weight: 800; */
+     margin: 3rem 0;
     font-style: normal;
 }
 
-/* .education__section img {
-    width: 100%;
-} */
-
-.education__section>p {
-    width: 50%;
-    text-align: center;
-}
-
 .education__section>.education__content {
-    /* border: 2px solid rgb(17, 0, 255); */
-    /* background: #271e1e; */
     width: 100%;
     margin: 1rem;
 }
 
 .education__content>.degree {
-    width: 80%;
+    width: 90%;
     background: #d7787825;
     /* width: fit-content; */
     background: #271e1e;
     background: #23212e79;
+    box-shadow: 0 0 25px 0 rgba(104, 144, 192, 0.675);
     border-radius: 5px;
     padding: 2vw 4vw;
-    margin: .5rem auto;
+    margin: 1.5rem auto;
 }
 
 .degree>h3 {
-    font-size: 2.2rem;
-    font-family: "Oswald", serif;
-    font-family: "Alfa Slab One", serif;
+    font-size: 2rem;
+    /* font-family: "Oswald", serif; */
     color: #c1ff72;
-    color: #c2ff72eb;
-    color: #5271ff;
+    color: #9dcd5d;
+    /* color: #5271ff; */
     margin: 0;
 }
 
@@ -205,8 +208,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-
-    color: #5ce1e6;
+    color: #45b2ff;
     color: #5ce1e6ec;
 }
 
@@ -225,9 +227,7 @@ main {
     font-weight: 800;
     padding: 0 1rem;
     margin: 0;
-    color: #f857a6;
     margin-right: 5vw;
-    font-style: italic;
 }
 
 .degree>ul {
@@ -239,7 +239,6 @@ main {
 .degree>ul>li {
     font-size: 1.5vw;
     font-weight: 300;
-    /* margin: .5rem 0; */
 }
 
 /* mdeia Quries */
@@ -260,36 +259,35 @@ main {
         grid-area: 2;
         margin: 0 auto;
         padding: 0 1rem;
-        /* width: 100vw; */
-        /* height: 60vw; */
     }
 
-    .content>h1 {
-        font-size: 5vw;
-    }
+.skill__section>.img__content>div {
+    background: #000;
+    height: 10rem;
+    width: 8rem;
+    padding: 2rem;
+    margin: 5vw .5rem;
+}
 
-    .content>h2 {
-        font-size: 4vw;
-    }
+.education__content>.degree{
+    width: 95%;
+    padding: 2vw;
+}
+.degree>h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
 
-    .content>p {
-        font-size: 3vw;
-    }
+.degree>.details{
+    flex-direction: column;
+    justify-content: center;
+}
+.degree>ul{
+    margin: 1rem auto;
+    text-align: center;
+    width: fit-content;
+} 
 
 
 
-
-
-
-
-
-    
-    .skill__section>.img__content img {
-        width: 30px;
-    }
-
-    .education__section>.education__content {
-        width: 90%;
-    }
-    
 }
