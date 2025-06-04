@@ -8,7 +8,7 @@ export default function Navbar () {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navRef.current.style.boxShadow = "0 0 15px 0px #0f0f12";
+        navRef.current.style.boxShadow = "0 0 10px 0px var(--shadow)";
       } else {
         navRef.current.style.boxShadow = "none";
       }

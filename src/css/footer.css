@@ -1,10 +1,10 @@
 footer {
     width: 100%;
     background-color: #00bf63;
-     background: #1609096c;
+     background: var(--secondary);
     padding:1rem 2rem;
     margin-top: 4rem;
-    color: #ffffff7b;
+    color: var(--text-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@ footer>.footer__links>ul>li>a {
 }
 footer > a:hover, 
 footer>.footer__links>ul>li>a:hover {
-    color: #fff;
+    color: var(--primary);
     text-decoration: underline;
 }
 /* Media Queries */

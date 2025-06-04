@@ -40,9 +40,9 @@ function App() {
   }
   ])
   return (
-    <>
+    <div  style={{ position: 'relative', overflowX: 'hidden' }}>
       <RouterProvider router={router}/>
-    </>
+    </div>
   )
 }
 

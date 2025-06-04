@@ -39,6 +39,7 @@ main {
     font-size: 3vw;
     margin: 3vw 0;
     font-weight: 500;
+    color: var(--text-secondary);
     
 }
 
@@ -47,13 +48,12 @@ main {
     font-weight: 700;
     font-size: 6vw;
     /* color: #dbff92; */
-    color: #EF4444;
-    ;
-    
+    /* color: #EF4444; */
+    color: var(--primary);
 }
 
 .content>h1>span {
-    color: #ffffff8b;
+    color: var(--text-secondary);
 
 }
 
@@ -62,9 +62,8 @@ main {
     font-weight: 700;
     font-size: 2.5vw;
     color: transparent;
-    background: linear-gradient(180deg, #ffffff, #33cfff);
-    background-clip: text;
-    
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    background-clip: text; 
 }
 
 .content>p {
@@ -75,11 +74,13 @@ main {
 
 /* Break line */
 .break__line {
-    width: 100%;
+    width: 95%;
     height: 1px;
+    margin: 0 auto;
     margin-bottom: 5vw;
     /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.615); */
-    background-color: rgb(119, 102, 171);
+    background-color: var(--primary);
+    
 }
 
 
@@ -118,7 +119,12 @@ main {
     /* background: #000;
     height: 10rem;
     width: 8rem; */
-    padding: 1.5rem;
+    box-shadow: 0 0 10px 0 var(--shadow);
+    border-radius: 15px;
+    height: 10rem;
+    width: 12rem;
+    margin: 1.5rem 1.5rem;
+    padding: 2rem;
 }
 
 .skill__section>.img__content img {
@@ -131,6 +137,7 @@ main {
     margin-top: .5rem;
     font-size: 10px;
     font-size: larger;
+    color: var(--text-secondary);
 }
 
 
@@ -158,11 +165,12 @@ main {
 
 .education__content>.degree {
     width: 90%;
-    background: #d7787825;
+    /* background: #d7787825; */
     /* width: fit-content; */
-    background: #271e1e;
-    background: #23212e79;
-    box-shadow: 0 0 25px 0 rgba(104, 144, 192, 0.675);
+    /* background: #271e1e;
+    background: #23212e79; */
+    /* background: var(--secondary); */
+    box-shadow: 0 0 15px 0 var(--shadow);
     border-radius: 5px;
     padding: 2vw 4vw;
     margin: 1.5rem auto;
@@ -172,8 +180,10 @@ main {
     font-size: 2rem;
     /* font-family: "Oswald", serif; */
     /* color: #c1ff72; */
-    color: #9dcd5d;
-    /* color: #ef444497; */
+    /* color: #9dcd5d; */
+    color: transparent;
+    background: linear-gradient(30deg, var(--primary),var(--secondary));
+    background-clip: text;
     margin: 0;
 }
 
@@ -183,14 +193,14 @@ main {
     align-items: center;
     padding: 0 1rem;
     color: #45b2ff;
-    color: #5ce1e6ec;
+    color: var(--text-secondary);
 }
 
 .details>h4 {
     /* font-family: "Bodoni Moda", serif; */
     font-size: 2vw;
     text-align: center;
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
 
 }
@@ -213,6 +223,7 @@ main {
 .degree>ul>li {
     font-size: 1.5vw;
     font-weight: 300;
+    color: var(--text-secondary);
 }
 
 /* mdeia Quries */
@@ -236,10 +247,6 @@ main {
     }
 
 .skill__section>.img__content>div {
-    background: #000;
-    height: 10rem;
-    width: 8rem;
-    padding: 2rem;
     margin: 5vw .5rem;
 }
 
