@@ -2,18 +2,11 @@
 
 :root {
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #F5F5F5; */
-  background-color: #0c0226;
-  background-color: #0B2715;
-  /* background-color: #1C1E21; */
-  /* background-color: #333333; */
-  background: #172421;
+  background: #1C1C22;
   font-family: 'Open Sans', sans-serif;
   max-width: 1280px;
   margin: 0 auto;
-  /* border: 1px solid #ffffff; */
 }
-
 
 *{
   margin: 0;
@@ -24,17 +17,14 @@
 ::-webkit-scrollbar{
   width: 8px;
 }
-::-webkit-scrollbar:hover{
-  width: 108px;
-}
 ::-webkit-scrollbar-track{
   background: transparent;
 }
 ::-webkit-scrollbar-thumb{
   background:rgba(255, 255, 255, 0.715);
-  border-radius: 10px;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover{
-  background:rgb(255, 62, 62);
+  background:#EF4444;
   border-radius: 10px;
 }

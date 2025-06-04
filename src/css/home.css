@@ -1,36 +1,17 @@
 main {
     width: 100%;
     margin: 0 auto;
-    /* overflow-x: hidden; */
-    /* border: 1px solid #d5ff05; */
 }
 
 .section__1 {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr .3fr;
-   
     padding: 2rem;
+    
+    margin-top: 15vh;
     position: relative;
 }
-
-/* .section__1::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    left: 60vw;
-    height: 30vw;
-    width: 30vw;
-    border-radius: 50%;
-    top: 3;
-    background: url(../assets/myPic.png);
-    background-position: center;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: color-burn;
-
-} */
 
 .section__1>.img {
     margin-right: 10%;
@@ -41,55 +22,48 @@ main {
     background: url(../assets/myPic.jpg);
     background-size: cover;
     border-radius: 50%;
-    /* border: 2px solid #805050; */
 }
 
-/* .section__1 > .img > img{
-    width: 20vw;
-    height: 20vw;
-} */
 .content {
-    /* border: 1px solid #ffffff; */
     grid-area: 1/1;
     width: 100%;
-    /* height: 80vh; */
-    /* padding-top: 4vw; */
     margin-top: 8vw;
     padding: 0;
     font-family: "Oswald", sans-serif;
     text-wrap: wrap;
-    color: #ffffff;
 
 }
 
 .content>h3 {
     font-weight: 600;
-    font-size: 4vw;
-    margin: 4vw 0;
-    font-weight: 300;
-    /* font-family: 'Lucida Sans', Verdana, sans-serif; */
-    /* font-family: "Bodoni Moda", serif; */
-    /* color: rgb(160, 132, 38); */
+    font-size: 3vw;
+    margin: 3vw 0;
+    font-weight: 500;
+    
 }
 
 .content>h1 {
     font-family: "Oswald", sans-serif;
     font-weight: 700;
     font-size: 6vw;
-    color: rgb(219, 255, 146);
+    /* color: #dbff92; */
+    color: #EF4444;
     ;
     
 }
 
 .content>h1>span {
-    color: rgb(255, 255, 255);
+    color: #ffffff8b;
 
 }
 
 .content>h2 {
-    color: rgb(146, 164, 255);
+    /* color: rgb(146, 164, 255); */
     font-weight: 700;
     font-size: 2.5vw;
+    color: transparent;
+    background: linear-gradient(180deg, #ffffff, #33cfff);
+    background-clip: text;
     
 }
 
@@ -197,9 +171,9 @@ main {
 .degree>h3 {
     font-size: 2rem;
     /* font-family: "Oswald", serif; */
-    color: #c1ff72;
+    /* color: #c1ff72; */
     color: #9dcd5d;
-    /* color: #5271ff; */
+    /* color: #ef444497; */
     margin: 0;
 }
 
@@ -274,7 +248,7 @@ main {
     padding: 2vw;
 }
 .degree>h3{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 

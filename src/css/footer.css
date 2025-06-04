@@ -4,11 +4,11 @@ footer {
      background: #1609096c;
     padding:1rem 2rem;
     margin-top: 4rem;
-    color: rgb(132, 83, 83);
+    color: #ffffff7b;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
     
 }

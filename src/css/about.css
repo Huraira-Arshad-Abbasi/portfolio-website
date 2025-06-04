@@ -1,6 +1,7 @@
 .about__section{
     min-height: 80vh;
     text-align: center;
+    margin-top: 15vh;
 }
 .about__section > h2{
     color: rgba(255, 255, 255, 0.659);
