@@ -8,10 +8,16 @@ const Contact = () => {
         <p>{`I'm open to internship opportunities and fresh roles in web development. Whether you have a project, job opportunity, or just want to connect, feel free to reach out!`}</p>
         <div className='contact__content'>
           <div className='left__content'>
-            <form action='' method='post'>
+            <form action='https://formspree.io/f/mnnvjnbl' method='post'>
               <textarea name="" id="" rows="2" ></textarea>
               <textarea name="" id=""  rows="8"></textarea>
-              <button type='submit'>Submit</button>
+              <button type='submit' onClick={(e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                // clear the form fields
+                e.target.form.reset();
+              }
+              }>Submit</button>
             </form>
           </div>
           <div className='right__content'>

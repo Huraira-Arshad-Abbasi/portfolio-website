@@ -1,48 +1,55 @@
 import '../css/Navbar.css'
-// import React from 'react';
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom' // ✅ Changed from Link to NavLink
 
 export default function Navbar () {
- const navRef = useRef(null);
+  const navRef = useRef(null)
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navRef.current.style.boxShadow = "0 0 10px 0px var(--shadow)";
+        navRef.current.style.boxShadow = '0 0 10px 0px var(--shadow)'
       } else {
-        navRef.current.style.boxShadow = "none";
+        navRef.current.style.boxShadow = 'none'
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
-    // Cleanup
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div>
       <nav ref={navRef}>
         <div className='logo'>
-          <Link to='/'>
+          <NavLink to='/' className='nav-link'>
             Huraira <span>Arshad</span>
-          </Link>
+          </NavLink>
         </div>
         <div className='nav__links'>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <NavLink to='/' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to='/About'>About</Link>
+              <NavLink to='/About' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to='/Project'>Projects</Link>
+              <NavLink to='/Project' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                Projects
+              </NavLink>
             </li>
-            {/* <li><Link to="/Reviews">Reviews</Link></li> */}
             <li>
-              <Link to='/Contact'>Contact</Link>
+              <NavLink to='/Contact' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -50,3 +57,4 @@ export default function Navbar () {
     </div>
   )
 }
+

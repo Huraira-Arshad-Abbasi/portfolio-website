@@ -1,15 +1,13 @@
 footer {
     width: 100%;
-    background-color: #00bf63;
-     background: var(--secondary);
+     box-shadow: 0 0 3px 0px var(--shadow);
     padding:1rem 2rem;
     margin-top: 4rem;
     color: var(--text-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
+    
     
 }
 footer > a{

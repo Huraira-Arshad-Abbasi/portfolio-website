@@ -12,7 +12,6 @@
 
 .contact__section>p {
     width: 50vw;
-    font-family: "Bodoni Moda", serif;
     font-size: 1.3rem;
     font-weight: 400;
     text-align: center;
@@ -56,13 +55,14 @@
     scrollbar-width: 0;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
+    border: none;
+    box-shadow: 0 0 5px 0 var(--shadow);
     transition: all 0.5s;
 }
 
 .left__content>form>textarea:focus,
 .left__content>form>textarea:hover {
-    background: var(--bg);
-    cursor: not-allowed;
+    box-shadow: 0 0 1px 0 var(--shadow);
 }
 
 .left__content>form>button {
@@ -81,6 +81,7 @@
 }
 form>button:hover{
  background: var(--hover);
+ box-shadow: 0 0 1px 0 var(--shadow);
 }
 
 .contact__content>.right__content {
@@ -103,7 +104,6 @@ form>button:hover{
 }
 
 .right__content>.info>.contact__info {
-    font-family: "Alfa Slab One", serif;
     font-size: 1.2rem;
     color: var(--text-secondary);
 }
@@ -129,7 +129,7 @@ form>button:hover{
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
     color: var(--text-secondary);
-    box-shadow: 0 0 5px 0 var(--shadow);
+    box-shadow: 0 0 3px 0 var(--shadow);
     border-radius: 50px;
 
     transition: all 0.5s;
@@ -137,6 +137,7 @@ form>button:hover{
 
 .contact__buttons >a:hover{
    background: var(--hover);
+   box-shadow: 0 0 1px 0 var(--shadow);
 }
 
 @media screen and (max-width: 768px) {
@@ -156,9 +157,7 @@ form>button:hover{
     .contact__content>.right__content {
         width: 90%;
     }
-}
-@media screen and (max-width: 768px)
-{
+
     .contact__content>.right__content>.info{
         flex-direction: column;
         text-align: center;

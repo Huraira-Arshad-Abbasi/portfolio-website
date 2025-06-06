@@ -43,8 +43,7 @@
   color: var(--text);
   /* background: #1C1C22; */
   background: var(--bg);
-  
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Oswald", sans-serif;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -64,9 +63,11 @@
 }
 ::-webkit-scrollbar-thumb{
   background:var(--secondary);
+  
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover{
-  background:var(--primary);
+  background:var(--hover);
+  
   border-radius: 10px;
 }

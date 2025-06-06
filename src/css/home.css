@@ -9,7 +9,7 @@ main {
     grid-template-columns: 2fr .3fr;
     padding: 2rem;
     
-    margin-top: 15vh;
+    margin-top: 10vh;
     position: relative;
 }
 
@@ -88,9 +88,6 @@ main {
 
 /* Section 2: */
 .skill__section > h2 {
-    /* font-size: 3vw; */
-    /* font-family: "Yeseva One", serif; */
-    /* font-weight: 800; */
     margin: 3rem 0;
     font-style: normal;
 }
@@ -125,18 +122,26 @@ main {
     width: 12rem;
     margin: 1.5rem 1.5rem;
     padding: 2rem;
+    transition: all .3s;
+    border: 1px solid white;
 }
 
+.skill__section>.img__content>div:hover{
+    background: var(--hover);
+    box-shadow: 0 0 10px 0 var(--primary);
+    
+    
+}
 .skill__section>.img__content img {
     width: 60px;
     border-radius: 2pt;
 }
 
 .skill__section>.img__content p {
-    font-family: sans-serif;
     margin-top: .5rem;
     font-size: 10px;
-    font-size: larger;
+    font-weight: 300;
+    font-size: small;
     color: var(--text-secondary);
 }
 
@@ -165,15 +170,16 @@ main {
 
 .education__content>.degree {
     width: 90%;
-    /* background: #d7787825; */
-    /* width: fit-content; */
-    /* background: #271e1e;
-    background: #23212e79; */
-    /* background: var(--secondary); */
-    box-shadow: 0 0 15px 0 var(--shadow);
+    box-shadow: 0 0 10px -3px var(--shadow);
     border-radius: 5px;
     padding: 2vw 4vw;
     margin: 1.5rem auto;
+    transition: all .6s;
+    border: 1.5px solid white;
+}
+.education__content>.degree:hover {
+    background: var(--hover);
+    box-shadow: 0 0 10px -3px var(--primary);
 }
 
 .degree>h3 {
@@ -194,6 +200,7 @@ main {
     padding: 0 1rem;
     color: #45b2ff;
     color: var(--text-secondary);
+    
 }
 
 .details>h4 {
@@ -215,14 +222,13 @@ main {
 }
 
 .degree>ul {
-    font-family: "Old Standard", serif;
     padding: 0;
     margin: 1rem 10rem;
 }
 
 .degree>ul>li {
     font-size: 1.5vw;
-    font-weight: 300;
+    /* font-weight: 300; */
     color: var(--text-secondary);
 }
 
@@ -232,13 +238,15 @@ main {
     .section__1 {
         grid-template-columns: 1fr;
         padding: 2rem 0;
+        margin-top: 0;
     }
 
     .section__1>.img {
+        
         grid-area: 1;
         margin: 0 auto;
-        width: 35vw;
-        height: 35vw;
+        width: 55vw;
+        height: 55vw;
     }
     .section__1>.content{
         grid-area: 2;
@@ -248,6 +256,8 @@ main {
 
 .skill__section>.img__content>div {
     margin: 5vw .5rem;
+    height: 10rem;
+    width: 8rem;
 }
 
 .education__content>.degree{
@@ -267,8 +277,9 @@ main {
     margin: 1rem auto;
     text-align: center;
     width: fit-content;
+    letter-spacing: 1px;
+    font-weight: 400;
+    
 } 
-
-
 
 }
