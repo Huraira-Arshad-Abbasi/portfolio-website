@@ -36,6 +36,8 @@ export default function Navbar () {
                 Home
               </NavLink>
             </li>
+
+            
             <li>
               <NavLink to='/About' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                 About

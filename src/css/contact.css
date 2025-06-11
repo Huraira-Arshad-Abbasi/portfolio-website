@@ -76,12 +76,13 @@
     background-color: var(--bg);
     box-shadow: 0 0 5px 0 var(--shadow);
     border-radius: 50px;
-    cursor: not-allowed;
     transition: all 0.5s;
 }
-form>button:hover{
- background: var(--hover);
- box-shadow: 0 0 1px 0 var(--shadow);
+
+form>button:hover {
+    cursor: pointer;
+    /* background: var(--hover); */
+    box-shadow: 0 0 1px 0 var(--shadow);
 }
 
 .contact__content>.right__content {
@@ -96,11 +97,11 @@ form>button:hover{
 }
 
 .right__content>.info>.mypic {
-       width: 12vw;
-       height: 12vw;
-       background: url(../assets/myPic.jpg);
-       background-size: cover;
-       border-radius: 50%;
+    width: 12vw;
+    height: 12vw;
+    background: url(../assets/myPic.jpg);
+    background-size: cover;
+    border-radius: 50%;
 }
 
 .right__content>.info>.contact__info {
@@ -120,6 +121,7 @@ form>button:hover{
     margin: 2rem auto;
     gap: 2rem;
 }
+
 .contact__buttons>a {
     /* width: 100%; */
     text-decoration: none;
@@ -135,9 +137,9 @@ form>button:hover{
     transition: all 0.5s;
 }
 
-.contact__buttons >a:hover{
-   background: var(--hover);
-   box-shadow: 0 0 1px 0 var(--shadow);
+.contact__buttons>a:hover {
+    background: var(--hover);
+    box-shadow: 0 0 1px 0 var(--shadow);
 }
 
 @media screen and (max-width: 768px) {
@@ -158,18 +160,21 @@ form>button:hover{
         width: 90%;
     }
 
-    .contact__content>.right__content>.info{
+    .contact__content>.right__content>.info {
         flex-direction: column;
         text-align: center;
     }
-    .right__content>.info>.mypic{
+
+    .right__content>.info>.mypic {
         width: 24vw;
         height: 24vw;
     }
-    .right__content>.contact__buttons{
+
+    .right__content>.contact__buttons {
         gap: .5rem;
     }
-    .contact__buttons>a{
+
+    .contact__buttons>a {
         font-size: .5rem;
     }
 }

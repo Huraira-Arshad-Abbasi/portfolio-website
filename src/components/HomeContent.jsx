@@ -27,9 +27,9 @@ export default function HomeContent() {
                         <h1>
                             <span>I{"'"}am </span>Huraira Arshad
                         </h1>
-                        <h2>MERN Stack Develpor</h2>
+                        <h2>Website Develpor</h2>
                         <p>
-                            Hello! I{"'"}m a passionate Web Developer skilled in creating
+                            I{"'"}m a passionate Web Developer skilled in creating
                             dynamic, user-friendly websites and applications using HTML, CSS,
                             JavaScript, and modern frameworks. With expertise in both
                             front-end and back-end technologies, I deliver clean, efficient,

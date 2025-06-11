@@ -47,7 +47,7 @@
 }
 .Porject__Card>a:hover{
     box-shadow: 0 0 10px 0 var(--primary);
-    background-color: var(--hover);
+    background-color: var(--hover2);
 }
 .Porject__Card>a>.heading {
     display: flex;
