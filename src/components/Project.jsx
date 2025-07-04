@@ -34,7 +34,7 @@ export default function Project () {
           <h3>02</h3>
           <Link
             target='_blank'
-            to='https://github.com/Huraira-Arshad-Abbasi/Todo-Sync'
+            to='https://media-hub-huraira-project.vercel.app/'
           >
             <div className='heading'>
               <h2>MediaHub – Multimedia Search & Download Platform</h2>
