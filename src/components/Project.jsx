@@ -32,6 +32,23 @@ export default function Project () {
         </div>
         <div className='Porject__Card'>
           <h3>02</h3>
+          <Link
+            target='_blank'
+            to='https://github.com/Huraira-Arshad-Abbasi/Todo-Sync'
+          >
+            <div className='heading'>
+              <h2>MediaHub – Multimedia Search & Download Platform</h2>
+              <p>(React, Vite, Axios, Pexels API)</p>
+            </div>
+            <div className='description'>
+              <p>
+                MediaHub is a modern frontend project where users can search, explore, and download high-quality images and videos. Built using React and Vite, this app integrates with the Unsplash and Pexels APIs to fetch media content dynamically. It features a responsive layout, hover controls on videos, and a clean 3-column grid for media display. A search feature allows users to filter results by keyword and type. Currently hosted on GitHub and optimized for future deployment on Vercel.
+              </p>
+            </div>
+          </Link>
+        </div>
+        <div className='Porject__Card'>
+          <h3>03</h3>
           <Link target='_blank' to='https://github.com/Huraira-Arshad-Abbasi'>
             <div className='heading'>
               <h2>Website Clones & UI Practice Projects</h2>
