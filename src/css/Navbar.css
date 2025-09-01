@@ -15,7 +15,7 @@ nav {
 
 .logo > a {
   position: relative;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   font-size: 2.5vw;
   text-decoration: none;
@@ -28,6 +28,7 @@ nav {
 
 .logo > a:hover {
   color: var(--primary);
+  font-weight: 900;
 }
 
 .nav__links {

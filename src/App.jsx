@@ -5,40 +5,44 @@ import Project from './components/Project';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Scroll from './components/Scroll';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
   const router = createBrowserRouter([
     {
        path: '/',
      element: <>
-    < Navbar /><HomeContent/>< Footer />
+     <Scroll />
+    < Navbar />
+    <HomeContent/>< Footer />
     </> 
   },
     {
        path: '/About',
      element:  <>
-    < Navbar /><About/>< Footer />
+    <Scroll />< Navbar /><About/>< Footer />
     </>
   },
     {
        path: '/Project',
      element: <>
-    < Navbar /><Project/>< Footer /> 
+    <Scroll />< Navbar /><Project/>< Footer /> 
     </>
   },
     {
        path: '/Reviews',
      element: <>
-    < Navbar /><Reviews />< Footer /> 
+    <Scroll />< Navbar /><Reviews />< Footer /> 
     </>
   },
     {
        path: '/Contact',
      element: <>
-    < Navbar /><Contact/>< Footer />
+    <Scroll />< Navbar /><Contact/>< Footer />
     </>
   }
   ])
+  
   return (
     <div  style={{ position: 'relative', overflowX: 'hidden' }}>
       <RouterProvider router={router}/>

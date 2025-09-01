@@ -1,4 +1,6 @@
 // import { project_layout } from '../assets/imges'
+import {  motion } from 'framer-motion'
+
 import '../css/project.css'
 import { Link } from 'react-router-dom'
 export default function Project () {
@@ -7,11 +9,14 @@ export default function Project () {
       <div className='project__section'>
         {/* <img src={project_layout} alt="" /> */}
         <h2>My Projects</h2>
-        <div className='Porject__Card'>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true}} className='Porject__Card'>
           <h3>01</h3>
           <Link
             target='_blank'
-            to='https://github.com/Huraira-Arshad-Abbasi/Todo-Sync'
+            to='https://todo-sync-jet.vercel.app/'
           >
             <div className='heading'>
               <h2>TodoSync - Task Management Web App</h2>
@@ -29,8 +34,11 @@ export default function Project () {
               </p>
             </div>
           </Link>
-        </div>
-        <div className='Porject__Card'>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 , delay: 0.2}}
+            viewport={{ once: true}} className='Porject__Card'>
           <h3>02</h3>
           <Link
             target='_blank'
@@ -46,8 +54,11 @@ export default function Project () {
               </p>
             </div>
           </Link>
-        </div>
-        <div className='Porject__Card'>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 , delay: 0.4}}
+            viewport={{ once: true}} className='Porject__Card'>
           <h3>03</h3>
           <Link target='_blank' to='https://github.com/Huraira-Arshad-Abbasi'>
             <div className='heading'>
@@ -65,7 +76,13 @@ export default function Project () {
               </p>
             </div>
           </Link>
-        </div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            transition={{ duration: 0.8, delay: 0.5}}
+            viewport={{ once: true }} className="upcoming__projects">
+          <h2>More Projects Coming Soon...</h2>
+        </motion.div>
       </div>
     </>
   )

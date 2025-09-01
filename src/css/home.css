@@ -56,11 +56,12 @@ main {
 .content>h1::before{
     content: '';
     position: absolute;
-    width: 0%;
+    width: 0;
     right: 0;
     height: 100%;
     background: var(--bg);
     z-index: 2;
+    opacity: 1;
     animation: animateName 3s 1;
     animation-delay: .5s;
 }   
@@ -68,8 +69,12 @@ main {
     0% {
         width: 80%;
     }
+    80%{
+        opacity: 1;
+    }
     100% {
         width: 0%;
+        opacity: 0;
     }
 }
 .content>h1>span {
@@ -112,7 +117,7 @@ main {
     min-height: 55vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -121,44 +126,41 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 3vw;
+    margin: 2rem auto;
 }
 
 .skill__section>.img__content>div {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
-    gap: 2px;
-    /* background: #000;
-    height: 10rem;
-    width: 8rem; */
-    box-shadow: 0 0 10px 0 var(--shadow);
-    border-radius: 15px;
-    height: 10rem;
-    width: 12rem;
-    margin: 1.5rem 1.5rem;
+    
+    box-shadow: 0 0 5px 0px var(--shadow);
+    border-radius: 5px;
+    height: 4rem;
+    width: 16rem;
+    margin: 1rem 1rem;
     padding: 2rem;
     transition: all .3s;
-    border: 1px solid white;
+    border: 1px solid #ffffff;
 }
 
 .skill__section>.img__content>div:hover{
     /* background: var(--hover); */
-    box-shadow: 0 0 10px 0 var(--primary);
+    box-shadow: 0 0 5px 0 var(--primary);
     
     
 }
 .skill__section>.img__content img {
-    width: 60px;
+    height: 40px;
     border-radius: 2pt;
 }
 
 .skill__section>.img__content p {
     margin-top: .5rem;
-    font-size: 10px;
+    font-size: 1.5rem;
     font-weight: 300;
-    font-size: small;
+    /* font-size: small; */
     color: var(--text-secondary);
 }
 
@@ -268,11 +270,11 @@ main {
         padding: 0 1rem;
     }
 
-.skill__section>.img__content>div {
+/* .skill__section>.img__content>div {
     margin: 5vw .5rem;
     height: 10rem;
     width: 8rem;
-}
+} */
 
 .education__content>.degree{
     width: 95%;

@@ -18,8 +18,8 @@
   transition: all 0.3s ease;
 }
 .about-container:hover {
-  box-shadow: 0 0 15px 0 var(--primary);
-  background-color: var(--hover);
+  box-shadow: 0 0 10px 0 var(--primary);
+  /* background-color: var(--hover); */
 }
 .about-heading {
   /* font-size: 2.5rem; */
