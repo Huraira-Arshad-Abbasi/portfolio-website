@@ -11,6 +11,26 @@ export default function Project () {
         <h2>My Projects</h2>
         <motion.div initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 , delay: 0.2}}
+            viewport={{ once: true}} className='Porject__Card'>
+          <h3>02</h3>
+          <Link
+            target='_blank'
+            to='https://pak-stats.vercel.app/'
+          >
+            <div className='heading'>
+              <h2>PakStats – Pakistan Indicator Dashboard</h2>
+              <p>(React, Vite, World Bank API)</p>
+            </div>
+            <div className='description'>
+              <p>
+                Built an interactive data visualization website using React that showcases Pakistan’s key economic indicators such as poverty, trade, inflation, and education. Integrated World Bank Open Data API for live statistics, designed reusable components for charts, and implemented a clean, user-friendly interface to make complex data understandable for the general public.
+              </p>
+            </div>
+          </Link>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true}} className='Porject__Card'>
           <h3>01</h3>

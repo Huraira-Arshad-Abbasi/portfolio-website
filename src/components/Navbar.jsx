@@ -9,8 +9,10 @@ export default function Navbar () {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         navRef.current.style.boxShadow = '0 0 10px 0px var(--shadow)'
+        navRef.current.style.background = 'var(--bg)'
       } else {
         navRef.current.style.boxShadow = 'none'
+         navRef.current.style.background = 'none'
       }
     }
 

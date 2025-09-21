@@ -5,7 +5,7 @@
     flex-direction: column;
     overflow-x: hidden;
     margin-top: 20vh;
-
+    
 }
 
 .project__section>h2 {
@@ -35,7 +35,7 @@
     margin: 1rem;
     border-radius: 5px;
     padding:  2rem;
-    background-color: white;
+    background-color: #ffffff6e;
     box-shadow: 0 0 10px -5px var(--shadow);
     transition: all .5s;
 }
@@ -54,7 +54,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
 }
 
 .heading>h2 {
@@ -77,9 +77,9 @@
 a> .description {
     font-weight: 300;
     font-style: normal;
-    font-size: small;
+    font-size: medium;
     color: var(--text-secondary);
-    margin-top: 5rem ;
+    margin-top: 2rem ;
 }
 
 /* .project__section img {

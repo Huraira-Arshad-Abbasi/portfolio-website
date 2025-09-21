@@ -7,7 +7,8 @@ import {
   react,
   ex,
   mongodb,
-  nodeJs
+  nodeJs,
+  cv
 } from "../assets/imges";
 import "../css/home.css";
 import Contact from "./Contact";
@@ -43,6 +44,7 @@ export default function HomeContent() {
   return (
     <>
       <main>
+        <div className="fixedbg"></div>
         {/* 🔹 Section 1: Hero Section */}
         <div className="section__1">
           <motion.div
@@ -84,6 +86,17 @@ export default function HomeContent() {
             >
               Website Developer
             </motion.h2>
+            <a href={cv} download>
+            <motion.button
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 1, delay: 2.5 }}
+              viewport={{ once: true }}
+            >
+              Download CV
+            </motion.button>
+              </a>
+            
 
             <motion.p
               initial={{ opacity: 0}}
@@ -156,8 +169,8 @@ export default function HomeContent() {
                 <p>2023 - *2027*</p>
               </div>
               <ul>
-                <li>Completed 3 semester</li>
-                <li>CGPA: 3.93/4</li>
+                <li>Completed 4 semester</li>
+                <li>CGPA: 3.95/4</li>
               </ul>
             </motion.div>
 

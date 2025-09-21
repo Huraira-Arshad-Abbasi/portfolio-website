@@ -65,7 +65,7 @@ const Contact = () => {
                 className='contact__info'
               >
                 <p>hurairaabbasi647@gmail.com</p>
-                <p>+92 316 7714957</p>
+                <p>+92 344 7714619</p>
                 <p>Rawalpindi, Pakistan</p>
               </motion.div>
             </motion.div>

@@ -1,16 +1,23 @@
 main {
     width: 100%;
     margin: 0 auto;
+   /* background: var(--bg); */
+    
 }
 
+
+/* main > div{
+   background: var(--bg); 
+} */
 .section__1 {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr .3fr;
     padding: 2rem;
-    
+    background: transparent;
     margin-top: 10vh;
     position: relative;
+    color: #ffffff;
 }
 
 .section__1>.img {
@@ -92,8 +99,9 @@ main {
 }
 
 .content>p {
-    font-weight: 200;
+    font-weight: 300;
     font-size: smaller;
+    color: var(--text);
 }
 
 
