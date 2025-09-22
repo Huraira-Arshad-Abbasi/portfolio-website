@@ -13,7 +13,7 @@ export default function Project () {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 , delay: 0.2}}
             viewport={{ once: true}} className='Porject__Card'>
-          <h3>02</h3>
+          <h3>01</h3>
           <Link
             target='_blank'
             to='https://pak-stats.vercel.app/'
@@ -33,7 +33,7 @@ export default function Project () {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true}} className='Porject__Card'>
-          <h3>01</h3>
+          <h3>02</h3>
           <Link
             target='_blank'
             to='https://todo-sync-jet.vercel.app/'
@@ -59,7 +59,7 @@ export default function Project () {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 , delay: 0.2}}
             viewport={{ once: true}} className='Porject__Card'>
-          <h3>02</h3>
+          <h3>03</h3>
           <Link
             target='_blank'
             to='https://media-hub-huraira-project.vercel.app/'
@@ -79,7 +79,7 @@ export default function Project () {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 , delay: 0.4}}
             viewport={{ once: true}} className='Porject__Card'>
-          <h3>03</h3>
+          <h3>04</h3>
           <Link target='_blank' to='https://github.com/Huraira-Arshad-Abbasi'>
             <div className='heading'>
               <h2>Website Clones & UI Practice Projects</h2>
