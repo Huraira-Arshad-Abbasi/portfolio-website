@@ -82,14 +82,14 @@ function App () {
   return (
     <motion.div style={{ position: 'relative', overflowX: 'hidden' }}>
       <motion.div
+      className='pointer'
       animate={{ x: position.x - 10, y: position.y - 10 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
       style={{
         width: 20,
         height: 20,
         border: '1px solid var(--secondary)',
         borderRadius: "50%",
-        // backgroundColor: "var(--secondary)",
         position: "fixed",
         top: 0,
         left: 0,
