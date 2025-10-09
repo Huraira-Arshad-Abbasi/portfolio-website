@@ -11,6 +11,15 @@
   --hover2: rgb(34, 40, 47);
   /* --hover: rgb(50, 65, 82); */
 
+
+  /* --bg: rgb(0, 0, 0);
+  --primary: #151f7e;
+  --secondary: #3ba7d9;
+  --text: #ffffff;
+  --text-secondary: #b3b3b3;
+  --shadow: #358bad;
+  --hover: rgb(34, 55, 76);
+  --hover2: rgb(56, 56, 150); */
   /* scheme 2 */
   /* --bg: #000000;
   --primary: #00ffcc;
@@ -67,8 +76,9 @@
     top: 0;
     left: 0;
     z-index: -10;
+    filter: opacity(0.2) contrast(1.5);
     filter:  invert() grayscale(.5) opacity(0.6);
-  animation: colorChange 15s infinite alternate ease-in-out;
+  animation: colorChange 10s infinite alternate ease-in-out;
 }
 
 @keyframes colorChange {

@@ -97,7 +97,7 @@ function App () {
         zIndex: 9999,
       }}
       />
-        <div className='fixedbg'></div>
+        
         <RouterProvider router={router} />
       
     </motion.div>

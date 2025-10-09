@@ -44,7 +44,7 @@ export default function HomeContent() {
   return (
     <>
       <main>
-        <div className="fixedbg"></div>
+        
         {/* 🔹 Section 1: Hero Section */}
         <div className="section__1">
           <motion.div
@@ -92,6 +92,7 @@ export default function HomeContent() {
               whileInView={{ opacity: 1}}
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
+              
             >
               Download CV
             </motion.button>
