@@ -29,8 +29,8 @@ const Contact = () => {
               action='https://formspree.io/f/mnnvjnbl'
               method='post'
             >
-              <motion.textarea name='' id='' rows='2'></motion.textarea>
-              <motion.textarea name='' id='' rows='8'></motion.textarea>
+              <motion.textarea name='' id='' placeholder='Subject...' rows='2'></motion.textarea>
+              <motion.textarea name='' id='' placeholder='Message...' rows='8'></motion.textarea>
               <motion.button
                 type='submit'
                 onClick={e => {

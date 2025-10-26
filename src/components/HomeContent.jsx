@@ -60,14 +60,14 @@ export default function HomeContent() {
           </motion.div>
 
           <div className="content">
-            <motion.h3
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Asalaam-u-Alaikum!
-            </motion.h3>
+              Hi!
+            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0 }}
@@ -152,7 +152,7 @@ export default function HomeContent() {
         <div className="break__line"></div>
 
         {/* 🔹 Section 3: Education */}
-        <div className="education__section">
+        <div name="Education" className="education__section">
           <h2>Education</h2>
           <motion.div
             className="education__content"

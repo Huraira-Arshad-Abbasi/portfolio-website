@@ -33,7 +33,7 @@
  /* border: 1px solid rgb(0, 179, 255); */
     width: 85%;
     margin: 1rem;
-    border-radius:  0 90px 15% 90px;
+    border-radius:  0 40px 5% 40px;
     padding:  2rem;
     background-color: var(--bg);
     box-shadow: 0 0 10px -5px var(--shadow);
@@ -46,8 +46,9 @@
     border: 1px solid white;
 }
 .Porject__Card>a:hover{
+    border-radius:  0 80px 15% 80px;
     box-shadow: 0 0 10px 0 var(--primary);
-    background-color: var(--hover2);
+    /* background-color: var(--hover2); */
 }
 .Porject__Card>a>.heading {
     display: flex;

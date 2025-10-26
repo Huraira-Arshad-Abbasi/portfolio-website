@@ -5,32 +5,48 @@ import { NavLink } from 'react-router-dom' // ✅ Changed from Link to NavLink
 export default function Navbar () {
   const navRef = useRef(null)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        navRef.current.style.boxShadow = '0 0 10px 0px var(--shadow)'
-        navRef.current.style.background = 'var(--bg)'
-      } else {
-        navRef.current.style.boxShadow = 'none'
-         navRef.current.style.background = 'none'
-      }
+useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // Background change logic
+    if (currentScrollY > 60) {
+      navRef.current.style.background = '#101231';
+      navRef.current.style.boxShadow = '0 0 10px 0px rgba(0, 0, 0, 0.55)'
+    } else {
+      navRef.current.style.boxShadow = 'none'
+      navRef.current.style.background = 'none';
     }
 
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+    // Hide/show logic
+    if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      // scrolling down
+      navRef.current.style.transform = 'translateY(-115%)';
+    } else {
+      // scrolling up
+      navRef.current.style.transform = 'translateY(0)';
     }
-  }, [])
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
   return (
     <div>
       <nav ref={navRef}>
-        <div className='logo'>
+        {/* <div className='logo'>
           <NavLink to='/' className='nav-link'>
             Huraira <span>Arshad</span>
           </NavLink>
-        </div>
+        </div> */}
         <div className='nav__links'>
           <ul>
             <li>
@@ -38,8 +54,7 @@ export default function Navbar () {
                 Home
               </NavLink>
             </li>
-
-            
+              
             <li>
               <NavLink to='/About' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                 About

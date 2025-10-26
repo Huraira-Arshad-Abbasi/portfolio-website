@@ -64,6 +64,7 @@
 .left__content>form>textarea:focus,
 .left__content>form>textarea:hover {
     box-shadow: 0 0 1px 0 var(--shadow);
+    background-color: #ffffff;
 }
 
 .left__content>form>button {
@@ -83,7 +84,7 @@
 
 form>button:hover {
     cursor: pointer;
-    /* background: var(--hover); */
+   background: var(--hover2);
     box-shadow: 0 0 1px 0 var(--shadow);
 }
 
@@ -140,7 +141,7 @@ form>button:hover {
 }
 
 .contact__buttons>a:hover {
-    background: var(--hover);
+    background: var(--hover2);
     box-shadow: 0 0 1px 0 var(--shadow);
 }
 
