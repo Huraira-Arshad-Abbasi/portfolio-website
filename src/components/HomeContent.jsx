@@ -11,7 +11,9 @@ import {
   cv
 } from "../assets/imges";
 import "../css/home.css";
+import Project from "./Project"
 import Contact from "./Contact";
+
 import { motion } from "framer-motion";
 
 
@@ -209,6 +211,8 @@ export default function HomeContent() {
           </motion.div>
         </div>
 
+        <div className="break__line"></div>
+        <Project/>
         <div className="break__line"></div>
 
         {/* 🔹 Section 4: Contact */}
