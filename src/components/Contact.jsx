@@ -18,7 +18,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
           viewport={{ once: true}}
-        >{`I’m open to fresh opportunities in web development. Whether you’re offering a role, or have a project to collaborate on, I’d be happy to connect!`}</motion.p>
+        >{`"I’m open to fresh opportunities in web development. Whether you’re offering a role, or have a project to collaborate on, I’d be happy to connect!"`}</motion.p>
         <motion.div className='contact__content'>
           <motion.div className='left__content'>
             <motion.form

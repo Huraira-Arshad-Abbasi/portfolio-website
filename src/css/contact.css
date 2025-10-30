@@ -12,12 +12,12 @@
 
 .contact__section>p {
     width: 50vw;
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 300;
     text-align: center;
     font-style: italic;
     letter-spacing: .5px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     color: var(--text-secondary);
 }
 
@@ -51,20 +51,21 @@
     padding: .5rem 1rem;
     outline: none;
     resize: none;
-    background: #ffffff;
+    background: var(--bg);
     background: transparent;
     scrollbar-width: 0;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
     border: none;
-    box-shadow: 0 0 5px 0 var(--shadow);
+    box-shadow: 0 0 1px 0 var(--secondary);
     transition: all 0.5s;
+    color: var(--text);
 }
 
 .left__content>form>textarea:focus,
 .left__content>form>textarea:hover {
-    box-shadow: 0 0 1px 0 var(--shadow);
-    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 var(--accent-Color);
+    background-color: var(--bg);
 }
 
 .left__content>form>button {
@@ -76,16 +77,16 @@
     font-size: 1.5rem;
     color: var(--text-secondary);
     background-color: var(--bg);
-    background-color: transparent;
-    box-shadow: 0 0 5px 0 var(--shadow);
+    /* background-color: transparent; */
+    box-shadow: 0 0 5px 0 var(--accent-Color);
     border-radius: 50px;
     transition: all 0.5s;
 }
 
 form>button:hover {
     cursor: pointer;
-   background: var(--hover2);
-    box-shadow: 0 0 1px 0 var(--shadow);
+color: var(--bg);
+   background: var(--secondary);
 }
 
 .contact__content>.right__content {
@@ -102,14 +103,14 @@ form>button:hover {
 .right__content>.info>.mypic {
     width: 12vw;
     height: 12vw;
-    background: url(../assets/myPic.jpg);
+    background: url(../assets/myPic.jpeg);
     background-size: cover;
     border-radius: 50%;
 }
 
 .right__content>.info>.contact__info {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    color: var(--text);
 }
 
 .info>.contact__info>p {
@@ -133,16 +134,17 @@ form>button:hover {
     border: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
-    color: var(--text-secondary);
-    box-shadow: 0 0 3px 0 var(--shadow);
+    color: var(--secondary);
+    box-shadow: 0 0 3px 0 var(--accent-Color);
     border-radius: 50px;
 
     transition: all 0.5s;
 }
 
 .contact__buttons>a:hover {
-    background: var(--hover2);
-    box-shadow: 0 0 1px 0 var(--shadow);
+    color: var(--bg);
+    background: var(--secondary);
+    box-shadow: 0 0 1px 0 var(--accent-Color);
 }
 
 @media screen and (max-width: 768px) {

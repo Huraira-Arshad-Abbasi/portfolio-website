@@ -5,10 +5,6 @@ main {
     
 }
 
-
-/* main > div{
-   background: var(--bg); 
-} */
 .section__1 {
     width: 100%;
     display: grid;
@@ -17,7 +13,6 @@ main {
     background: transparent;
     margin-top: 10vh;
     position: relative;
-    color: #ffffff;
 }
 
 .section__1>.img {
@@ -26,7 +21,7 @@ main {
     width: 25vw;
     margin-top: 30%;
     height: 25vw;
-    background: url(../assets/myPic.jpg);
+    background: url(../assets/myPic.jpeg);
     background-size: cover;
     border-radius: 50%;
 }
@@ -44,7 +39,7 @@ main {
 .content> p {
     font-weight: 600;
     font-size: 2rem;
-    margin: 3vw 0;
+    margin: 2vw 0;
     font-weight: 500;
     color: var(--secondary);
     
@@ -54,10 +49,8 @@ main {
     position: relative;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    font-size: 6vw;
-    /* color: #dbff92; */
-    /* color: #EF4444; */
-    color: var(--primary);
+    font-size: 5vw;
+    color: var(--accent-Color);
     transition: all .5s;
 }
 .content>h1::before{
@@ -69,7 +62,7 @@ main {
     background: var(--bg);
     z-index: 2;
     opacity: 1;
-    animation: animateName 3s 1;
+    animation: animateName 2s 1;
     animation-delay: .5s;
 }   
 @keyframes animateName{
@@ -85,17 +78,20 @@ main {
     }
 }
 .content>h1>span {
-    color: var(--text-secondary);
+    color: var(--secondary);
 
 }
 
 .content>h2 {
     /* color: rgb(146, 164, 255); */
-    font-weight: 700;
-    font-size: 2.5vw;
-    color: transparent;
-    background: linear-gradient(180deg, var(--primary), var(--secondary));
-    background-clip: text; 
+    font-family: "Oswald", sans-serif;
+    font-weight: 900;
+    font-size: 3vw;
+    color: var(--secondary);
+    letter-spacing: 1px;
+    word-spacing: 16px;
+    /* background: linear-gradient(180deg, var(--text), var(--secondary));
+    background-clip: text;  */
 }
 
 .content a>  button{
@@ -105,51 +101,44 @@ main {
     border: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
-    background: var(--bg);
-    color: var(--text);
-    box-shadow: 0 0 3px 0 var(--shadow);
+    background: var(--accent-Color);
+    color: var(--bg);
+    box-shadow: 0 0 3px 0 var(--secondary);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.5s;
-    animation: animateButton 5s infinite forwards ease-in-out;
+    animation: animateButton 6s infinite forwards ease;
     animation-delay: 10s;
     
 }
 
 .content> a> button:hover{
-    box-shadow: 0 0 8px 0 var(--shadow);
-    background: var(--secondary);
-    
-    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 0.5rem 1.2rem;
     animation-iteration-count: 1;
 }
 
 @keyframes animateButton{
     0%{
         transform: scale(1);
-        background-color: var(--primary);
-        box-shadow: 0 0 3px 0 var(--shadow);
-        
-        padding: 0.5rem 1rem;
+        background-color: var(--accent-Color);
     }
     30%{
         transform: scale(1.01);
-        background-color: var(--secondary);
-        box-shadow: 0 0 8px 0 var(--shadow);
-       
-        padding: 0.5rem 1rem;
+        background-color: var(--primary);
+        color: var(--secondary);
     }
     60%{
         transform: scale(1.01);
-        background-color: var(--secondary);
-        box-shadow: 0 0 8px 0 var(--shadow);
-       
-        padding: 0.5rem 1.5rem;
+        background-color: var(--primary);
+        padding: .5rem 1.2rem;
+       color: var(--bg);
     }
     100%{
         transform: scale(1);
-        background-color: var(--primary);
-        box-shadow: 0 0 3px 0 var(--shadow);
+        background-color: var(--accent-Color);
+        /* box-shadow: 0 0 3px 0 var(--shadow); */
         padding: 0.5rem 1rem;
     }
    
@@ -157,8 +146,8 @@ main {
 
 .content>p:last-child {
     font-weight: 300;
-    font-size: smaller;
-    color: var(--text);
+    font-size: medium;
+    color: var(--text-secondary);
 }
 
 
@@ -169,7 +158,7 @@ main {
     margin: 0 auto;
     margin-bottom: 5vw;
     /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.615); */
-    background-color: var(--primary);
+    background-color: var(--text);
     
 }
 
@@ -198,25 +187,22 @@ main {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-    align-items: center;
-    
-    box-shadow: 0 0 5px 0px var(--shadow);
-    
+    align-items: center; 
+    /* box-shadow: 0 0 3px 0px var(--secondary); */
     height: 4rem;
     width: 16rem;
     margin: 1rem 1rem;
     padding: 2rem;
     transition: all .3s;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--secondary);
 }
 
 .skill__section>.img__content>div:hover{
-    border-radius: 0  10%;
-    box-shadow: 0 0 5px 0 var(--primary);
-    transform: translateY(-5px);
-    
-    
+    border-radius: 0  20%;
+    border-color: var(--accent-Color);
+    /* box-shadow: 0 0 3px 0 var(--accent-Color); */
 }
+
 .skill__section>.img__content img {
     height: 40px;
     border-radius: 2pt;
@@ -224,8 +210,8 @@ main {
 
 .skill__section>.img__content p {
     margin-top: .5rem;
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: normal;
+    font-weight: 400;
     /* font-size: small; */
     color: var(--text-secondary);
 }
@@ -252,70 +238,76 @@ main {
 .education__section>.education__content {
     width: 100%;
     margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .education__content>.degree {
-    width: 90%;
-     display: block;
+    width: 31%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 
     background: var(--bg);
-    box-shadow: 0 0 10px -3px var(--shadow);
-    border-radius: 35px;
+    box-shadow: 0 0 8px -3px var(--accent-Color);
+    border-radius: 30px;
     padding: 2vw 4vw;
     margin: 2.5rem auto;
     transition: all .6s;
-    border: 1.5px solid white;
+    border: 1px solid var(--bg);
 
 }
 .education__content>.degree:hover {
-    border-radius: 20px;
-    transform: translateY(-5px);
-    box-shadow: 0 0 10px -3px var(--primary);
+    border-radius: 45px;
+    border-color: var(--accent-Color);
+    /* transform: translateY(-5px); */
+    box-shadow: 0 0 3px 0px var(--secondary);
 }
 
 .degree>h3 {
     font-size: 2rem;
+    text-align: center;
     color: transparent;
-    background: linear-gradient(30deg, var(--primary),var(--secondary));
+    background: linear-gradient(30deg, var(--accent-Color),var(--secondary));
     background-clip: text;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .degree>.details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    color: #45b2ff;
+    
+    padding: 0;
     color: var(--text-secondary);
     
 }
 
 .details>h4 {
     /* font-family: "Bodoni Moda", serif; */
-    font-size: 2vw;
+    font-size: normal;
     text-align: center;
-    font-weight: 500;
-    margin: 0;
+    font-weight: 400;
+    margin: 0 auto;
 
 }
 
 .details>p {
     font-family: "Racing Sans One", serif;
-    font-size: 2vw;
-    font-weight: 800;
+    font-size: normal;
+    font-weight: 600;
+    text-align: center;
     padding: 0 1rem;
     margin: 0;
-    margin-right: 5vw;
+    margin-right: 0 auto;
 }
 
 .degree>ul {
-    padding: 0;
-    margin: 1rem 10rem;
+    padding: 1.5rem 0;
+    /* margin: 1rem 1rem; */
+    margin: auto;
 }
 
 .degree>ul>li {
-    font-size: 1.5vw;
+    font-size: normal;
     /* font-weight: 300; */
     color: var(--text-secondary);
 }
@@ -348,29 +340,17 @@ main {
 } */
 
 .education__content>.degree{
-    width: 95%;
-    padding: 2vw;
+    width: 80%;
+    padding: 10vw 2vw;
+    margin: .5rem auto;
+    border-color: var(--accent-Color);
+    box-shadow: var(--secondary);
 }
 .degree>h3{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
-.degree>.details{
-    flex-direction: column;
-    justify-content: center;
-}
-.degree>ul{
-    margin: 1rem auto;
-    text-align: center;
-    width: fit-content;
-    letter-spacing: 1px;
-    font-weight: 400;
-    
-} 
 
-.degree>ul>li {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-}
+
 }

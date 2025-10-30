@@ -98,7 +98,7 @@ export default function Project () {
           </Link>
         </motion.div>
         <motion.div initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            whileInView={{ opacity: .5}}
             transition={{ duration: 0.8, delay: 0.5}}
             viewport={{ once: true }} className="upcoming__projects">
           <h2>More Projects Coming Soon...</h2>

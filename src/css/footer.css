@@ -1,6 +1,6 @@
 footer {
     width: 100%;
-     box-shadow: 0 0 3px 0px var(--shadow);
+     box-shadow: 0 0 5px 0px var(--accent-Color);
     padding:1rem 2rem;
     margin-top: 4rem;
     color: var(--text-secondary);
@@ -34,7 +34,7 @@ footer>.footer__links>ul>li>a {
 }
 footer > a:hover, 
 footer>.footer__links>ul>li>a:hover {
-    color: var(--primary);
+    color: var(--accent-Color);
     text-decoration: underline;
 }
 /* Media Queries */

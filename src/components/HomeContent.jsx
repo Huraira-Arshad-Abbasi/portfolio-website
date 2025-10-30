@@ -9,22 +9,21 @@ import {
   mongodb,
   nodeJs,
   cv
-} from "../assets/imges";
-import "../css/home.css";
-import Project from "./Project"
-import Contact from "./Contact";
+} from '../assets/imges'
+import '../css/home.css'
+import Project from './Project'
+import Contact from './Contact'
 
-import { motion } from "framer-motion";
-
+import { motion } from 'framer-motion'
 
 // 🔹 Container for staggered children (skills/icons)
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
+    transition: { staggerChildren: 0.15 }
+  }
+}
 
 // 🔹 Animation for each child (skill icons)
 const item = {
@@ -33,35 +32,31 @@ const item = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-   
-  },
-  
+    transition: { duration: 0.5, ease: 'easeOut' }
+  }
+
   // dragConstraints={{ top: -5, bottom: 5, left: -5, right: 5 }}
-};
+}
 
-export default function HomeContent() {
-
-
+export default function HomeContent () {
   return (
     <>
       <main>
-        
         {/* 🔹 Section 1: Hero Section */}
-        <div className="section__1">
+        <div className='section__1'>
           <motion.div
-            className="img"
+            className='img'
             drag
             dragConstraints={{ top: -10, bottom: 10, left: -50, right: 10 }}
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, delay: 3, ease: "easeIn" }}
+            transition={{ duration: 2, delay: 3, ease: 'easeIn' }}
             viewport={{ once: true }}
           >
             {/* <img src={mypic} alt="Huraira Arshad" /> */}
           </motion.div>
 
-          <div className="content">
+          <div className='content'>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,36 +69,34 @@ export default function HomeContent() {
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: .5, delay: .5 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
             >
               <span>I{"'"}am </span>Huraira Arshad
             </motion.h1>
 
             <motion.h2
-              initial={{ opacity: 0}}
-              whileInView={{ opacity: 1}}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
               Website Developer
             </motion.h2>
             <a href={cv} download>
-            <motion.button
-              initial={{ opacity: 0}}
-              whileInView={{ opacity: 1}}
-              transition={{ duration: 1, delay: 2.5 }}
-              viewport={{ once: true }}
-              
-            >
-              Download CV
-            </motion.button>
-              </a>
-            
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 2.5 }}
+                viewport={{ once: true }}
+              >
+                Download CV
+              </motion.button>
+            </a>
 
             <motion.p
-              initial={{ opacity: 0}}
-              whileInView={{ opacity: 1}}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
@@ -118,56 +111,63 @@ export default function HomeContent() {
           </div>
         </div>
 
-        <div className="break__line"></div>
+        <div className='break__line'></div>
 
         {/* 🔹 Section 2: Skills */}
-        <div className="skill__section">
+        <div className='skill__section'>
           <h2>My Expertise</h2>
           <motion.div
-            className="img__content"
+            className='img__content'
             variants={container}
-            initial="hidden"
-            whileInView="show"
+            initial='hidden'
+            whileInView='show'
             viewport={{ once: true, amount: 0.3 }}
           >
-            {[ 
-              { src: html, label: "HTML" },
-              { src: css, label: "CSS" },
-              { src: js, label: "JavaScript" },
-              { src: bootstrap, label: "Bootstrap" },
-              { src: taiwind, label: "Tailwind CSS" },
-              { src: react, label: "React" },
-              { src: ex, label: "Express" },
-              { src: mongodb, label: "MongoDB" },
-              { src: nodeJs, label: "Node.js" }
+            {[
+              { src: html, label: 'HTML' },
+              { src: css, label: 'CSS' },
+              { src: js, label: 'JavaScript' },
+              { src: bootstrap, label: 'Bootstrap' },
+              { src: taiwind, label: 'Tailwind CSS' },
+              { src: react, label: 'React' },
+              { src: ex, label: 'Express' },
+              { src: mongodb, label: 'MongoDB' },
+              { src: nodeJs, label: 'Node.js' }
             ].map((skill, index) => (
-              <motion.div
-              
-              key={index} className="skill__item" variants={item}>
-                <img src={skill.src} alt={skill.label} />
+              <motion.div key={index} 
+              className='skill__item' variants={item}>
+                <motion.img
+                  drag
+                  dragConstraints={{
+                    top: -2,
+                    bottom: 2,
+                    left: -2,
+                    right: 2
+                  }}
+                  src={skill.src}
+                  alt={skill.label}
+                />
                 <p>{skill.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        <div className="break__line"></div>
+        <div className='break__line'></div>
 
         {/* 🔹 Section 3: Education */}
-        <div name="Education" className="education__section">
+        <div name='Education' className='education__section'>
           <h2>Education</h2>
-          <motion.div
-            className="education__content"
-            
-          >
+          <motion.div className='education__content'>
             <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true}}
-             className="degree">
-              <h3>Bachelor in Software Engineering</h3>
-              <div className="details">
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='degree'
+            >
+              <h3>BS - Software Engineering</h3>
+              <div className='details'>
                 <h4>(Virtual University of Pakistan)</h4>
                 <p>2023 - *2027*</p>
               </div>
@@ -178,13 +178,14 @@ export default function HomeContent() {
             </motion.div>
 
             <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true}}
-             className="degree">
-              <h3>Higher Secondary Education (FSC Pre-Engineering)</h3>
-              <div className="details">
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='degree'
+            >
+              <h3>FSC Pre-Engineering</h3>
+              <div className='details'>
                 <h4>(Read Foundation College, Aliot, Murree)</h4>
                 <p>2021 - 2022</p>
               </div>
@@ -194,13 +195,14 @@ export default function HomeContent() {
             </motion.div>
 
             <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true}}
-             className="degree">
-              <h3>Secondary Education (Matriculation)</h3>
-              <div className="details">
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='degree'
+            >
+              <h3>Matriculation</h3>
+              <div className='details'>
                 <h4>(Government School, Potha Shreef, Murree)</h4>
                 <p>2019 - 2020</p>
               </div>
@@ -211,13 +213,13 @@ export default function HomeContent() {
           </motion.div>
         </div>
 
-        <div className="break__line"></div>
-        <Project/>
-        <div className="break__line"></div>
+        <div className='break__line'></div>
+        <Project />
+        <div className='break__line'></div>
 
         {/* 🔹 Section 4: Contact */}
         <Contact />
       </main>
     </>
-  );
+  )
 }

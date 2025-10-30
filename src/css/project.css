@@ -17,8 +17,6 @@
 .project__section>.Porject__Card {
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
-    /* border: 2px solid #178436f8; */
 }
 .Porject__Card > h3{
     font-size: 3rem;
@@ -36,19 +34,19 @@
     border-radius:  0 40px 5% 40px;
     padding:  2rem;
     background-color: var(--bg);
-    box-shadow: 0 0 10px -5px var(--shadow);
+    box-shadow: 0 0 10px -5px var(--secondary);
     transition: all .5s;
 }
 
 .Porject__Card>a{
     text-decoration: none;
     color: var(text-secondary);
-    border: 1px solid white;
+    border: 1px solid var(--bg);
 }
 .Porject__Card>a:hover{
     border-radius:  0 80px 15% 80px;
-    box-shadow: 0 0 10px 0 var(--primary);
-    /* background-color: var(--hover2); */
+    /* box-shadow: 0 0 10px 0 var(--accent-Color); */
+    border-color: var(--accent-Color);
 }
 .Porject__Card>a>.heading {
     display: flex;
@@ -59,18 +57,20 @@
 }
 
 .heading>h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: transparent;
-    background: linear-gradient(30deg, var(--primary),var(--secondary));
+    background: linear-gradient(30deg, var(--accent-Color),var(--text-secondary));
     background-clip: text;
     margin: 0;
+    margin-right: .5rem;
 }
 
 .heading>p {
-    color: var(--text-secondary);
-    font-weight: 400;
+    color: var(--secondary);
+    font-weight: 500;
     font-style: normal;
-    font-size: 1.8rem;
+    font-size: 1rem;
+    
     margin: 0;
     line-height: 30px;
 }
@@ -98,8 +98,7 @@ a> .description {
     text-align: center;
     margin: 2rem auto;
     font-size: 1.5rem;
-    color: var(--text-secondary);
-    opacity: 0.7;
+    color: var(--accent-Color);
 }
  @media (max-width: 768px) {
     .project__section {

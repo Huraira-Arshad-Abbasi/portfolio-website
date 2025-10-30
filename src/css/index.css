@@ -2,52 +2,50 @@
 
 :root {
   /* scheme 1 */
-  --bg: #fef9f9;
+  /* --bg: #fef9f9;
   --primary: #7c3aed;
   --secondary: #f472b6;
+  
   --text: #1f2937;
   --text-secondary: #6b7280;
-  --shadow: #0a1f3b5e;
-  --hover2: #22282f;
+  --shadow: #1f406b70;
+  --hover2: #22282f; */
   /* --hover: rgb(50, 65, 82); */
 
 
-  /* --bg: rgb(0, 0, 0);
-  --primary: #151f7e;
-  --secondary: #3ba7d9;
-  --text: #ffffff;
-  --text-secondary: #b3b3b3;
-  --shadow: #358bad;
-  --hover: rgb(34, 55, 76);
-  --hover2: rgb(56, 56, 150); */
-  /* scheme 2 */
-  /* --bg: #000000;
-  --primary: #00ffcc;
-  --secondary: #ff0066;
-  --text: #ffffff;
-  --text-secondary: #b3b3b3;
-  --shadow: #358bad;
-  --hover2: rgb(56, 56, 150); */
+
+--bg: #fbfafa;
+--primary: #101231;
+--secondary: #105231;
+--text: black;
+--text-secondary: #24252b;
+--accent-Color: #793ae6;
 
 
-  /* scheme 3 */
-  /* --bg: #0f172a;
-  --primary: #38bdf8;
-  --secondary: #facc15;
-  --text: #f8fafc;
-  --text-secondary: #94a3b8;
-  --shadow: #358bad;
-  --hover: rgb(34, 55, 76); */
+/* Dark theme */
+/* --bg: #0b0c1a;
+--primary: #d4d6ff;
+--secondary: #3be48f;
+--text: #f4f4f4;
+--text-secondary: #b5b5c8;
+--accent-Color: #a875ff; */
 
 
-  /* scheme 4 */
-  /* --bg: #ffffff ;
-  --primary: #2563eb ;
-  --secondary: #10b981 ;
-  --text: #111827;
-  --text-secondary: #6b7280;
-  --shadow: #154051be;
-  --hover: rgb(56, 150, 103); */
+/* --bg: #0a0f0d;
+--primary: #9adbb3;
+--secondary: #2e8a57;
+--text: #e8e8e8;
+--text-secondary: #b0b0b0;
+--accent-Color: #9c6bff; */
+
+/* --bg: #101231;
+--primary: #ffffff;
+--secondary: #00c980;
+--text: #f0f0f0;
+--text-secondary: #b0b0b0;
+--accent-Color: #bb86fc; */
+
+
 
 
   color: var(--text);
@@ -58,6 +56,17 @@
   margin: 0 auto;
 }
 
+
+[data-theme="dark"] {
+ --bg: #0a0f0d;
+--primary: #9adbb3;
+--secondary: #2e8a57;
+--text: #e8e8e8;
+--text-secondary: #b0b0b0;
+--accent-Color: #9c6bff;
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -65,8 +74,8 @@
   /* border: 1px solid rgba(23, 88, 132, 0.161); */
 }
 
-
-.fixedbg{
+/* image is removed : hhhhhh*/
+.fihhhhhxedbg{ 
     width: 100%;
     height: 100vh;
     background: url(../assets/bg3.jpg);
@@ -83,7 +92,7 @@
 
 @keyframes colorChange {
   0% {
-    filter:invert() opacity(0.1)   hue-rotate(0deg) grayscale(0.5);
+    filter:invert() opacity(0.1)  hue-rotate(0deg) grayscale(0.5);
   }
   25% {
     filter:invert() opacity(0.6) hue-rotate(90deg) grayscale(0.3);
