@@ -20,6 +20,7 @@
 --text: black;
 --text-secondary: #24252b;
 --accent-Color: #793ae6;
+--accent-Color: #e45910;
 
 
 /* Dark theme */
@@ -49,7 +50,6 @@
 
 
   color: var(--text);
-  /* background: #1C1C22; */
   background: var(--bg);
   font-family: "Oswald", sans-serif;
   max-width: 1280px;

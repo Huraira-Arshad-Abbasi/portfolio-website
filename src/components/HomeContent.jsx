@@ -81,7 +81,7 @@ export default function HomeContent () {
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
-              Website Developer
+              Frontend Developer | React.js • MERN Stack Experience
             </motion.h2>
             <a href={cv} download>
               <motion.button

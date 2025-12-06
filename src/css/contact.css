@@ -78,15 +78,15 @@
     color: var(--text-secondary);
     background-color: var(--bg);
     /* background-color: transparent; */
-    box-shadow: 0 0 5px 0 var(--accent-Color);
+    box-shadow: 0 0 5px 0 var(--secondary);
     border-radius: 50px;
     transition: all 0.5s;
 }
 
 form>button:hover {
     cursor: pointer;
-color: var(--bg);
-   background: var(--secondary);
+    color: var(--bg);
+    background: var(--accent-Color);
 }
 
 .contact__content>.right__content {
@@ -135,7 +135,7 @@ color: var(--bg);
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
     color: var(--secondary);
-    box-shadow: 0 0 3px 0 var(--accent-Color);
+    box-shadow: 0 0 3px 0 var(--secondary);
     border-radius: 50px;
 
     transition: all 0.5s;

@@ -23,7 +23,7 @@ main {
     height: 25vw;
     background: url(../assets/myPic.jpeg);
     background-size: cover;
-    border-radius: 50%;
+    border-radius: 50%; 
 }
 
 .content {
@@ -86,10 +86,8 @@ main {
     /* color: rgb(146, 164, 255); */
     font-family: "Oswald", sans-serif;
     font-weight: 900;
-    font-size: 3vw;
+    font-size: 2.5vw;
     color: var(--secondary);
-    letter-spacing: 1px;
-    word-spacing: 16px;
     /* background: linear-gradient(180deg, var(--text), var(--secondary));
     background-clip: text;  */
 }
@@ -251,7 +249,7 @@ main {
 
     background: var(--bg);
     box-shadow: 0 0 8px -3px var(--accent-Color);
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 2vw 4vw;
     margin: 2.5rem auto;
     transition: all .6s;
@@ -259,7 +257,7 @@ main {
 
 }
 .education__content>.degree:hover {
-    border-radius: 45px;
+    border-radius: 25px;
     border-color: var(--accent-Color);
     /* transform: translateY(-5px); */
     box-shadow: 0 0 3px 0px var(--secondary);
