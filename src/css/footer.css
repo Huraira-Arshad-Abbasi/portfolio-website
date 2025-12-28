@@ -1,12 +1,15 @@
 footer {
     width: 100%;
-     box-shadow: 0 0 5px 0px var(--accent-Color);
+     /* box-shadow: 0 -5px 5px 0px var(--secondary); */
     padding:1rem 2rem;
-    margin-top: 4rem;
-    color: var(--text-secondary);
+    border-top: 2px solid var(--accent-Color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 100;
+    background-color: var(--primary);
+    color: var(--accent-Color1);
+
     
     
 }
@@ -14,6 +17,11 @@ footer > a{
     text-decoration: none;
     color: unset;
     transition: .5s;
+    /* color: transparent;
+    background: linear-gradient(30deg, var(--accent-Color), var(--bg));
+  background-clip: text;
+  -webkit-background-clip: text; */
+    
 }
 /* footer > a:hover{
     text-decoration: none;
@@ -31,6 +39,10 @@ footer>.footer__links>ul>li>a {
     margin: 0 1rem;
     color: unset;
     transition: .5s;
+    /* color: transparent;
+    background: linear-gradient(30deg, var(--accent-Color), var(--bg));
+  background-clip: text;
+  -webkit-background-clip: text; */
 }
 footer > a:hover, 
 footer>.footer__links>ul>li>a:hover {

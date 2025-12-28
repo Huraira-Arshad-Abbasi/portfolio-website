@@ -1,6 +1,7 @@
 // import { contact_layout } from '../assets/imges'
 import { motion } from 'framer-motion'
 import '../css/contact.css'
+import { text, textarea } from 'motion/react-client'
 const Contact = () => {
   return (
     <>
@@ -36,9 +37,8 @@ const Contact = () => {
                 onClick={e => {
                   e.preventDefault()
                   alert(
-                    'Thank you for your message! I will get back to you soon.'
+                    'Sorry! Form submission is currently disabled.'
                   )
-                  // clear the form fields
                   e.target.form.reset()
                 }}
               >

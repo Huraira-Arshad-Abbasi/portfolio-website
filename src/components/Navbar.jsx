@@ -17,23 +17,32 @@ export default function Navbar () {
       const currentScrollY = window.scrollY
 
       // Background change logic
-      if (currentScrollY > 60) {
+
+      if (currentScrollY > 100) {
         navRef.current.style.background = 'var(--primary)'
         navRef.current.style.boxShadow = '0 0 5px 0px var(--secondary)'
+        navRef.current.style.borderColor = 'var(--accent-Color)'
+        navRef.current.style.visibility = 'visible'
       } else {
         navRef.current.style.boxShadow = 'none'
         navRef.current.style.background = 'none'
+        navRef.current.style.borderColor = 'var(--bg)'
+        // if we are in home it should be hidden
+        if (window.location.pathname === '/') {
+          navRef.current.style.visibility = 'hidden'
+        } else {
+          navRef.current.style.visibility = 'visible'
+        }
       }
 
       // Hide/show logic
-      if (currentScrollY > lastScrollY && currentScrollY > 250) {
+      if (currentScrollY > lastScrollY && currentScrollY > 600) {
         // scrolling down
         navRef.current.style.transform = 'translateY(-115%)'
       } else {
         // scrolling up
         navRef.current.style.transform = 'translateY(0)'
       }
-
       lastScrollY = currentScrollY
     }
 
@@ -98,13 +107,12 @@ export default function Navbar () {
             </li>
             <li>
               <button
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            >
-            {theme === 'light' ? 'Dark' : 'Light'} Mode
-            </button>
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              >
+                {theme === 'light' ? 'Dark' : 'Light'} Mode
+              </button>
             </li>
           </ul>
-          
         </div>
       </nav>
     </div>

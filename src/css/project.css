@@ -12,6 +12,8 @@
     font-style: normal;
     text-align: center;
     margin-bottom: 2.5rem;
+    font-size: xx-large;
+    color: var(--accent-Color);
 }
 
 .project__section>.Porject__Card {
@@ -58,7 +60,7 @@
 .heading>h2 {
     font-size: 1.8rem;
     color: transparent;
-    background: linear-gradient(30deg, var(--accent-Color),var(--text-secondary));
+    background: linear-gradient(30deg, var(--accent-Color1),var(--text-secondary));
     background-clip: text;
     margin: 0;
     margin-right: .5rem;

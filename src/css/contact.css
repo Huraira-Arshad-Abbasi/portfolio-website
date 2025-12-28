@@ -1,13 +1,17 @@
 .contact__section {
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 3rem;
     margin-top: 20vh;
+    
 }
 
 .contact__section>h2 {
     margin: 3rem 0;
     text-align: center;
     font-style: normal;
+    font-size: xx-large;
+    color: var(--accent-Color);
 }
 
 .contact__section>p {
@@ -15,7 +19,7 @@
     font-size: 1.2rem;
     font-weight: 300;
     text-align: center;
-    font-style: italic;
+    /* font-style: italic; */
     letter-spacing: .5px;
     margin: 3rem auto;
     color: var(--text-secondary);
@@ -56,37 +60,37 @@
     scrollbar-width: 0;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
-    border: none;
-    box-shadow: 0 0 1px 0 var(--secondary);
+    border: 1px solid var(--accent-Color);
+    /* box-shadow: 0 0 5px 0 var(--accent-Color); */
     transition: all 0.5s;
     color: var(--text);
 }
 
 .left__content>form>textarea:focus,
 .left__content>form>textarea:hover {
-    box-shadow: 0 0 3px 0 var(--accent-Color);
+    /* box-shadow: 0 0 3px 0 var(--accent-Color1); */
+    border-color: var(--accent-Color1);
     background-color: var(--bg);
 }
 
 .left__content>form>button {
-    width: 95%;
-    padding: .5rem 1rem;
+    width: 90%;
+    padding: .8rem 1rem;
     outline: none;
     border: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-Color);
     background-color: var(--bg);
-    /* background-color: transparent; */
-    box-shadow: 0 0 5px 0 var(--secondary);
-    border-radius: 50px;
+    border: 1px solid var(--accent-Color);
+    border-radius: 10px;
     transition: all 0.5s;
 }
 
 form>button:hover {
     cursor: pointer;
-    color: var(--bg);
-    background: var(--accent-Color);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 .contact__content>.right__content {
@@ -110,11 +114,10 @@ form>button:hover {
 
 .right__content>.info>.contact__info {
     font-size: 1.2rem;
-    color: var(--text);
+    color: var(--accent-Color);
 }
 
 .info>.contact__info>p {
-    /* color: rgba(0, 255, 255, 0.659); */
     margin: .5rem 0;
 }
 
@@ -127,24 +130,19 @@ form>button:hover {
 }
 
 .contact__buttons>a {
-    /* width: 100%; */
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    outline: none;
-    border: none;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 0.3rem 1.5rem;
     font-size: 1rem;
     color: var(--secondary);
-    box-shadow: 0 0 3px 0 var(--secondary);
-    border-radius: 50px;
-
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
     transition: all 0.5s;
 }
 
 .contact__buttons>a:hover {
-    color: var(--bg);
-    background: var(--secondary);
-    box-shadow: 0 0 1px 0 var(--accent-Color);
+    cursor: pointer;
+    color: var(--accent-Color);
+    background: var(--primary);
 }
 
 @media screen and (max-width: 768px) {

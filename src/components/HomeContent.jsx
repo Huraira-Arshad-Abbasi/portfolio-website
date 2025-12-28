@@ -81,7 +81,7 @@ export default function HomeContent () {
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
-              Frontend Developer | React.js • MERN Stack Experience
+              Full Stack Developer (MERN Stack)
             </motion.h2>
             <a href={cv} download>
               <motion.button
@@ -100,7 +100,7 @@ export default function HomeContent () {
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
-              I{"'"}m a passionate Web Developer skilled in creating dynamic,
+              Full Stack Developer skilled in creating dynamic,
               user-friendly websites and applications using HTML, CSS,
               JavaScript, and modern frameworks. With expertise in both
               front-end and back-end technologies, I deliver clean, efficient,
@@ -187,7 +187,7 @@ export default function HomeContent () {
               <h3>FSC Pre-Engineering</h3>
               <div className='details'>
                 <h4>(Read Foundation College, Aliot, Murree)</h4>
-                <p>2021 - 2022</p>
+                <p>2020 - 2022</p>
               </div>
               <ul>
                 <li>Marks: 666/1100</li>
@@ -204,7 +204,7 @@ export default function HomeContent () {
               <h3>Matriculation</h3>
               <div className='details'>
                 <h4>(Government School, Potha Shreef, Murree)</h4>
-                <p>2019 - 2020</p>
+                <p>2018 - 2020</p>
               </div>
               <ul>
                 <li>Marks: 875/1100</li>

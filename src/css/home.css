@@ -10,9 +10,9 @@ main {
     display: grid;
     grid-template-columns: 2fr .3fr;
     padding: 2rem;
-    background: transparent;
-    margin-top: 10vh;
+    margin-top: 0vh;
     position: relative;
+
 }
 
 .section__1>.img {
@@ -29,25 +29,22 @@ main {
 .content {
     grid-area: 1/1;
     width: 100%;
-    margin-top: 8vw;
+    margin-top: 4vw;
     padding: 0;
-    font-family: "Oswald", sans-serif;
     text-wrap: wrap;
+    color: var(--secondary);
 
 }
 
 .content> p {
-    font-weight: 600;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 4rem;
     margin: 2vw 0;
-    font-weight: 500;
-    color: var(--secondary);
-    
+    /* font-weight: 500; */
 }
 
 .content>h1 {
     position: relative;
-    font-family: "Oswald", sans-serif;
     font-weight: 700;
     font-size: 5vw;
     color: var(--accent-Color);
@@ -83,13 +80,9 @@ main {
 }
 
 .content>h2 {
-    /* color: rgb(146, 164, 255); */
-    font-family: "Oswald", sans-serif;
     font-weight: 900;
     font-size: 2.5vw;
-    color: var(--secondary);
-    /* background: linear-gradient(180deg, var(--text), var(--secondary));
-    background-clip: text;  */
+    color: var(--accent-Color1);
 }
 
 .content a>  button{
@@ -97,54 +90,29 @@ main {
     margin: 1.5rem auto;
     outline: none;
     border: none;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
-    background: var(--accent-Color);
-    color: var(--bg);
-    box-shadow: 0 0 3px 0 var(--secondary);
-    border-radius: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--accent-Color);
+    border: 2px solid var(--accent-Color);
+    border-radius: 16px;
     cursor: pointer;
     transition: all 0.5s;
-    animation: animateButton 6s infinite forwards ease;
-    animation-delay: 10s;
     
 }
 
 .content> a> button:hover{
-    background: var(--primary);
-    color: var(--secondary);
     padding: 0.5rem 1.2rem;
-    animation-iteration-count: 1;
+    border-radius: 8px;
+}
+.content> a> button:active{
+    background-color: var(--accent-Color);
 }
 
-@keyframes animateButton{
-    0%{
-        transform: scale(1);
-        background-color: var(--accent-Color);
-    }
-    30%{
-        transform: scale(1.01);
-        background-color: var(--primary);
-        color: var(--secondary);
-    }
-    60%{
-        transform: scale(1.01);
-        background-color: var(--primary);
-        padding: .5rem 1.2rem;
-       color: var(--bg);
-    }
-    100%{
-        transform: scale(1);
-        background-color: var(--accent-Color);
-        /* box-shadow: 0 0 3px 0 var(--shadow); */
-        padding: 0.5rem 1rem;
-    }
-   
-}
 
 .content>p:last-child {
     font-weight: 300;
-    font-size: medium;
+    font-size: large;
     color: var(--text-secondary);
 }
 
@@ -156,7 +124,7 @@ main {
     margin: 0 auto;
     margin-bottom: 5vw;
     /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.615); */
-    background-color: var(--text);
+    background-color: var(--accent-Color1);
     
 }
 
@@ -164,6 +132,8 @@ main {
 .skill__section > h2 {
     margin: 3rem 0;
     font-style: normal;
+    font-size: xx-large;
+    color: var(--accent-Color);
 }
 .skill__section {
     min-height: 55vh;
@@ -229,45 +199,45 @@ main {
 }
 
 .education__section>h2 {
-     margin: 3rem 0;
+    margin: 3rem 0;
     font-style: normal;
+    font-size: xx-large;
+    color: var(--accent-Color);
 }
 
 .education__section>.education__content {
     width: 100%;
     margin: 1rem;
+    padding: 0 2rem;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
 }
 
 .education__content>.degree {
-    width: 31%;
+    width: 30%;
      display: flex;
      flex-direction: column;
      align-items: center;
-
     background: var(--bg);
     box-shadow: 0 0 8px -3px var(--accent-Color);
-    border-radius: 20px;
-    padding: 2vw 4vw;
-    margin: 2.5rem auto;
+    border-radius: 15px;
+    padding: 2vw 3vw;
+    margin: 2rem auto;
     transition: all .6s;
     border: 1px solid var(--bg);
 
 }
 .education__content>.degree:hover {
-    border-radius: 25px;
+    border-radius: 0px;
     border-color: var(--accent-Color);
-    /* transform: translateY(-5px); */
-    box-shadow: 0 0 3px 0px var(--secondary);
 }
 
 .degree>h3 {
     font-size: 2rem;
     text-align: center;
     color: transparent;
-    background: linear-gradient(30deg, var(--accent-Color),var(--secondary));
+    background: linear-gradient(30deg, var(--accent-Color1),var(--secondary));
     background-clip: text;
     margin: 0 auto;
 }

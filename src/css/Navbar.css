@@ -12,7 +12,8 @@ nav {
   z-index: 100;
   transition: all 0.5s;
   border-radius: 40px;
-  border: 1px solid var(--accent-Color);
+  border: 1px solid var(--bg);
+  visibility: hidden;
 }
 
 /* .logo > a {
