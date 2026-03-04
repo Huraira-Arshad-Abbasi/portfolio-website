@@ -7,7 +7,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-weight: 100;
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     color: var(--accent-Color1);
 
     
