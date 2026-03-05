@@ -1,0 +1,104 @@
+.skill__section {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* font-family: sans-serif; */
+    background: var(--primary);
+}
+.skill__section> .discription{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+    
+    /* border: 1px solid black; */
+}
+.discription>div{
+    margin: 0 1rem;
+    width: 30%;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 15px -5px var(--accent-Color);
+    transition: all .5s;
+    background-color: var(--bg);
+}
+.discription>div:hover{
+    border-color: var(--accent-Color);
+}
+.discription>div>h3{
+    /* font-size: 1.8rem; */
+    color: transparent;
+    background: linear-gradient(30deg, var(--accent-Color1), var(--text-secondary) );
+    background-clip: text;
+}
+.discription>div>p,
+.discription>div>label{
+    margin-left: 1rem;
+    font-size: .5rem;
+}
+.discription>div>p>span{
+    font-weight: 600;
+}
+.discription>div>ul{
+    margin-left: 2rem;
+    font-size: .5rem;
+}
+
+.skill__section>.img__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.skill__section>.img__content>div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0 ;
+    padding: 1.5rem;
+    width: fit-content;
+    transition: all .3s;
+    /* border: 1px solid var(--secondary); */
+}
+
+.skill__section>.img__content>div:hover {
+    border-radius: 0 20%;
+    border-color: var(--accent-Color);
+    /* box-shadow: 0 0 3px 0 var(--accent-Color); */
+}
+
+.skill__section>.img__content img {
+    height: 30px;
+    border-radius: 2pt;
+}
+
+.skill__section>.img__content p {
+    margin-top: .5rem;
+    font-size: normal;
+    font-weight: 300;
+    /* font-size: small; */
+    color: var(--bg);
+}
+@media screen and (max-width: 900px) {
+    .discription>div {
+        width: 45%;
+        margin: 1rem ;
+    }
+    
+
+}
+@media screen and (max-width: 768px) {
+    .discription>div {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+
+}

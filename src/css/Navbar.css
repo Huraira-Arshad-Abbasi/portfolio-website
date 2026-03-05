@@ -1,13 +1,13 @@
 nav {
   position: fixed;
-  width: 60%;
+  width: 50%;
   top: 0;
-  left: 20%;
+  left: 25%;
   margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 1rem;
+  padding:  1rem;
   background-color: transparent;
   z-index: 100;
   transition: all 0.5s;
@@ -50,7 +50,7 @@ nav {
   margin: 1rem 2vw;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.5vw;
+  font-size: .5rem;
   position: relative;
   color: transparent;
   background: linear-gradient(30deg, var(--accent-Color), var(--bg));
@@ -87,9 +87,9 @@ nav {
 .nav__links li > button {
   background: var(--secondary);
   color: var(--bg);
-  font-weight: 600;
+  font-size: .5rem;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 15px;
   cursor: pointer;
   transition: background 0.3s;

@@ -1,42 +1,15 @@
-import {
-  html,
-  css,
-  js,
-  bootstrap,
-  taiwind,
-  react,
-  ex,
-  mongodb,
-  nodeJs,
-  cv
-} from '../assets/imges'
-import '../css/home.css'
+import Expertise from './Expertise'
 import Project from './Project'
 import Contact from './Contact'
+import '../css/home.css'
 
 import { motion } from 'framer-motion'
+import{
+    cv
+} from '../assets/imges'
 
-// 🔹 Container for staggered children (skills/icons)
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-}
 
-// 🔹 Animation for each child (skill icons)
-const item = {
-  hidden: { opacity: 0, scale: 0.8, y: 30 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' }
-  }
 
-  // dragConstraints={{ top: -5, bottom: 5, left: -5, right: 5 }}
-}
 
 export default function HomeContent () {
   return (
@@ -113,44 +86,7 @@ export default function HomeContent () {
         <div className='break__line'></div>
 
         {/* 🔹 Section 2: Skills */}
-        <div className='skill__section'>
-          <h2>My Expertise</h2>
-          <motion.div
-            className='img__content'
-            variants={container}
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {[
-              { src: html, label: 'HTML' },
-              { src: css, label: 'CSS' },
-              { src: js, label: 'JavaScript' },
-              { src: bootstrap, label: 'Bootstrap' },
-              { src: taiwind, label: 'Tailwind CSS' },
-              { src: react, label: 'React' },
-              { src: ex, label: 'Express' },
-              { src: mongodb, label: 'MongoDB' },
-              { src: nodeJs, label: 'Node.js' }
-            ].map((skill, index) => (
-              <motion.div key={index} className='skill__item' variants={item}>
-                <motion.img
-                  drag
-                  dragConstraints={{
-                    top: -2,
-                    bottom: 2,
-                    left: -2,
-                    right: 2
-                  }}
-                  src={skill.src}
-                  alt={skill.label}
-                />
-                <p>{skill.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
+        <Expertise/>
         <div className='break__line'></div>
 
         {/* 🔹 Section 3: Education */}
