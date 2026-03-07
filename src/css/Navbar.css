@@ -16,23 +16,7 @@ nav {
   visibility: hidden;
 }
 
-/* .logo > a {
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2.5vw;
-  text-decoration: none;
-  background: linear-gradient(30deg, var(--primary), var(--secondary));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: 0.5s;
-}
 
-.logo > a:hover {
-  color: var(--primary);
-  font-weight: 900;
-} */
 
 .nav__links {
   width: 100%;
@@ -57,7 +41,7 @@ nav {
   background-clip: text;
   -webkit-background-clip: text;
   transition: 0.5s;
-  padding: 0 0.3vw;
+  padding: 0 0.5vw;
 }
 
 .nav__links > ul > li > .nav-link:hover,

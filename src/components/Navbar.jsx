@@ -75,7 +75,7 @@ export default function Navbar () {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <NavLink
                 to='/About'
                 className={({ isActive }) =>
@@ -84,7 +84,7 @@ export default function Navbar () {
               >
                 About
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to='/Project'

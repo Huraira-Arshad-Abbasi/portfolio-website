@@ -27,7 +27,8 @@
     background-color: var(--bg);
 }
 .discription>div:hover{
-    border-color: var(--accent-Color);
+    border-color: var(--accent-Color1);
+    scale: 1.1;
 }
 .discription>div>h3{
     /* font-size: 1.8rem; */
@@ -45,7 +46,10 @@
 }
 .discription>div>ul{
     margin-left: 2rem;
-    font-size: .5rem;
+    
+}
+.discription>div>ul>li{
+    font-size: .8rem;
 }
 
 .skill__section>.img__content {
@@ -71,7 +75,7 @@
 .skill__section>.img__content>div:hover {
     border-radius: 0 20%;
     border-color: var(--accent-Color);
-    /* box-shadow: 0 0 3px 0 var(--accent-Color); */
+    scale: 1.2;
 }
 
 .skill__section>.img__content img {

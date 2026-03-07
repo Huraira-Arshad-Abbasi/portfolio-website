@@ -2,6 +2,7 @@ main {
     width: 100%;
     margin: 0 auto;
     /* background: var(--bg); */
+    scroll-behavior: smooth;
 
 }
 
@@ -24,6 +25,10 @@ main {
     background: url(../assets/myPic.jpeg);
     background-size: cover;
     border-radius: 50%;
+    transition: all .5s;
+}
+.section__1>.img:hover {
+    scale: .9;
 }
 
 .content {
@@ -86,26 +91,29 @@ main {
 
 .content>h2 {
     font-weight: 900;
-    font-size: 2.5vw;
+    font-size: 1.5rem;
     color: var(--accent-Color1);
 }
 
 .content a>button {
     padding: 0.5rem 1rem;
-    margin: 1.5rem auto;
+    margin: 1.5rem .5rem;
     outline: none;
     border: none;
     font-size: 1rem;
     font-weight: bold;
     background-color: transparent;
-    color: var(--accent-Color);
-    border: 2px solid var(--accent-Color);
+    color: var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.5s;
 
 }
-
+.content a:not([href="#Contact"])>button {
+    background-color: var(--primary);
+    color: var(--bg);
+}
 .content>a>button:hover {
     padding: 0.5rem 1.2rem;
     border-radius: 8px;
@@ -179,15 +187,10 @@ main {
     /* width: 30%; */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     background: var(--bg);
-    /* box-shadow: 0 0 8px -3px var(--accent-Color); */
     padding: 0 3vw;
     padding-bottom: 5vw;
-    /* margin: 2rem auto; */
     transition: all .6s;
-    border-right: 3px solid transparent;
-    /* border-radius: 50%; */
     overflow-y: hidden;
 }
 
@@ -210,14 +213,16 @@ main {
     border-radius: 20px;
     background-color: pink;
     border: 2px solid pink;
+    transition: all .5s;
 
 }
 
-.education__content>.degree:hover {
-    border-radius: 0px;
-    /* background-color: var(--secondary); */
-    border-color: var(--accent-Color);
+.degree:hover>i::before {
+    background-color: var(--accent-Color1);
+    border-color: var(--accent-Color1);
 }
+
+
 
 .degree>h3 {
     font-size: 1.8rem;

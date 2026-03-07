@@ -4,12 +4,7 @@ import Contact from './Contact'
 import '../css/home.css'
 
 import { motion } from 'framer-motion'
-import{
-    cv
-} from '../assets/imges'
-
-
-
+import { cv } from '../assets/imges'
 
 export default function HomeContent () {
   return (
@@ -54,8 +49,9 @@ export default function HomeContent () {
               transition={{ duration: 1, delay: 2.5 }}
               viewport={{ once: true }}
             >
-              Full Stack Developer (MERN Stack)
+              Full Stack Developer - MERN Stack
             </motion.h2>
+
             <a href={cv} download>
               <motion.button
                 initial={{ opacity: 0 }}
@@ -64,6 +60,17 @@ export default function HomeContent () {
                 viewport={{ once: true }}
               >
                 Download CV
+              </motion.button>
+            </a>
+            {/* go to contact page */}
+            <a href='#Contact'>
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 2.5 }}
+                viewport={{ once: true }}
+              >
+                Contact Me
               </motion.button>
             </a>
 
@@ -86,7 +93,7 @@ export default function HomeContent () {
         <div className='break__line'></div>
 
         {/* 🔹 Section 2: Skills */}
-        <Expertise/>
+        <Expertise />
         <div className='break__line'></div>
 
         {/* 🔹 Section 3: Education */}
@@ -94,7 +101,7 @@ export default function HomeContent () {
           <h2>Education</h2>
           <motion.div
             initial={{ y: 100 }}
-            whileInView={{  y: 0 }}
+            whileInView={{ y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             className='education__content'
@@ -161,7 +168,9 @@ export default function HomeContent () {
         <div className='break__line'></div>
 
         {/* 🔹 Section 4: Contact */}
-        <Contact />
+        <div id='Contact'>
+          <Contact />
+        </div>
       </main>
     </>
   )
