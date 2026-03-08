@@ -120,7 +120,7 @@ export default function HomeContent () {
                 <p>2023 - Present</p>
                 <ul>
                   <li>Completed 5 semester</li>
-                  <li>CGPA: 3.85/4</li>
+                  <li>CGPA: 3.93/4</li>
                 </ul>
               </div>
             </motion.div>
