@@ -18,7 +18,8 @@
 
 
 --bg: #fbfafa;
---bg: #f9f7f7;
+/* --bg: #f9f7f7; */
+--bg: white;
 --primary: #101231;
 --primary: #0f2a44;
 --secondary: #105231;
@@ -73,6 +74,16 @@
 --text-secondary: #b0b0b0;
 --accent-Color: #9a5b5b;
 --accent-Color1: #66d6fb;
+
+
+--bg: #000000;
+--primary: #25304f91;
+--secondary: #34d399;
+--text: #f1f5f9;
+--text-secondary: #94a3b8;
+--accent-Color: #fbbf24;
+--accent-Color1: #22d3ee;
+
 }
 
 
@@ -84,7 +95,7 @@
 }
 
 /* image is removed : hhhhhh*/
-.fihhhhhxedbg{ 
+.fixedhhhhhhbg{ 
     width: 100%;
     height: 100vh;
     background: url(../assets/bg3.jpg);
