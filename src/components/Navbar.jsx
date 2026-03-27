@@ -27,6 +27,7 @@ export default function Navbar () {
         navRef.current.style.boxShadow = 'none'
         navRef.current.style.background = 'none'
         navRef.current.style.borderColor = 'var(--bg)'
+        
         // if we are in home it should be hidden
         if (window.location.pathname === '/') {
           navRef.current.style.visibility = 'hidden'

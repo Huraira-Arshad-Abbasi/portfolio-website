@@ -193,7 +193,9 @@ main {
     transition: all .6s;
     overflow-y: hidden;
 }
-
+/* .degree:hover{
+    background: linear-gradient(120deg, var(--bg) 50%, var(--primary) );
+} */
 .degree>i {
     position: absolute;
     left: 20%;
@@ -206,10 +208,10 @@ main {
 .degree>i::before {
     content: '';
     position: absolute;
-    left: -15px;
+    left: -10px;
     top: 15px;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     border-radius: 20px;
     background-color: pink;
     border: 2px solid pink;
@@ -220,6 +222,7 @@ main {
 .degree:hover>i::before {
     background-color: var(--accent-Color1);
     border-color: var(--accent-Color1);
+    scale: 1.3;
 }
 
 
