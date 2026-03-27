@@ -8,17 +8,16 @@ export default function ProjectDetails ({ setExpandFlag, project }) {
     <div className='details_container'>
       <div className='images'>
         {project.images.map((image, index) => (
-          <img key={index} src={image} alt={`${project.name} screenshot ${index + 1}`} />
+          <img key={index} loading='lazy' src={image} alt={`${project.name} screenshot ${index + 1}`} />
         ))}
       </div>
       <div className='content'>
         <div className='heading'>
           <h2>{project.name}</h2>
           <div className='links'>
-            {/* three links will button will be here */}
-            <button disabled>Readme.md</button>
-            <button >GitHub</button>
-            <button>Live Preview</button>
+            {/* <button disabled>Readme.md</button> */}
+            <button onClick={() => window.open(project.github, '_blank')}>GitHub</button>
+            <button onClick={() => window.open(project.live, '_blank')}>Live Preview</button>
           </div>
         </div>
         <div className='description'>

@@ -17,16 +17,16 @@
 
 
 
---bg: #fbfafa;
+/* --bg: #fbfafa; */
 /* --bg: #f9f7f7; */
 --bg: white;
 --primary: #101231;
---primary: #0f2a44;
+/* --primary: #0f2a44; */
 --secondary: #105231;
 --hover: whitesmoke;
 --text: #105231;
 --text-secondary: #24252b;
---accent-Color: #e45910;
+/* --accent-Color: #e45910; */
 --accent-Color: #dc2627;
 --accent-Color1: #5563e3;
 /* new scheme */
@@ -71,6 +71,7 @@
  --bg: #0a0f0d;
 --primary: #9adbb3;
 --secondary: #2e8a57;
+--hover: #0d2518;
 --text: #e8e8e8;
 --text-secondary: #b0b0b0;
 --accent-Color: #9a5b5b;

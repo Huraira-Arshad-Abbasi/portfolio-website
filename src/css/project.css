@@ -59,10 +59,10 @@
 }
 
 .Porject__Card>.card_container:hover {
-    scale: 1.02;
+    /* scale: 1.02; */
     /* border-radius: 0 ; */
-    /* box-shadow: 0 0 10px 0 var(--accent-Color); */
-    border-color: var(--accent-Color);
+    box-shadow: 0 0 5px  var(--accent-Color1);
+    /* border-color: var(--accent-Color1); */
 }
 
 .Porject__Card>.card_container>.content {
@@ -77,7 +77,6 @@
   border-radius: 10px;
   overflow: hidden;
   background-color: whitesmoke;
-
   display: flex;
 }
 .images .swiper {
@@ -103,7 +102,7 @@
     margin: 1.5rem auto;
 }
 
-.card_container .heading>h2 {
+ .heading>h2 {
     font-size: 1.8rem;
     color: transparent;
     background: linear-gradient(30deg, var(--accent-Color1), var(--text-secondary));
@@ -153,6 +152,7 @@
 .card_container .description > button:hover{
     background-color: var(--hover);
     color:  var(--primary);
+    scale: 0.95;
 }
 
 /* .project__section img {
