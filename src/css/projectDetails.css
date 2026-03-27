@@ -1,8 +1,132 @@
-.details_container{
+.details_container {
     position: fixed;
-    min-height: 80%;
-    width: 80%;
-    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80vw;
+    max-width: 900px;
+    /* height: 80vh; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg);
+    border-radius: 12px;
+    z-index: 1000;
+    overflow: hidden;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.details_container>.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    overflow-x: auto;
+}
+
+.details_container>.images img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    background-color: var(--hover);
     border-radius: 10px;
-    
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+/* .details_container>.images>img:hover {
+    transform: scale(1.05);
+} */
+
+.details_container>.content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    background-color: var(--hover);
+
+}
+
+.details_container .content>.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.details_container .heading h2 {
+    font-size: 1.5rem;
+    color: var(--accent-Color1);
+}
+
+.details_container .heading .links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.details_container .heading .links button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--secondary);
+    color: var(--bg);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.details_container .heading .links button:hover {
+    opacity: 0.8;
+}
+
+.details_container .heading .links button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--secondary);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.details_container .heading .links button:hover {
+    opacity: 0.8;
+}
+
+.details_container .description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details_container .description p:first-child {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.details_container>button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: var(--primary);
+    color: var(--bg);
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.details_container>button:hover {
+    transform: scale(1.1);
 }
