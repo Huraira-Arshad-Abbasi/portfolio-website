@@ -158,7 +158,7 @@
 @media screen and (max-width: 600px) {
     .details_container {
         width: 90vw;
-        height: 80vh;
+        min-height: 80vh;
     }
 
     .details_container>.images {
