@@ -1,7 +1,7 @@
 // import { contact_layout } from '../assets/imges'
 import { motion } from 'framer-motion'
 import '../css/contact.css'
-import { text, textarea } from 'motion/react-client'
+// import { text, textarea } from 'motion/react-client'
 const Contact = () => {
   return (
     <>
@@ -65,7 +65,7 @@ const Contact = () => {
                 className='contact__info'
               >
                 <p>hurairaabbasi647@gmail.com</p>
-                <p>+92 344 7714619</p>
+                <p>+92 316 7714 957</p>
                 <p>Rawalpindi, Pakistan</p>
               </motion.div>
             </motion.div>
@@ -81,7 +81,7 @@ const Contact = () => {
               >
                 Email
               </motion.a>
-              <motion.a href='https://wa.me/923167714957' target='_blank'>
+              <motion.a href='https://wa.me/+923167714957' target='_blank'>
                 WhatsApp
               </motion.a>
               <motion.a
