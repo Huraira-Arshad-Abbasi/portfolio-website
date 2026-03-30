@@ -113,6 +113,7 @@ main {
 .content a:not([href="#Contact"])>button {
     background-color: var(--primary);
     color: var(--bg);
+    scroll-behavior: smooth;
 }
 .content>a>button:hover {
     padding: 0.5rem 1.2rem;
@@ -290,7 +291,7 @@ main {
     .section__1>.img {
 
         grid-area: 1;
-        margin: 0 auto;
+        margin: 4rem auto;
         width: 55vw;
         height: 55vw;
     }

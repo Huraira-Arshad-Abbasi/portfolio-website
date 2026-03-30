@@ -68,8 +68,8 @@
 
 .left__content>form>textarea:focus,
 .left__content>form>textarea:hover {
-    /* box-shadow: 0 0 3px 0 var(--accent-Color1); */
-    border-color: var(--accent-Color1);
+    box-shadow: 0 0 3px 0 var(--accent-Color1);
+    /* border-color: var(--accent-Color1); */
     background-color: var(--bg);
 }
 
@@ -114,6 +114,7 @@ form>button:hover {
 
 .right__content>.info>.contact__info {
     font-size: 1.2rem;
+    font-weight: 300;
     color: var(--accent-Color1);
 }
 
