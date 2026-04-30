@@ -6,7 +6,7 @@ import '../css/projectDetails.css'
 export default function ProjectDetails ({ setExpandFlag, project }) {
   return (
     <div className='details_container'>
-      <div className='images'>
+      <div className='images' onClick={() => window.open(project.live, '_blank')}>
         {project.images.map((image, index) => (
           <img key={index} loading='lazy' src={image} alt={`${project.name} screenshot ${index + 1}`} />
         ))}

@@ -1,6 +1,7 @@
 // import { project_layout } from '../assets/imges'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { DHub } from '../assets/imges'
 import { MHCover, MH1, MH2, MH3, MH4, MH5 } from '../assets/imges'
 import { PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7 } from '../assets/imges'
 import { TodoCover, TS1, TS2 } from '../assets/imges'
@@ -17,6 +18,16 @@ import '../css/project.css'
 const projects = [
   {
     id: '01',
+    name: 'full-stack agency platform',
+    technologies: 'Next.js, Express.js, MongoDB Atlas, Cloudinary, REST APIs',
+    description:
+      'Developed a full-stack agency platform using MongoDB, Express, React, and Node.js, enabling users to explore services, submit leads, and book appointments. Implemented secure JWT-based authentication and built an admin dashboard to manage blogs, services, and customer interactions. Deployed the frontend and backend on cloud platforms with proper API integration and CORS handling.',
+    images: [DHub],
+    github: 'https://github.com/Huraira-Arshad-Abbasi/DevelopersHub-Corporation-Agency-platform',
+    live: 'https://developers-hub-corporation-agency-p.vercel.app/'
+  },
+  {
+    id: '02',
     name: 'PakStats – Pakistan Indicator Dashboard',
     technologies: 'React, Vite, World Bank API',
     description:
@@ -26,7 +37,7 @@ const projects = [
     live: 'https://pak-stats.vercel.app/'
   },
   {
-    id: '02',
+    id: '03',
     name: 'TodoSync - Task Management Web App',
     technologies: 'React, Node.js, Express, MongoDB, and Mongoose.',
     description:
@@ -36,7 +47,7 @@ const projects = [
     live: 'https://todo-sync-jet.vercel.app/'
   },
   {
-    id: '03',
+    id: '04',
     name: 'MediaHub – Multimedia Search & Download Platform',
     technologies: 'React, Vite, Axios, Pexels API',
     description:
@@ -46,7 +57,7 @@ const projects = [
     live: 'https://media-hub-huraira-project.vercel.app/'
   },
   {
-    id: '04',
+    id: '05',
     name: 'Website Clones & UI Practice Projects',
     technologies: 'HTML, CSS, JavaScript',
     description:

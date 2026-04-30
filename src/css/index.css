@@ -69,17 +69,17 @@
 
 [data-theme="dark"] {
  --bg: #0a0f0d;
---primary: #9adbb3;
+--primary: darkslategray;
 --secondary: #2e8a57;
 --hover: #0d2518;
 --text: #e8e8e8;
 --text-secondary: #b0b0b0;
---accent-Color: #9a5b5b;
+--accent-Color: brown;
 --accent-Color1: #66d6fb;
 
 
 --bg: #000000;
---primary: #25304f91;
+--primary: darkslategray;
 --secondary: #34d399;
 --text: #f1f5f9;
 --text-secondary: #94a3b8;

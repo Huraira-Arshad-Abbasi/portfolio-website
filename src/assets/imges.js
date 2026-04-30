@@ -12,6 +12,8 @@ import cover from './cover.jpeg'
 
 export {html, css, js, bootstrap, taiwind, react,ex, mongodb, nodeJs, cv, cover}
 
+import DHub from './developersHub/DHub.jpeg';
+export {DHub}
 
 import MHCover from './Media-Hub/MHCover.png';
 import MH1 from './Media-Hub/MH1.png';
