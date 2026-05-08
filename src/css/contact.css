@@ -1,184 +1,228 @@
-.contact__section {
-    width: 100%;
-    margin: 0 auto;
-    padding-bottom: 3rem;
-    margin-top: 20vh;
-    
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact {
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
-.contact__section>h2 {
-    margin: 3rem 0;
-    text-align: center;
-    font-style: normal;
-    font-size: xx-large;
-    color: var(--accent-Color);
+.contact__tagline {
+  max-width: 480px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
-.contact__section>p {
-    width: 50vw;
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-align: center;
-    /* font-style: italic; */
-    letter-spacing: .5px;
-    margin: 3rem auto;
-    color: var(--text-secondary);
+/* ============================================
+   BODY GRID
+   ============================================ */
+.contact__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+  align-items: start;
 }
 
-.contact__content {
-    display: flex;
+/* ============================================
+   FORM
+   ============================================ */
+.contact__form-wrap {
+  width: 100%;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact__field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  resize: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow   0.2s ease;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Submit button */
+.contact__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform  0.15s ease;
+}
+
+.contact__submit:hover:not(:disabled) {
+  background: var(--accent);
+}
+
+.contact__submit:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error */
+.contact__error {
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Success state */
+.contact__success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+}
+
+.contact__success h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.contact__success p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ============================================
+   INFO SIDE
+   ============================================ */
+.contact__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact__info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.contact__info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+}
+
+/* Social buttons */
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact__social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition:
+    background    0.2s ease,
+    border-color  0.2s ease,
+    color         0.2s ease;
+}
+
+.contact__social-btn:hover {
+  background: var(--primary);
+  color: var(--bg);
+  border-color: var(--primary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .contact__body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__tagline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__social-btn {
+    flex: 1;
     justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 2rem auto;
-}
-
-.contact__content>.left__content {
-    width: 40%;
-    /* background: #b90f0f19; */
-}
-
-.contact__content>.left__content>form {
-    position: relative;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
-    /* border: 1px solid rgba(255, 0, 0, 0.393); */
-}
-
-.left__content>form>textarea {
-    width: 90%;
-    padding: .5rem 1rem;
-    outline: none;
-    resize: none;
-    background: var(--bg);
-    background: transparent;
-    scrollbar-width: 0;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    border: 1px solid var(--accent-Color);
-    /* box-shadow: 0 0 5px 0 var(--accent-Color); */
-    transition: all 0.5s;
-    color: var(--text);
-}
-
-.left__content>form>textarea:focus,
-.left__content>form>textarea:hover {
-    box-shadow: 0 0 3px 0 var(--accent-Color1);
-    /* border-color: var(--accent-Color1); */
-    background-color: var(--bg);
-}
-
-.left__content>form>button {
-    width: 90%;
-    padding: .8rem 1rem;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--accent-Color);
-    background-color: var(--bg);
-    border: 1px solid var(--accent-Color);
-    border-radius: 10px;
-    transition: all 0.5s;
-}
-
-form>button:hover {
-    cursor: pointer;
-    background-color: var(--primary);
-    border-color: var(--primary);
-}
-
-.contact__content>.right__content {
-    width: 60%;
-}
-
-.contact__content>.right__content>.info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 1rem;
-}
-
-.right__content>.info>.mypic {
-    width: 12vw;
-    height: 12vw;
-    background: url(../assets/myPic.jpeg);
-    background-size: cover;
-    border-radius: 50%;
-}
-
-.right__content>.info>.contact__info {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: var(--accent-Color1);
-}
-
-.info>.contact__info>p {
-    margin: .5rem 0;
-}
-
-.right__content>.contact__buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    gap: 2rem;
-}
-
-.contact__buttons>a {
-    text-decoration: none;
-    padding: 0.3rem 1.5rem;
-    font-size: 1rem;
-    color: var(--secondary);
-    border: 1px solid var(--secondary);
-    border-radius: 10px;
-    transition: all 0.5s;
-}
-
-.contact__buttons>a:hover {
-    cursor: pointer;
-    color: var(--accent-Color);
-    background: var(--primary);
-}
-
-@media screen and (max-width: 768px) {
-
-    .contact__section>p {
-        width: 90vw;
-    }
-
-    .contact__content {
-        flex-direction: column-reverse;
-    }
-
-    .contact__content>.left__content {
-        width: 100%;
-    }
-
-    .contact__content>.right__content {
-        width: 90%;
-    }
-
-    .contact__content>.right__content>.info {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .right__content>.info>.mypic {
-        width: 24vw;
-        height: 24vw;
-    }
-
-    .right__content>.contact__buttons {
-        gap: .5rem;
-    }
-
-    .contact__buttons>a {
-        font-size: .5rem;
-    }
+  }
 }

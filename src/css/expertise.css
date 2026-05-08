@@ -1,124 +1,226 @@
-.skill__section {
-    min-height: 55vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* font-family: sans-serif; */
-    background: var(--primary);
+/* ============================================
+   EXPERTISE SECTION
+   ============================================ */
+.expertise {
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
-.skill__section>.discription {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 2rem;
-
-    /* border: 1px solid black; */
+/* ============================================
+   CARDS GRID
+   ============================================ */
+.expertise__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
-.discription>div {
-    margin: 0 1rem;
-    width: 30%;
-    margin-bottom: 3rem;
-    padding: 1rem 2rem;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 15px -5px var(--accent-Color);
-    transition: all .5s;
-    background-color: var(--bg);
+.expertise__subtitle {
+  max-width: 520px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
 }
 
-.discription>div:hover {
-    border-color: var(--accent-Color1);
-    scale: 1.1;
+/* ── Card ── */
+.expertise__card {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow   var(--duration-base) var(--ease-out),
+    transform    var(--duration-base) var(--ease-out);
 }
 
-.discription>div>h3 {
-    /* font-size: 1.8rem; */
-    color: transparent;
-    background: linear-gradient(30deg, var(--accent-Color1), var(--text-secondary));
-    background-clip: text;
+.expertise__card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
-.discription>div>p,
-.discription>div>label {
-    margin-left: 1rem;
-    font-size: .5rem;
+/* "Learning" card gets a distinct accent border */
+.expertise__card--learning {
+  border-style: dashed;
+  border-color: var(--accent-alt);
 }
 
-.discription>div>p>span {
-    font-weight: 600;
+.expertise__card--learning:hover {
+  border-color: var(--accent-alt);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-alt) 15%, transparent);
 }
 
-.discription>div>ul {
-    margin-left: 2rem;
-
+/* ── Card header ── */
+.expertise__card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  margin-bottom: 1.1rem;
 }
 
-.discription>div>ul>li {
-    font-size: .8rem;
+.expertise__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+  margin-top: 0.1rem;
 }
 
-.skill__section>.img__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
+.expertise__card--learning .expertise__icon {
+  background: color-mix(in srgb, var(--accent-alt) 10%, transparent);
+  color: var(--accent-alt);
 }
 
-.skill__section>.img__content>div {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 1.5rem;
-    width: fit-content;
-    transition: all .3s;
-    /* border: 1px solid var(--secondary); */
+.expertise__card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
 }
 
-.skill__section>.img__content>div:hover {
-    /* border-radius: 0 20%; */
-    border-color: var(--accent-Color);
-    scale: 1.2;
+.expertise__stack {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
 }
 
-.skill__section>.img__content img {
-    height: 30px;
-    /* border-radius: 2pt; */
+/* "Learning" badge */
+.expertise__badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-alt);
+  background: color-mix(in srgb, var(--accent-alt) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-alt) 30%, transparent);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
 }
 
-.skill__section>.img__content p {
-    margin-top: .5rem;
-    font-size: normal;
-    font-weight: 300;
-    /* font-size: small; */
-    color: var(--bg);
+/* ── Skill list ── */
+.expertise__skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
-@media screen and (max-width: 900px) {
-    .discription>div {
-        width: 45%;
-        margin: 1rem;
-    }
-
-
+.expertise__skills li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
 }
 
-@media screen and (max-width: 768px) {
-    .discription>div {
-        width: 100%;
-        margin: 1rem 0;
-    }
-
-   
-    
-.skill__section>.img__content {
-    justify-content: space-around;
+.expertise__skills li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-strong);
 }
 
+.expertise__card--learning .expertise__skills li::before {
+  background: var(--accent-alt);
+  opacity: 0.5;
+}
 
+/* ============================================
+   TECH STRIP
+   ============================================ */
+.expertise__tech {
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+}
+
+.expertise__tech-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.expertise__tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background   var(--duration-fast) var(--ease-out),
+    transform    var(--duration-fast) var(--ease-out);
+}
+
+.tech-pill:hover {
+  border-color: var(--border-strong);
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+}
+
+.tech-pill img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+.tech-pill span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .expertise__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .expertise__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise__tech-strip {
+    gap: 0.5rem;
+  }
+
+  .tech-pill span {
+    font-size: 0.75rem;
+  }
 }

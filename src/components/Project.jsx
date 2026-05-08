@@ -1,258 +1,200 @@
-// import { project_layout } from '../assets/imges'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { DHub } from '../assets/imges'
-import { MHCover, MH1, MH2, MH3, MH4, MH5 } from '../assets/imges'
-import { PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7 } from '../assets/imges'
-import { TodoCover, TS1, TS2 } from '../assets/imges'
-import ProjectDetails from './ProjectDetails'
-
+import { motion, AnimatePresence } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import { Pagination } from 'swiper/modules'
+import { Code, ExternalLink, ArrowRight } from 'lucide-react'
+import 'swiper/css'
 import 'swiper/css/pagination'
 
+import { DHub }                                    from '../assets/imges'
+import { MHCover, MH1, MH2, MH3, MH4, MH5 }       from '../assets/imges'
+import { PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7 } from '../assets/imges'
+import { TodoCover, TS1, TS2 }                     from '../assets/imges'
+import ProjectDetails                              from './ProjectDetails'
 import '../css/project.css'
-// import { Link } from 'react-router-dom'
 
+// ── Data ──────────────────────────────────────────────────────
 const projects = [
   {
-    id: '01',
-    name: 'full-stack agency platform',
-    technologies: 'Next.js, Express.js, MongoDB Atlas, Cloudinary, REST APIs',
+    id:           '01',
+    name:         'Full-Stack Agency Platform',
+    technologies: 'Next.js · Express.js · MongoDB Atlas · Cloudinary',
     description:
-      'Developed a full-stack agency platform using MongoDB, Express, React, and Node.js, enabling users to explore services, submit leads, and book appointments. Implemented secure JWT-based authentication and built an admin dashboard to manage blogs, services, and customer interactions. Deployed the frontend and backend on cloud platforms with proper API integration and CORS handling.',
-    images: [DHub],
-    github: 'https://github.com/Huraira-Arshad-Abbasi/DevelopersHub-Corporation-Agency-platform',
-    live: 'https://developers-hub-corporation-agency-p.vercel.app/'
+      'A full-stack agency platform enabling users to explore services, submit leads, and book appointments. Secure JWT auth, admin dashboard for blogs and services, deployed with full API integration.',
+    images:  [DHub],
+    github:  'https://github.com/Huraira-Arshad-Abbasi/DevelopersHub-Corporation-Agency-platform',
+    live:    'https://developers-hub-corporation-agency-p.vercel.app/',
   },
   {
-    id: '02',
-    name: 'PakStats – Pakistan Indicator Dashboard',
-    technologies: 'React, Vite, World Bank API',
+    id:           '02',
+    name:         'PakStats — Pakistan Indicator Dashboard',
+    technologies: 'React · Vite · World Bank API',
     description:
-      'Built an interactive data visualization website using React that showcases Pakistan’s key economic indicators such as poverty, trade, inflation, and education. Integrated World Bank Open Data API for live statistics, designed reusable components for charts, and implemented a clean, user-friendly interface to make complex data understandable for the general public.',
-    images: [PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7],
-    github: 'https://github.com/Huraira-Arshad-Abbasi/PakStats',
-    live: 'https://pak-stats.vercel.app/'
+      `Interactive data visualization of Pakistan's key economic indicators — poverty, trade, inflation, and education. Live World Bank API integration with reusable chart components.`,
+    images:  [PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7],
+    github:  'https://github.com/Huraira-Arshad-Abbasi/PakStats',
+    live:    'https://pak-stats.vercel.app/',
   },
   {
-    id: '03',
-    name: 'TodoSync - Task Management Web App',
-    technologies: 'React, Node.js, Express, MongoDB, and Mongoose.',
+    id:           '03',
+    name:         'TodoSync — Task Management App',
+    technologies: 'React · Node.js · Express · MongoDB',
     description:
-      'A full-stack todo management app with user authentication. Each user can securely add, view, edit, and delete their own todos. Integrated React Router for dynamic routing and Axios for client-server communication. Todos are filtered by user email and fetched from MongoDB via RESTful API endpoints. Currently source code is available on GitHub and will be deployed live soon.',
-    images: [TodoCover, TS1, TS2],
-    github: 'https://github.com/Huraira-Arshad-Abbasi/Todo-Sync',
-    live: 'https://todo-sync-jet.vercel.app/'
+      `A full-stack todo app with user authentication. Each user manages their own todos via RESTful API endpoints, React Router for routing, and Axios for client-server communication.`,
+    images:  [TodoCover, TS1, TS2],
+    github:  'https://github.com/Huraira-Arshad-Abbasi/Todo-Sync',
+    live:    'https://todo-sync-jet.vercel.app/',
   },
   {
-    id: '04',
-    name: 'MediaHub – Multimedia Search & Download Platform',
-    technologies: 'React, Vite, Axios, Pexels API',
+    id:           '04',
+    name:         'MediaHub — Multimedia Search & Download',
+    technologies: 'React · Vite · Axios · Pexels API',
     description:
-      'MediaHub is a modern frontend project where users can search, explore, and download high-quality images and videos. Built using React and Vite, this app integrates with the Unsplash and Pexels APIs to fetch media content dynamically. It features a responsive layout, hover controls on videos, and a clean 3-column grid for media display. A search feature allows users to filter results by keyword and type. Currently hosted on GitHub and optimized for future deployment on Vercel.',
-    images: [MHCover, MH1, MH2, MH3, MH4, MH5],
-    github: 'https://github.com/Huraira-Arshad-Abbasi/Media-Hub',
-    live: 'https://media-hub-huraira-project.vercel.app/'
+      'Search, explore, and download high-quality images and videos. Integrates Unsplash and Pexels APIs with a responsive 3-column grid, hover video controls, and keyword filtering.',
+    images:  [MHCover, MH1, MH2, MH3, MH4, MH5],
+    github:  'https://github.com/Huraira-Arshad-Abbasi/Media-Hub',
+    live:    'https://media-hub-huraira-project.vercel.app/',
   },
   {
-    id: '05',
-    name: 'Website Clones & UI Practice Projects',
-    technologies: 'HTML, CSS, JavaScript',
+    id:           '05',
+    name:         'Website Clones & UI Practice',
+    technologies: 'HTML · CSS · JavaScript',
     description:
-      'Created several frontend clones of websites as part of self-learning and UI development practice. These projects helped strengthen my skills in layout design, responsiveness, and understanding modern web structure. Though not yet uploaded to GitHub, they reflect hands-on experience with real-world UI patterns and component-based design.',
-    images: [],
-    github: 'https://github.com/Huraira-Arshad-Abbasi',
-    live: 'https://github.com/Huraira-Arshad-Abbasi'
-  }
+      `Frontend clones of real websites built during self-learning. Strengthened skills in layout design, responsiveness, and modern UI patterns through hands-on replication.`,
+    images:  [],
+    github:  'https://github.com/Huraira-Arshad-Abbasi',
+    live:    'https://github.com/Huraira-Arshad-Abbasi',
+  },
 ]
 
-export default function Project () {
-  const [expandFlag, setExpandFlag] = useState(false)
+// ── Variants ──────────────────────────────────────────────────
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+}
+
+// ── Component ──────────────────────────────────────────────────
+export default function Project() {
   const [selectedProject, setSelectedProject] = useState(null)
+
   return (
-    <>
-      <div className='project__section'>
-        {/* <img src={project_layout} alt="" /> */}
+    <section className='projects'>
+
+      <motion.div
+        className='section-header'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <span className='section-label'>
+          <ArrowRight size={14} /> Selected work
+        </span>
         <h2>My Projects</h2>
+      </motion.div>
+
+      <div className='projects__list'>
         {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className='Porject__Card'
+          <motion.article
+            key={project.id}
+            className='project-card'
+            variants={cardVariants}
+            initial='hidden'
+            whileInView='show'
+            viewport={{ once: true, margin: '-60px' }}
           >
-            <h3>{project.id}</h3>
-            <div className='card_container'>
-              <div className='content'>
-                <div className='heading'>
-                  <h2>{project.name}</h2>
-                  <p>({project.technologies})</p>
-                </div>
-                <div className='description'>
-                  <p>{project.description}</p>
+            {/* Number */}
+            <span className='project-card__num' aria-hidden='true'>
+              {project.id}
+            </span>
+
+            {/* Inner: alternates direction via CSS */}
+            <div className={`project-card__inner ${index % 2 === 1 ? 'project-card__inner--reverse' : ''}`}>
+
+              {/* Content */}
+              <div className='project-card__content'>
+                <h3 className='project-card__name'>{project.name}</h3>
+                <p  className='project-card__tech'>{project.technologies}</p>
+                <p  className='project-card__desc'>{project.description}</p>
+
+                <div className='project-card__actions'>
                   <button
-                    onClick={() => {
-                      setExpandFlag(!expandFlag), setSelectedProject(project)
-                    }}
+                    className='pcard-btn'
+                    onClick={() => setSelectedProject(project)}
                   >
-                    see details
+                    See details
                   </button>
+                  <a
+                    href={project.github}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='pcard-icon-btn'
+                    aria-label='GitHub'
+                  >
+                    <Code size={16} />
+                  </a>
+                  <a
+                    href={project.live}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='pcard-icon-btn'
+                    aria-label='Live demo'
+                  >
+                    <ExternalLink size={16} />
+                  </a>
                 </div>
               </div>
-              <div className='images'>
-                <Swiper
-                  modules={[ Pagination]}
-                  pagination={{ clickable: true }}
-                  
-                  loop
-                >
-                  {project.images.map(img => (
-                    <SwiperSlide key={img}>
-                      <img src={img} loading='lazy' />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+
+              {/* Images */}
+              <div className='project-card__media'>
+                {project.images.length > 0 ? (
+                  <Swiper
+                    modules={[Pagination]}
+                    pagination={{ clickable: true }}
+                    loop={project.images.length > 1}
+                    className='pcard-swiper'
+                  >
+                    {project.images.map((img, i) => (
+                      <SwiperSlide key={i}>
+                        <img
+                          src={img}
+                          alt={`${project.name} screenshot ${i + 1}`}
+                          loading='lazy'
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className='project-card__empty'>
+                    <span>Screenshots coming soon</span>
+                  </div>
+                )}
               </div>
+
             </div>
-          </motion.div>
+          </motion.article>
         ))}
-
-        {expandFlag && (
-          <div>
-            <ProjectDetails
-              setExpandFlag={setExpandFlag}
-              project={selectedProject}
-            />
-          </div>
-        )}
-
-        {/* <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className='Porject__Card'
-        >
-          <h3>01</h3>
-          <Link
-            // target='_blank'
-            to='/project'
-          >
-            <div className='content'>
-              <div className='heading'>
-                <h2>PakStats – Pakistan Indicator Dashboard</h2>
-                <p>(React, Vite, World Bank API)</p>
-              </div>
-              <div className='description'>
-                <p>
-                  Built an interactive data visualization website using React
-                  that showcases Pakistan’s key economic indicators such as
-                  poverty, trade, inflation, and education. Integrated World
-                  Bank Open Data API for live statistics, designed reusable
-                  components for charts, and implemented a clean, user-friendly
-                  interface to make complex data understandable for the general
-                  public.
-                </p>
-              </div>
-            </div>
-            <div className='images'></div>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className='Porject__Card'
-        >
-          <h3>02</h3>
-          <Link target='_blank' to='https://todo-sync-jet.vercel.app/'>
-            <div className='heading'>
-              <h2>TodoSync - Task Management Web App</h2>
-              <p>(React, Node.js, Express, MongoDB, and Mongoose.)</p>
-            </div>
-            <div className='description'>
-              <p>
-                A full-stack todo management app with user authentication. Each
-                user can securely add, view, edit, and delete their own todos.
-                Integrated React Router for dynamic routing and Axios for
-                client-server communication. Todos are filtered by user email
-                and fetched from MongoDB via RESTful API endpoints. Currently
-                source code is available on GitHub and will be deployed live
-                soon.
-              </p>
-            </div>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className='Porject__Card'
-        >
-          <h3>03</h3>
-          <Link
-            target='_blank'
-            to='https://media-hub-huraira-project.vercel.app/'
-          >
-            <div className='heading'>
-              <h2>MediaHub – Multimedia Search & Download Platform</h2>
-              <p>(React, Vite, Axios, Pexels API)</p>
-            </div>
-            <div className='description'>
-              <p>
-                MediaHub is a modern frontend project where users can search,  explore, and download high-quality images and videos. Built
-                using React and Vite, this app integrates with the Unsplash and
-                Pexels APIs to fetch media content dynamically. It features a
-                responsive layout, hover controls on videos, and a clean
-                3-column grid for media display. A search feature allows users
-                to filter results by keyword and type. Currently hosted on
-                GitHub and optimized for future deployment on Vercel.
-              </p>
-            </div>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className='Porject__Card'
-        >
-          <h3>04</h3>
-          <Link target='_blank' to='https://github.com/Huraira-Arshad-Abbasi'>
-            <div className='heading'>
-              <h2>Website Clones & UI Practice Projects</h2>
-              <p>(HTML, CSS, JavaScript)</p>
-            </div>
-            <div className='description'>
-              <p>
-                Created several frontend clones of websites as part of
-                self-learning and UI development practice. These projects helped
-                strengthen my skills in layout design, responsiveness, and
-                understanding modern web structure. Though not yet uploaded to
-                GitHub, they reflect hands-on experience with real-world UI
-                patterns and component-based design.
-              </p>
-            </div>
-          </Link>
-        </motion.div> */}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.5 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className='upcoming__projects'
-        >
-          <h2>More Projects Coming Soon...</h2>
-        </motion.div>
       </div>
-    </>
+
+      <motion.p
+        className='projects__more'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        More projects coming soon
+      </motion.p>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectDetails
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
+
+    </section>
   )
 }

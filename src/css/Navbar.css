@@ -1,107 +1,239 @@
-nav {
+/* ============================================
+   NAVBAR — Floating pill, scroll-aware
+   ============================================ */
+.navbar_wrapper{
   position: fixed;
-  width: 50%;
-  top: 0;
-  left: 25%;
-  margin: 1rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding:  1rem;
-  background-color: transparent;
-  z-index: 100;
-  transition: all 0.5s;
-  border-radius: 40px;
-  border: 1px solid var(--bg);
-  visibility: hidden;
-}
-
-
-
-.nav__links {
   width: 100%;
-  /* margin-left: auto; */
+  top: 1.25rem;
+  z-index: 200;
 }
 
-.nav__links > ul {
-  list-style: none;
+.navbar {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 0;
+  margin: auto;
+
+  width: min(680px, calc(100vw - 2rem));
+  padding: 0.6rem 0.75rem 0.6rem 1.25rem;
+  border-radius: 9999px;
+
+  /* Glassmorphism base — transparent until scrolled */
+  background: transparent;
+  border: 1px solid transparent;
+  backdrop-filter: none;
+
+  transition:
+    background  0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.4s,
+    box-shadow  0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform   0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav__links > ul > li > .nav-link {
-  margin: 1rem 2vw;
+/* Scrolled state — frosted glass pill */
+.navbar--scrolled {
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  border-color: var(--border);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Hide on scroll down */
+.navbar--hidden {
+  transform: translateX(-50%) translateY(calc(-100% - 1.5rem));
+}
+
+/* Invisible on home hero (before scroll) */
+.navbar--invisible {
+  opacity: 0;
+  /* pointer-events: none; */
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
   text-decoration: none;
-  font-weight: 600;
-  font-size: .5rem;
+  margin-right: auto;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.navbar__logo span {
+  color: var(--accent);
+}
+
+.navbar__logo:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   DESKTOP LINKS
+   ============================================ */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
   position: relative;
-  color: transparent;
-  background: linear-gradient(30deg, var(--accent-Color), var(--bg));
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: 0.5s;
-  padding: 0 0.5vw;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+
+  font-family: var(--font-body);
+  font-size: 0.825rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  transition:
+    color      0.2s ease,
+    background 0.2s ease;
 }
 
-.nav__links > ul > li > .nav-link:hover,
-.nav__links > ul > li > .nav-link.active {
-  color: var(--accent-Color);
-  padding: 0 0.5vw;
+.navbar__link:hover {
+  color: var(--text);
+  background: var(--hover-bg);
 }
 
-/* Underline effect */
-.nav__links > ul > li > .nav-link::before {
+.navbar__link--active {
+  color: var(--text);
+}
+
+/* Active dot indicator */
+.navbar__link--active::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: -4px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
   height: 3px;
-  width: 0;
-  background-color: var(--accent-Color);
-  border-radius: 5pt;
-  transition: width 0.5s;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
-.nav__links > ul > li > .nav-link:hover::before,
-.nav__links > ul > li > .nav-link.active::before {
-  width: 100%;
+/* Underline (kept for hover, hidden by default) */
+.navbar__link-underline {
+  display: none; /* using dot indicator instead */
 }
 
-.nav__links li > button {
-  background: var(--secondary);
-  color: var(--bg);
-  font-size: .5rem;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+/* ============================================
+   ACTIONS (theme toggle + hamburger)
+   ============================================ */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navbar__theme-btn,
+.navbar__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: background 0.3s;
+  transition:
+    background  0.2s ease,
+    color       0.2s ease,
+    border-color 0.2s ease,
+    transform   0.15s ease;
 }
 
-.nav__links li >button:hover {
-  background: var(--accent-Color);
+.navbar__theme-btn:hover,
+.navbar__menu-btn:hover {
+  background: var(--hover-bg);
+  color: var(--text);
+  border-color: var(--border-strong);
+  transform: scale(1.08);
 }
 
+/* Hide hamburger on desktop */
+.navbar__menu-btn {
+  display: none;
+}
 
-/* Media Queries */
-@media (max-width: 768px) {
-  nav {
-    width: 100%;
-    left: 0;
-    border: none;
-    box-shadow: none;
+/* ============================================
+   MOBILE DRAWER
+   ============================================ */
+.navbar__drawer {
+  display: none; /* shown via JS when open */
+}
+
+/* ============================================
+   RESPONSIVE — Mobile
+   ============================================ */
+@media (max-width: 600px) {
+  .navbar {
+    top: 0.75rem;
+    border-radius: 16px;
+    padding: 0.6rem 0.75rem;
+    flex-wrap: wrap;
   }
 
-
-  .nav__links {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  /* Hide desktop links */
+  .navbar__links {
+    display: none;
   }
 
-  .nav__links > ul > li > .nav-link {
-    font-size: 3vw;
-    margin: 0 4vw;
+  /* Show hamburger */
+  .navbar__menu-btn {
+    display: flex;
+  }
+
+  /* Mobile drawer */
+  .navbar__drawer {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .navbar__drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .navbar__drawer-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .navbar__drawer-link:hover,
+  .navbar__drawer-link.navbar__link--active {
+    background: var(--hover-bg);
+    color: var(--text);
   }
 }

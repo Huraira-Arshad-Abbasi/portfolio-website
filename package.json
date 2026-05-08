@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "gsap": "^3.12.5",
+    "lucide-react": "^1.14.0",
     "motion": "^12.23.12",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

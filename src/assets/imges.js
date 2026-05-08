@@ -9,8 +9,9 @@ import mongodb from './mongodb.png';
 import nodeJs from './nodeJs.png';
 import cv from './Huraira_Arshad_Resume.pdf';
 import cover from './cover.jpeg'
+import myPic from './myPic.jpeg';
 
-export {html, css, js, bootstrap, taiwind, react,ex, mongodb, nodeJs, cv, cover}
+export {html, css, js, bootstrap, taiwind, react,ex, mongodb, nodeJs, cv, cover, myPic}
 
 import DHub from './developersHub/DHub.jpeg';
 export {DHub}

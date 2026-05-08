@@ -1,195 +1,228 @@
-.details_container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    max-width: 900px;
-    /* height: 80vh; */
+/* ============================================
+   PROJECT DETAILS MODAL
+   ============================================ */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* gap: 1rem; */
-    align-items: center;
-
-    background-color: var(--bg);
-    border-radius: 12px;
-    z-index: 1000;
-    overflow: hidden;
-
-    box-shadow: 0 5px 30px var(--secondary);
+/* Backdrop */
+.pd-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 400;
 }
 
-.details_container>.images {
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    gap: 1.5rem;
-    margin: 3rem auto;
-    overflow-x: auto;
-    width: 95%;
-    padding: 1rem;
-    background-color: var(--hover);
-    border-radius: 10px;
+/* Modal */
+.pd-modal {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+
+  width: min(860px, 88vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
 }
 
-
-
-.details_container > .images::-webkit-scrollbar {
-  height: 3px;
-  opacity: 0.3;
+/* Scrollbar inside modal */
+.pd-modal::-webkit-scrollbar       { width: 4px; }
+.pd-modal::-webkit-scrollbar-track { background: transparent; }
+.pd-modal::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
 }
-.details_container > .images::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  opacity: 0.3;
-  border-radius: 4px;
+
+/* ── Close button ── */
+.pd-close {
+  position: sticky;
+  top: 0.75rem;
+  float: right;
+  margin: 0.75rem 0.75rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   cursor: pointer;
+  z-index: 10;
+
+  transition:
+    background     0.2s ease,
+    color          0.2s ease,
+    border-color   0.2s ease;
 }
 
-.details_container > .images::-webkit-scrollbar-track {
-  background: var(--hover);
+.pd-close:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
 
-.details_container>.images img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
-    background-color: var(--hover);
-    /* border-radius: 10px; */
-    flex-shrink: 0;
-
-    transition: transform 0.3s ease;
+/* ── Image strip ── */
+.pd-images {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 1.25rem 1.5rem 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* .details_container>.images>img:hover {
-    transform: scale(1.05);
-} */
-
-.details_container>.content {
-    /* flex: 1; */
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    overflow-y: auto;
-    /* background-color: var(--hover); */
-
+.pd-images::-webkit-scrollbar        { height: 3px; }
+.pd-images::-webkit-scrollbar-track  { background: transparent; }
+.pd-images::-webkit-scrollbar-thumb  {
+  background: var(--border-strong);
+  border-radius: 9999px;
 }
 
-.details_container .content>.heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+.pd-images img {
+  flex-shrink: 0;
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease;
 }
 
-/* .details_container .heading h2 {
-    font-size: 1.5rem;
-    color: var(--accent-Color1);
-} */
-
-.details_container .heading .links {
-    display: flex;
-    gap: 0.5rem;
+.pd-images img:hover {
+  transform: scale(1.03);
+  cursor: zoom-in;
 }
 
-.details_container .heading .links button {
-    
-    border: 2px solid transparent;
-    color: var(--accent-Color1);
-    cursor: pointer;
-
-    background-color: transparent;
-    padding: .5rem 1rem;
-    margin-top: 1rem;
-    border-radius: 15px;
-    box-shadow: 0 0 10px -5px var(--secondary);
-    transition: all 0.5s ease;
-}
-.heading .links button:last-child{
-    background: var(--primary);
-    /* color: var(--a); */
+/* ── Content ── */
+.pd-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.details_container .heading .links button:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    scale: 0.95;
-    /* color: var(--accent-Color1); */
-
+/* Heading row */
+.pd-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
+.pd-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
 
-.details_container .description {
-    display: flex;
+/* Links */
+.pd-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.pd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background    0.2s ease,
+    color         0.2s ease,
+    border-color  0.2s ease;
+}
+
+.pd-btn--outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.pd-btn--outline:hover {
+  background: var(--hover-bg);
+  border-color: var(--text-muted);
+}
+
+.pd-btn--primary {
+  background: var(--primary);
+  color: var(--bg);
+  border-color: var(--primary);
+}
+
+.pd-btn--primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Tech stack */
+.pd-tech {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Description */
+.pd-desc {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  .pd-modal {
+    width: 92vw;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .pd-images img {
+    width: 200px;
+    height: 130px;
+  }
+
+  .pd-heading {
     flex-direction: column;
-    gap: 1rem;
-    font-weight: 300;
-    font-style: normal;
-    font-size: medium;
-    color: var(--text-secondary);
-}
+    gap: 0.75rem;
+  }
 
-.details_container .description p:first-child {
-    font-weight: bold;
-    color: var(--secondary);
-}
-
-.details_container>button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-
-    border: none;
-    color: var(--bg);
-    background-color: var(--primary);
-
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-
-    cursor: pointer;
-    font-weight: bold;
-
-    transition: 0.5s;
-}
-
-.details_container>button:hover {
-    background-color: var(--accent-Color);
-}
-
-@media screen and (max-width: 600px) {
-    .details_container {
-        width: 90vw;
-        height: 90vh;
-    }
-
-    .details_container>.images {
-        flex-direction: column;
-        align-items: center;
-        height: 30%;
-        border-radius: 0;
-        border: 2px solid var(--hover);
-    }
-
-    .details_container>.images img {
-        width: 100%;
-        height: auto;
-    }
-    .details_container .content{
-        padding: 0 1rem;
-    }
-
-    .details_container .content>.heading {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-.details_container .heading .links {
+  .pd-links {
     width: 100%;
-    justify-content: end;
-    gap: 1.5rem;
-}
+  }
 
-
+  .pd-btn {
+    flex: 1;
+    justify-content: center;
+  }
 }

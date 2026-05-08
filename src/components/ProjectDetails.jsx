@@ -1,38 +1,93 @@
-// import React from 'react'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
+import { X, Code, ExternalLink } from 'lucide-react'
 import '../css/projectDetails.css'
-// import { cover } from '../assets/imges'
 
-export default function ProjectDetails ({ setExpandFlag, project }) {
+export default function ProjectDetails({ project, onClose }) {
   return (
-    <div className='details_container'>
-      <div className='images' onClick={() => window.open(project.live, '_blank')}>
-        {project.images.map((image, index) => (
-          <img key={index} loading='lazy' src={image} alt={`${project.name} screenshot ${index + 1}`} />
-        ))}
-      </div>
-      <div className='content'>
-        <div className='heading'>
-          <h2>{project.name}</h2>
-          <div className='links'>
-            {/* <button disabled>Readme.md</button> */}
-            <button onClick={() => window.open(project.github, '_blank')}>GitHub</button>
-            <button onClick={() => window.open(project.live, '_blank')}>Live Preview</button>
-          </div>
-        </div>
-        <div className='description'>
-          <p>{project.technologies}</p>
-          <p>{project.description}</p>
-        </div>
-      </div>
+    <>
+      {/* Backdrop */}
+      <motion.div
+        className='pd-backdrop'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={onClose}
+        aria-hidden='true'
+      />
 
-      <button type='button' onClick={() => setExpandFlag(false)}>
-        X
-      </button>
-    </div>
+      {/* Modal */}
+      <motion.div
+        className='pd-modal'
+        role='dialog'
+        aria-modal='true'
+        aria-label={project.name}
+        initial={{ opacity: 0, y: 40, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0,  scale: 1    }}
+        exit={{    opacity: 0, y: 24, scale: 0.97 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {/* Close button */}
+        <button
+          className='pd-close'
+          onClick={onClose}
+          aria-label='Close'
+        >
+          <X size={16} strokeWidth={2.5} />
+        </button>
+
+        {/* Image strip */}
+        {project.images.length > 0 && (
+          <div className='pd-images'>
+            {project.images.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                loading='lazy'
+                alt={`${project.name} screenshot ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Content */}
+        <div className='pd-content'>
+
+          <div className='pd-heading'>
+            <h2>{project.name}</h2>
+            <div className='pd-links'>
+              <a
+                href={project.github}
+                target='_blank'
+                rel='noreferrer'
+                className='pd-btn pd-btn--outline'
+              >
+                <Code size={14} strokeWidth={2} />
+                Source code
+              </a>
+              <a
+                href={project.live}
+                target='_blank'
+                rel='noreferrer'
+                className='pd-btn pd-btn--primary'
+              >
+                <ExternalLink size={14} strokeWidth={2} />
+                Live preview
+              </a>
+            </div>
+          </div>
+
+          <p className='pd-tech'>{project.technologies}</p>
+          <p className='pd-desc'>{project.description}</p>
+
+        </div>
+      </motion.div>
+    </>
   )
 }
+
 ProjectDetails.propTypes = {
-  setExpandFlag: PropTypes.func.isRequired,
-  project: PropTypes.object.isRequired
+  project: PropTypes.object.isRequired,
+  onClose: PropTypes.func.isRequired,
 }

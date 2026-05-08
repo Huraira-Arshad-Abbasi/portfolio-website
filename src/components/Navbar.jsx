@@ -1,121 +1,155 @@
 import '../css/Navbar.css'
 import { useEffect, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom' // ✅ Changed from Link to NavLink
+import { NavLink, useLocation } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Sun, Moon, Menu, X } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
 
-export default function Navbar () {
-  const [theme, setTheme] = useState('light')
-  const navRef = useRef(null)
+export default function Navbar() {
+  const { theme, toggleTheme } = useTheme()       
+  const [scrolled, setScrolled]   = useState(false)
+  const [hidden, setHidden]       = useState(false)
+  const [menuOpen, setMenuOpen]   = useState(false)
+  const lastScrollY               = useRef(0)
+  const location                  = useLocation()
+  const isHome                    = location.pathname === '/'
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+    const onScroll = () => {
+      const y = window.scrollY
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      // Background change logic
-
-      if (currentScrollY > 100) {
-        navRef.current.style.background = 'var(--primary)'
-        navRef.current.style.boxShadow = '0 0 5px 0px var(--secondary)'
-        navRef.current.style.borderColor = 'var(--accent-Color)'
-        navRef.current.style.visibility = 'visible'
-      } else {
-        navRef.current.style.boxShadow = 'none'
-        navRef.current.style.background = 'none'
-        navRef.current.style.borderColor = 'var(--bg)'
-        
-        // if we are in home it should be hidden
-        if (window.location.pathname === '/') {
-          navRef.current.style.visibility = 'hidden'
-        } else {
-          navRef.current.style.visibility = 'visible'
-        }
-      }
-
-      // Hide/show logic
-      if (currentScrollY > lastScrollY && currentScrollY > 600) {
-        // scrolling down
-        navRef.current.style.transform = 'translateY(-115%)'
-      } else {
-        // scrolling up
-        navRef.current.style.transform = 'translateY(0)'
-      }
-      lastScrollY = currentScrollY
+      setScrolled(y > 80)
+      setHidden(y > lastScrollY.current && y > 500)
+      lastScrollY.current = y
     }
 
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close mobile menu on route change
+  useEffect(() => { setMenuOpen(false) }, [location.pathname])
+
+  const navLinks = [
+    { to: '/',        label: 'Home'     },
+    { to: '/Project', label: 'Projects' },
+    { to: '/Contact', label: 'Contact'  },
+  ]
+
+  // On home page + not scrolled → invisible
+  const invisible = isHome && !scrolled
+
   return (
-    <div>
-      <nav ref={navRef}>
-        {/* <div className='logo'>
-          <NavLink to='/' className='nav-link'>
-            Huraira <span>Arshad</span>
-          </NavLink>
-        </div> */}
+    <div className="navbar_wrapper">    
+    <motion.nav
+      className={[
+        'navbar',
+        scrolled  ? 'navbar--scrolled' : '',
+        hidden    ? 'navbar--hidden'   : '',
+        invisible ? 'navbar--invisible': '',
+      ].filter(Boolean).join(' ')}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0,   opacity: 1  }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+    >
+      {/* Logo */}
+      <NavLink to="/" className="navbar__logo">
+        H<span>A</span>
+      </NavLink>
 
-        <div className='nav__links'>
-          <ul>
-            <li>
-              <NavLink
-                to='/'
-                className={({ isActive }) =>
-                  isActive ? 'nav-link active' : 'nav-link'
-                }
-              >
-                Home
-              </NavLink>
-            </li>
+      {/* Desktop links */}
+      <ul className="navbar__links">
+        {navLinks.map(({ to, label }) => (
+          <li key={to}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                ['navbar__link', isActive ? 'navbar__link--active' : ''].filter(Boolean).join(' ')
+              }
+            >
+              {label}
+              <span className="navbar__link-underline" />
+            </NavLink>
+          </li>
+        ))}
+      </ul>
 
-            {/* <li>
-              <NavLink
-                to='/About'
-                className={({ isActive }) =>
-                  isActive ? 'nav-link active' : 'nav-link'
-                }
-              >
-                About
-              </NavLink>
-            </li> */}
-            <li>
-              <NavLink
-                to='/Project'
-                className={({ isActive }) =>
-                  isActive ? 'nav-link active' : 'nav-link'
-                }
-              >
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to='/Contact'
-                className={({ isActive }) =>
-                  isActive ? 'nav-link active' : 'nav-link'
-                }
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <button
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              >
-                {theme === 'light' ? 'Dark' : 'Light'} Mode
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      {/* Actions */}
+      <div className="navbar__actions">
+        <button
+          className="navbar__theme-btn"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={theme}
+              initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+              animate={{ rotate: 0,   opacity: 1, scale: 1   }}
+              exit={{    rotate:  90, opacity: 0, scale: 0.6 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              style={{ display: 'flex' }}
+            >
+              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+            </motion.span>
+          </AnimatePresence>
+        </button>
+
+        {/* Mobile hamburger */}
+        <button
+          className="navbar__menu-btn"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={menuOpen ? 'close' : 'open'}
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0,   opacity: 1 }}
+              exit={{    rotate:  90, opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              style={{ display: 'flex' }}
+            >
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            </motion.span>
+          </AnimatePresence>
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="navbar__drawer"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0  }}
+            exit={{    opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <ul className="navbar__drawer-links">
+              {navLinks.map(({ to, label }, i) => (
+                <motion.li
+                  key={to}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0   }}
+                  transition={{ delay: i * 0.06, duration: 0.3 }}
+                >
+                  <NavLink
+                    to={to}
+                    className={({ isActive }) =>
+                      ['navbar__drawer-link', isActive ? 'navbar__link--active' : ''].filter(Boolean).join(' ')
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
     </div>
   )
 }

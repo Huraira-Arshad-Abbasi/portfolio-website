@@ -1,81 +1,32 @@
-import Navbar from './components/Navbar'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
+import Layout from './components/Layout'
 import HomeContent from './components/HomeContent'
 import About from './components/About'
 import Project from './components/Project'
 import Reviews from './components/Reviews'
-
 import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Scroll from './components/Scroll'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { motion } from 'framer-motion'
-function App () {
+import NotFound from './components/NotFound'
 
+// ✅ Defined OUTSIDE component — stable reference, never recreated on render
+const router = createBrowserRouter([
+  {
+    element: <Layout />,   // shared shell: Scroll + Navbar + AnimatePresence + Footer
+    children: [
+      { index: true,          element: <HomeContent /> },
+      { path: '/About',       element: <About /> },
+      { path: '/Project',     element: <Project /> },
+      { path: '/Reviews',     element: <Reviews /> },
+      { path: '/Contact',     element: <Contact /> },
+      { path: '*',            element: <NotFound /> },   // 404 fallback
+    ]
+  }
+])
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-        <>
-          <Scroll />
-          <Navbar />
-          <HomeContent />
-          <Footer />
-        </>
-      )
-    },
-    {
-      path: '/About',
-      element: (
-        <>
-          <Scroll />
-          <Navbar />
-          <About />
-          <Footer />
-        </>
-      )
-    },
-    {
-      path: '/Project',
-      element: (
-        <>
-          <Scroll />
-          <Navbar />
-          <Project />
-          <Footer />
-        </>
-      )
-    },
-    {
-      path: '/Reviews',
-      element: (
-        <>
-          <Scroll />
-          <Navbar />
-          <Reviews />
-          <Footer />
-        </>
-      )
-    },
-    {
-      path: '/Contact',
-      element: (
-        <>
-          <Scroll />
-          <Navbar />
-          <Contact />
-          <Footer />
-        </>
-      )
-    }
-  ])
-
+export default function App() {
   return (
-    <motion.div style={{ position: 'relative', overflowX: 'hidden' }}>
-        <RouterProvider router={router} />
-      
-    </motion.div>
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   )
 }
-
-export default App

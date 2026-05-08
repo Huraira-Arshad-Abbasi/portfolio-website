@@ -1,31 +1,31 @@
-// useScrollRestoration.js
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
-const scrollPositions = {};
+const scrollPositions = {}
 
 export default function Scroll() {
-  const { pathname } = useLocation();
-  
-  
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    // restore saved position (if exists) when route changes
-    if (scrollPositions[pathname]) {
-      
-      window.scrollTo(0, scrollPositions[pathname]);
-    } else {
-      window.scrollTo(0, 0);
+    // Restore saved position or go to top
+    const saved = scrollPositions[pathname]
+    window.scrollTo(0, saved ?? 0)
+
+    // Throttle: only write every 200ms
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          scrollPositions[pathname] = window.scrollY
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
-    const handleScroll = () => {
-      scrollPositions[pathname] = window.scrollY; // save scroll position
-    };
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [pathname])
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [pathname]);
+  return null
 }

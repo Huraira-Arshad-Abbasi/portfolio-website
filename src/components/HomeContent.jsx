@@ -1,177 +1,174 @@
 import Expertise from './Expertise'
 import Project from './Project'
-import Contact from './Contact'
 import '../css/home.css'
 
 import { motion } from 'framer-motion'
-import { cv } from '../assets/imges'
+import { ArrowDownToLine, Mail, GraduationCap, MapPin } from 'lucide-react'
+import { cv, myPic } from '../assets/imges'
+import { Link } from 'react-router-dom'
+
+// Animation variants — defined once, reused
+const fadeUp = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0  }
+}
+
+const staggerContainer = {
+  hidden:  {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+}
+
+const education = [
+  {
+    degree:     'BS — Software Engineering',
+    school:     'Virtual University of Pakistan',
+    period:     '2023 — Present',
+    highlights: ['Completed 5 semesters', 'CGPA: 3.93 / 4.0'],
+  },
+  {
+    degree:     'FSC Pre-Engineering',
+    school:     'Read Foundation College, Aliot, Murree',
+    period:     '2020 — 2022',
+    highlights: ['Marks: 666 / 1100'],
+  },
+  {
+    degree:     'Matriculation',
+    school:     'Government School, Potha Shreef, Murree',
+    period:     '2018 — 2020',
+    highlights: ['Marks: 875 / 1100'],
+  },
+]
 
 export default function HomeContent () {
+  const scrollToContact = () => {
+    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <>
-      <main>
-        {/* 🔹 Section 1: Hero Section */}
-        <div className='section__1'>
-          <motion.div
-            className='img'
-            drag
-            dragConstraints={{ top: -10, bottom: 10, left: -50, right: 10 }}
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, delay: 3, ease: 'easeIn' }}
-            viewport={{ once: true }}
-          >
-            {/* <img src={mypic} alt="Huraira Arshad" /> */}
+    <main className='home'>
+
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className='hero'>
+        <motion.div
+          className='hero__text'
+          variants={staggerContainer}
+          initial='hidden'
+          animate='visible'
+        >
+          <motion.p className='hero__greeting' variants={fadeUp}>
+            Hello, I&apos;m
+          </motion.p>
+
+          <motion.h1 className='hero__name' variants={fadeUp}>
+            Huraira<br />
+            <span className='hero__name--accent'>Arshad</span>
+          </motion.h1>
+
+          <motion.p className='hero__role' variants={fadeUp}>
+            Full Stack Developer — MERN Stack
+          </motion.p>
+
+          <motion.p className='hero__bio' variants={fadeUp}>
+            Skilled in building dynamic, user-friendly web applications with
+            HTML, CSS, JavaScript, and modern frameworks. I deliver clean,
+            efficient, and scalable code — from pixel-perfect interfaces to
+            robust back-end APIs.
+          </motion.p>
+
+          <motion.div className='hero__actions' variants={fadeUp}>
+            <a href={cv} download className='btn btn--primary'>
+              <ArrowDownToLine size={15} strokeWidth={2} />
+              Download CV
+            </a>
+            <button className='btn btn--outline' onClick={scrollToContact}>
+              <Mail size={15} strokeWidth={2} />
+              Contact Me
+            </button>
           </motion.div>
+        </motion.div>
 
-          <div className='content'>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Hi!
-            </motion.p>
-
-            <motion.h1
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <span>I{"'"}am </span>Huraira Arshad
-            </motion.h1>
-
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }}
-              viewport={{ once: true }}
-            >
-              Full Stack Developer - MERN Stack
-            </motion.h2>
-
-            <a href={cv} download>
-              <motion.button
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 2.5 }}
-                viewport={{ once: true }}
-              >
-                Download CV
-              </motion.button>
-            </a>
-            {/* go to contact page */}
-            <a href='#Contact'>
-              <motion.button
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 2.5 }}
-                viewport={{ once: true }}
-              >
-                Contact Me
-              </motion.button>
-            </a>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }}
-              viewport={{ once: true }}
-            >
-              Full Stack Developer skilled in creating dynamic, user-friendly
-              websites and applications using HTML, CSS, JavaScript, and modern
-              frameworks. With expertise in both front-end and back-end
-              technologies, I deliver clean, efficient, and scalable code,
-              ensuring engaging user experiences and robust solutions tailored
-              to client needs. Let{"'"}s build something amazing together!
-            </motion.p>
-          </div>
+        {/* Decorative background text */}
+        <div className='hero__bg-text' aria-hidden='true'>HA</div>
+        {/* my picture on right side */}
+        <div className='hero__image'>
+          <img src={myPic} width="300" height="300" alt="Huraira Arshad's portrait" />
         </div>
+      </section>
 
-        <div className='break__line'></div>
+      <div className='divider' />
 
-        {/* 🔹 Section 2: Skills */}
-        <Expertise />
-        <div className='break__line'></div>
+      {/* ── Skills ───────────────────────────────────────── */}
+      <Expertise />
 
-        {/* 🔹 Section 3: Education */}
-        <div name='Education' className='education__section'>
+      <div className='divider' />
+
+      {/* ── Education ────────────────────────────────────── */}
+      <section className='education'>
+        <motion.div
+          className='section-header'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <span className='section-label'>
+            <GraduationCap size={14} /> Background
+          </span>
           <h2>Education</h2>
-          <motion.div
-            initial={{ y: 100 }}
-            whileInView={{ y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className='education__content'
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
-              viewport={{ once: true }}
-              className='degree'
-            >
-              <i></i>
-              <h3>BS - Software Engineering</h3>
-              <div className='details'>
-                <h4>(Virtual University of Pakistan)</h4>
-                <p>2023 - Present</p>
-                <ul>
-                  <li>Completed 5 semester</li>
-                  <li>CGPA: 3.93/4</li>
-                </ul>
-              </div>
-            </motion.div>
+        </motion.div>
 
+        <div className='education__timeline'>
+          {education.map((item, i) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1.8 }}
-              viewport={{ once: true }}
-              className='degree'
+              key={item.degree}
+              className='edu-card'
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              viewport={{ once: true, margin: '-60px' }}
             >
-              <i></i>
-              <h3>FSC Pre-Engineering</h3>
-              <div className='details'>
-                <h4>(Read Foundation College, Aliot, Murree)</h4>
-                <p>2020 - 2022</p>
-                <ul>
-                  <li>Marks: 666/1100</li>
+              <div className='edu-card__dot' />
+              <div className='edu-card__body'>
+                <h3 className='edu-card__degree'>{item.degree}</h3>
+                <div className='edu-card__meta'>
+                  <span className='edu-card__school'>
+                    <MapPin size={12} /> {item.school}
+                  </span>
+                  <span className='edu-card__period'>{item.period}</span>
+                </div>
+                <ul className='edu-card__highlights'>
+                  {item.highlights.map(h => (
+                    <li key={h}>{h}</li>
+                  ))}
                 </ul>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              viewport={{ once: true }}
-              className='degree'
-            >
-              <i></i>
-              <h3>Matriculation</h3>
-              <div className='details'>
-                <h4>(Government School, Potha Shreef, Murree)</h4>
-                <p>2018 - 2020</p>
-                <ul>
-                  <li>Marks: 875/1100</li>
-                </ul>
-              </div>
-            </motion.div>
-          </motion.div>
+          ))}
         </div>
+      </section>
 
-        <div className='break__line'></div>
-        <Project />
-        <div className='break__line'></div>
+      <div className='divider' />
+    {/* ── Project ────────────────────────────────────── */}
+      <Project/>
 
-        {/* 🔹 Section 4: Contact */}
-        <div id='Contact'>
-          <Contact />
-        </div>
-      </main>
-    </>
+      {/* ── Contact CTA ──────────────────────────────────── */}
+      <section className='contact-cta' id='contact-section'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className='contact-cta__inner'
+        >
+          <h2>Let&apos;s build something<br /><em>amazing</em> together.</h2>
+          <p>Open to freelance projects, collaborations, and full-time roles.</p>
+          <Link to='/Contact' className='btn btn--primary btn--lg'>
+            Get in touch
+            <Mail size={16} />
+          </Link>
+        </motion.div>
+      </section>
+
+    </main>
   )
 }
