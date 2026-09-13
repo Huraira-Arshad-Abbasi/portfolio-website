@@ -70,34 +70,83 @@
   gap: 0.875rem;
 }
 
-/* Decorative large background letters */
-.hero__bg-text {
+.hero__image-wrap{
+  --leaf: 50% 50% 18% 18% / 42% 42% 62% 62%;
   position: absolute;
-  right: -2rem;
+  right: clamp(2rem, 6vw, 5rem);
   top: 45%;
   transform: translateY(-50%);
-  font-family: var(--font-display);
-  font-size: clamp(14rem, 28vw, 22rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  color: var(--border);
-  line-height: 1;
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
+  width: clamp(280px, 34vw, 380px);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
 }
 
-.hero__image{
+/* Soft glow hugging the leaf portrait */
+.hero__image-wrap::after {
+  content: '';
   position: absolute;
-  right: clamp(1.5rem, 6vw, 5rem);
-  top: 45%;
-  transform: translateY(-50%);
-  width: clamp(200px, 30vw, 300px);
-  height: clamp(200px, 30vw, 300px);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  filter: grayscale(20%) brightness(80%);
-  border: 4px solid var(--border-strong);
+  inset: -6%;
+  border-radius: var(--leaf);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent) 0%, transparent 70%);
+  filter: blur(18px);
+  animation: heroGlow 4.5s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Portrait: leaf-shaped, with a moving plate behind = the "moving shadow" */
+.hero__image{
+  position: relative;
+  width: 78%;
+  aspect-ratio: 4 / 5;
+  z-index: 1;
+}
+
+.hero__image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--leaf);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 70%, transparent),
+    color-mix(in srgb, var(--text) 35%, transparent)
+  );
+  z-index: -1;
+  animation: heroPlate 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--leaf);
+  border: 3px solid var(--border-strong);
+  box-shadow: var(--shadow-lg);
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* ── Hero picture animations ── */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* Moving shadow plate behind the portrait */
+@keyframes heroPlate {
+  from { transform: rotate(3deg) translate(8px, 10px) scale(1); }
+  to   { transform: rotate(-2deg) translate(12px, 14px) scale(1.05); }
+}
+
+@keyframes heroGlow {
+  from { opacity: 0.6; transform: scale(0.97); }
+  to   { opacity: 1;   transform: scale(1.03); }
 }
 
 /* ============================================
@@ -336,12 +385,7 @@
     min-height: 100svh;
   }
 
-  .hero__bg-text {
-    opacity: 0.4;
-    right: -3rem;
-    font-size: 40vw;
-  }
-  .hero__image{
+  .hero__image-wrap{
     display: none;
   }
 
