@@ -1,10 +1,10 @@
 import {
-  html, css, js, bootstrap, taiwind,
-  react, ex, mongodb, nodeJs
-} from '../assets/imges'
+  SiHtml5, SiCss, SiJavascript, SiBootstrap, SiTailwindcss, SiReact,
+  SiExpress, SiMongodb, SiNodedotjs, SiPython, SiFastapi, SiPostgresql,
+} from 'react-icons/si'
 import '../css/expertise.css'
 import { motion } from 'framer-motion'
-import { Monitor, Server, Database, Layers, Wrench, Smartphone } from 'lucide-react'
+import { Monitor, Server, Database, Layers, Wrench, Smartphone, Bot } from 'lucide-react'
 
 // ── Data ────────────────────────────────────────────────────────
 const expertise = [
@@ -23,9 +23,9 @@ const expertise = [
   {
     icon:   Server,
     title:  'Backend Development',
-    stack:  'Node.js · Express.js',
+    stack:  'Node.js · Express.js · FastAPI',
     skills: [
-      'RESTful APIs with Node.js and Express',
+      'RESTful APIs with Node.js, Express, and FastAPI',
       'Authentication and authorization with JWT',
       'Structured routes, controllers, and middleware',
       'Server-side validation and error handling',
@@ -34,9 +34,9 @@ const expertise = [
   {
     icon:   Database,
     title:  'Database Management',
-    stack:  'MongoDB · Mongoose',
+    stack:  'MongoDB · Mongoose · PostgreSQL',
     skills: [
-      'NoSQL database design and management',
+      'NoSQL and relational database design and management',
       'Schemas and models with Mongoose',
       'CRUD operations and query optimization',
       'User-scoped data architecture',
@@ -65,6 +65,17 @@ const expertise = [
     ],
   },
   {
+    icon:   Bot,
+    title:  'AI-Assisted Development',
+    stack:  'opencode · Claude · AI Coding Agents',
+    skills: [
+      'Shipping code faster by pairing with AI coding agents',
+      'Using opencode and Claude to boost productivity',
+      'Automating boilerplate and repetitive tasks',
+      'Focusing more on architecture and problem-solving',
+    ],
+  },
+  {
     icon:    Smartphone,
     title:   'Mobile Development',
     stack:   'React Native',
@@ -78,15 +89,18 @@ const expertise = [
 ]
 
 const techStack = [
-  { src: html,      label: 'HTML'       },
-  { src: css,       label: 'CSS'        },
-  { src: js,        label: 'JavaScript' },
-  { src: bootstrap, label: 'Bootstrap'  },
-  { src: taiwind,   label: 'Tailwind'   },
-  { src: react,     label: 'React'      },
-  { src: ex,        label: 'Express'    },
-  { src: mongodb,   label: 'MongoDB'    },
-  { src: nodeJs,    label: 'Node.js'    },
+  { Icon: SiHtml5,       label: 'HTML',       color: '#E34F26' },
+  { Icon: SiCss,         label: 'CSS',        color: '#1572B6' },
+  { Icon: SiJavascript,  label: 'JavaScript', color: '#F7DF1E' },
+  { Icon: SiBootstrap,   label: 'Bootstrap',  color: '#7952B3' },
+  { Icon: SiTailwindcss, label: 'Tailwind',   color: '#06B6D4' },
+  { Icon: SiReact,       label: 'React',      color: '#61DAFB' },
+  { Icon: SiExpress,     label: 'Express',    color: '#8a8a8a' },
+  { Icon: SiMongodb,     label: 'MongoDB',    color: '#47A248' },
+  { Icon: SiNodedotjs,   label: 'Node.js',    color: '#339933' },
+  { Icon: SiPython,      label: 'Python',     color: '#3776AB' },
+  { Icon: SiFastapi,     label: 'FastAPI',    color: '#009688' },
+  { Icon: SiPostgresql,  label: 'PostgreSQL', color: '#4169E1' },
 ]
 
 // ── Variants ────────────────────────────────────────────────────
@@ -178,7 +192,7 @@ export default function Expertise() {
         <div className='expertise__tech-strip'>
           {techStack.map((t) => (
             <motion.div key={t.label} className='tech-pill' variants={techVariants}>
-              <img src={t.src} alt={t.label} />
+              <t.Icon size={20} color={t.color} aria-label={t.label} />
               <span>{t.label}</span>
             </motion.div>
           ))}

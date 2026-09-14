@@ -189,10 +189,9 @@
   transform: translateY(-2px);
 }
 
-.tech-pill img {
-  height: 20px;
-  width: 20px;
-  object-fit: contain;
+.tech-pill svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .tech-pill span {

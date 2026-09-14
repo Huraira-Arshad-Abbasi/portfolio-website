@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, MessageCircle, LucideComputer } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react'
+import { FaLinkedin } from 'react-icons/fa6'
 import '../css/contact.css'
 
 const fadeUp = {
@@ -27,7 +28,7 @@ const contactLinks = [
   {
     label: 'LinkedIn',
     href:  'https://linkedin.com/in/huraira-arshad-abbasi/',
-    icon:  LucideComputer,
+    icon:  FaLinkedin,
   },
 ]
 
