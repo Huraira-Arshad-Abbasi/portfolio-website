@@ -82,6 +82,313 @@
 }
 
 /* ============================================
+   DEVELOPER THEME — JellyFish deep-ocean
+   heavy neon accents, thin lines, sharp corners
+   ============================================ */
+[data-theme="dev"] {
+  /* Surfaces — JellyFish deep-ocean */
+  --bg:              #010033;
+  --bg-secondary:    #0f0021;
+  --bg-elevated:     #28002b;
+
+  /* Brand — neon jellies */
+  --primary:         #FFFFFF;
+  --secondary:       #00ffff;
+  --accent:          #ffd900;
+  --accent-alt:      #00ff55;
+
+  /* Text */
+  --text:            #FFFFFF;
+  --text-secondary:  #9b9b9b;
+  --text-muted:      #8f9bb3;
+
+  /* UI — neon hairlines */
+  --border:          rgba(0, 255, 255, 0.16);
+  --border-strong:   rgba(255, 217, 0, 0.42);
+  --hover-bg:        rgba(0, 255, 255, 0.06);
+  --shadow-sm:       0 1px 2px rgba(0, 0, 0, 0.60);
+  --shadow-md:       0 4px 16px rgba(0, 255, 255, 0.10);
+  --shadow-lg:       0 16px 48px rgba(255, 217, 0, 0.14);
+
+  /* Typography */
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+
+  /* Sizing — sharper corners */
+  --radius-sm:       2px;
+  --radius-md:       4px;
+  --radius-lg:       6px;
+  --radius-full:     6px;
+}
+
+/* Developer vibe — mono labels, ocean glows & editor grid */
+[data-theme="dev"] body {
+  background-image:
+    radial-gradient(1100px 750px at 85% -10%, rgba(0, 255, 255, 0.09), transparent 60%),
+    radial-gradient(950px 700px at -10% 110%, rgba(255, 217, 0, 0.09), transparent 55%),
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px, 24px 24px;
+}
+
+[data-theme="dev"] .section-label,
+[data-theme="dev"] .section-header h2,
+[data-theme="dev"] .hero__greeting,
+[data-theme="dev"] .expertise__stack,
+[data-theme="dev"] .expertise__tech-label,
+[data-theme="dev"] .services__tag,
+[data-theme="dev"] .tech-pill span,
+[data-theme="dev"] .edu-card__period,
+[data-theme="dev"] .expertise__badge {
+  font-family: var(--font-mono);
+}
+
+[data-theme="dev"] .section-header h2 {
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #00ffff, #ffd900);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme="dev"] .edu-card__period {
+  border-radius: 2px;
+  text-transform: none;
+}
+
+/* ── Dev mode: dense thin-line borders (VS Code chrome) ── */
+
+/* Navbar — neon frame when scrolled */
+[data-theme="dev"] .navbar--scrolled {
+  border-color: rgba(0, 255, 255, 0.35);
+  box-shadow: var(--shadow-md), inset 0 0 0 1px var(--border), 0 0 24px rgba(0, 255, 255, 0.12);
+}
+
+/* Section headers get an editor rule under the heading */
+[data-theme="dev"] .section-header {
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 1.25rem;
+  margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+/* Labels become bracket-style annotations */
+[data-theme="dev"] .section-label {
+  border-left: 2px solid #00ffff;
+  padding-left: 0.6rem;
+}
+
+/* Cards — flat, crisp, thin outlines
+   (project cards handled separately below —
+    their wrapper holds the numbering aside) */
+[data-theme="dev"] .expertise__card,
+[data-theme="dev"] .services__card {
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
+}
+
+/* Thin tab-colored accent line on cards */
+[data-theme="dev"] .expertise__card,
+[data-theme="dev"] .services__card {
+  position: relative;
+}
+
+[data-theme="dev"] .expertise__card::before,
+[data-theme="dev"] .services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ffd900);
+  box-shadow: 0 0 10px rgba(255, 217, 0, 0.45);
+}
+
+/* Neon hover glow on cards & pills */
+[data-theme="dev"] .expertise__card:hover,
+[data-theme="dev"] .services__card:hover {
+  border-color: rgba(0, 255, 255, 0.60);
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.15);
+}
+
+[data-theme="dev"] .tech-pill:hover {
+  border-color: rgba(0, 255, 255, 0.60);
+}
+
+/* ── Project cards — editor-style panels ──
+   The numbering is dropped in dev mode so nothing
+   gets trapped behind the card border. */
+[data-theme="dev"] .project-card {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-theme="dev"] .project-card__num {
+  display: none;
+}
+
+[data-theme="dev"] .project-card__inner {
+  position: relative;
+  border: 1px solid rgba(0, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Tab-colored accent line along the card top */
+[data-theme="dev"] .project-card__inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ffd900);
+  box-shadow: 0 0 10px rgba(255, 217, 0, 0.45);
+  z-index: 2;
+}
+
+[data-theme="dev"] .project-card__tech {
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+[data-theme="dev"] .project-card__inner:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dev"] .project-card__media {
+  border-left: 1px solid var(--border);
+}
+
+[data-theme="dev"] .project-card__inner--reverse .project-card__media {
+  border-left: none;
+  border-right: 1px solid var(--border);
+}
+
+/* Tech pills & tags — brighter hairline borders */
+[data-theme="dev"] .tech-pill,
+[data-theme="dev"] .services__tag {
+  border-color: var(--border-strong);
+}
+
+/* Education period chips outlined */
+[data-theme="dev"] .edu-card__period {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-secondary);
+}
+
+/* Footer becomes a status bar */
+[data-theme="dev"] .footer {
+  border-top: 1px solid var(--border-strong);
+  background: var(--bg-secondary);
+}
+
+/* Portrait — thin crisp outline instead of thick frame */
+[data-theme="dev"] .hero__image img {
+  border-width: 1px;
+  border-color: var(--border-strong);
+}
+
+/* CTA wrapped in a dashed code-block frame */
+[data-theme="dev"] .contact-cta__inner {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ── Heavier JellyFish accents ── */
+
+/* Hero name — neon gradient */
+[data-theme="dev"] .hero__name {
+  background: linear-gradient(90deg, #00ffff, #ffd900);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme="dev"] .hero__name--accent {
+  color: #ffd900;
+  -webkit-text-fill-color: #ffd900;
+}
+
+/* Hero greeting — terminal cyan */
+[data-theme="dev"] .hero__greeting {
+  color: #00ffff;
+}
+
+/* Glowing neon primary button — yellow jelly */
+[data-theme="dev"] .btn--primary {
+  background: linear-gradient(90deg, #ffd900, #ff7e34);
+  box-shadow: 0 0 18px rgba(255, 217, 0, 0.45);
+}
+
+[data-theme="dev"] .btn--primary:hover {
+  background: linear-gradient(90deg, #ff7e34, #ffd900);
+  box-shadow: 0 0 26px rgba(255, 217, 0, 0.60);
+}
+
+/* CTA banner → contact — glow the accent border */
+[data-theme="dev"] .contact-cta {
+  border-color: rgba(255, 217, 0, 0.45);
+}
+
+[data-theme="dev"] .contact-cta__btn {
+  background: linear-gradient(90deg, #ffd900, #ff7e34);
+  box-shadow: 0 0 18px rgba(255, 217, 0, 0.45);
+}
+
+[data-theme="dev"] .contact-cta__btn:hover {
+  background: linear-gradient(90deg, #ff7e34, #ffd900);
+  box-shadow: 0 0 26px rgba(255, 217, 0, 0.60);
+}
+
+[data-theme="dev"] .btn--outline {
+  border-color: rgba(0, 255, 255, 0.50);
+}
+
+[data-theme="dev"] .btn--outline:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.18);
+}
+
+/* Portrait — neon plate & glow */
+[data-theme="dev"] .hero__image::before {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.55), rgba(255, 217, 0, 0.35));
+}
+
+[data-theme="dev"] .hero__image-wrap::after {
+  background: radial-gradient(circle, rgba(255, 217, 0, 0.35) 0%, transparent 70%);
+  filter: blur(24px);
+}
+
+/* Expertise icon tiles — cyan tint */
+[data-theme="dev"] .expertise__icon {
+  color: #00ffff;
+  background: rgba(0, 255, 255, 0.10);
+}
+
+/* Services icon tiles — yellow tint */
+[data-theme="dev"] .services__icon {
+  color: #ffd900;
+  background: rgba(255, 217, 0, 0.12);
+}
+
+/* Timeline dots & education accents stay neon */
+[data-theme="dev"] .edu-card__period {
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.40);
+}
+
+/* Selection — neon jelly yellow */
+[data-theme="dev"] ::selection {
+  background: #ffd900;
+  color: #010033;
+}
+
+/* ============================================
    RESET & BASE
    ============================================ */
 *, *::before, *::after {
@@ -108,10 +415,24 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 
+  /* Subtle editor-grid backdrop (all themes) */
+  background-image:
+    linear-gradient(rgba(26, 26, 46, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 46, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+
   /* Smooth theme transitions */
   transition:
     background-color var(--duration-slow) var(--ease-out),
     color var(--duration-slow) var(--ease-out);
+}
+
+/* Dark theme grid — faint light hairlines */
+[data-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(232, 230, 224, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 230, 224, 0.022) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* ============================================

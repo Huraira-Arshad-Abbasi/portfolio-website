@@ -1,12 +1,14 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
+export const THEMES = ['light', 'dark', 'dev']
+
 const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     // Persist preference across sessions
     const stored = localStorage.getItem('portfolio-theme')
-    if (stored) return stored
+    if (stored && THEMES.includes(stored)) return stored
     // Respect OS preference on first visit
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   })
@@ -16,10 +18,11 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('portfolio-theme', theme)
   }, [theme])
 
-  const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
+  // Cycle light → dark → dev → light
+  const toggleTheme = () => setTheme(t => THEMES[(THEMES.indexOf(t) + 1) % THEMES.length])
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

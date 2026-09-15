@@ -14,8 +14,8 @@
   gap: 0;
   margin: auto;
 
-  width: min(680px, calc(100vw - 2rem));
-  padding: 0.6rem 0.75rem 0.6rem 1.25rem;
+  width: min(760px, calc(100vw - 2rem));
+  padding: 0.75rem 0.9rem 0.75rem 1.5rem;
   border-radius: 9999px;
 
   /* Glassmorphism base — transparent until scrolled */
@@ -67,10 +67,11 @@
 }
 
 .navbar__logo span {
-  color: var(--accent);
+  color: inherit;
 }
 
-.navbar__logo:hover {
+.navbar__logo:hover,
+.navbar__logo:hover span {
   color: var(--accent);
 }
 
@@ -133,17 +134,60 @@
 }
 
 /* ============================================
-   ACTIONS (theme toggle + hamburger)
+   ACTIONS (theme selector + hamburger)
    ============================================ */
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
   margin-left: 0.75rem;
   flex-shrink: 0;
 }
 
-.navbar__theme-btn,
+/* Segmented theme selector — light / dark / dev side by side */
+.navbar__themes {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.navbar__theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color      0.2s ease,
+    transform  0.15s ease;
+}
+
+.navbar__theme-btn:hover {
+  color: var(--text);
+  background: var(--hover-bg);
+}
+
+.navbar__theme-btn--active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.navbar__theme-btn--active:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 .navbar__menu-btn {
   display: flex;
   align-items: center;
@@ -156,13 +200,12 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition:
-    background  0.2s ease,
-    color       0.2s ease,
+    background   0.2s ease,
+    color        0.2s ease,
     border-color 0.2s ease,
-    transform   0.15s ease;
+    transform    0.15s ease;
 }
 
-.navbar__theme-btn:hover,
 .navbar__menu-btn:hover {
   background: var(--hover-bg);
   color: var(--text);

@@ -2,11 +2,17 @@ import '../css/Navbar.css'
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sun, Moon, Menu, X } from 'lucide-react'
-import { useTheme } from '../context/ThemeContext'
+import { Sun, Moon, Terminal, Menu, X } from 'lucide-react'
+import { useTheme, THEMES } from '../context/ThemeContext'
+
+const themeIcons = {
+  light: Sun,
+  dark:  Moon,
+  dev:   Terminal,
+}
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme()       
+  const { theme, setTheme } = useTheme()       
   const [scrolled, setScrolled]   = useState(false)
   const [hidden, setHidden]       = useState(false)
   const [menuOpen, setMenuOpen]   = useState(false)
@@ -31,9 +37,10 @@ export default function Navbar() {
   useEffect(() => { setMenuOpen(false) }, [location.pathname])
 
   const navLinks = [
-    { to: '/',        label: 'Home'     },
-    { to: '/Project', label: 'Projects' },
-    { to: '/Contact', label: 'Contact'  },
+    { to: '/',          label: 'Home'     },
+    { to: '/Services',  label: 'Services' },
+    { to: '/Project',   label: 'Projects' },
+    { to: '/Contact',   label: 'Contact'  },
   ]
 
   // On home page + not scrolled → invisible
@@ -54,7 +61,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <NavLink to="/" className="navbar__logo">
-        H<span>A</span>
+        Hurair<span>a</span>
       </NavLink>
 
       {/* Desktop links */}
@@ -76,24 +83,24 @@ export default function Navbar() {
 
       {/* Actions */}
       <div className="navbar__actions">
-        <button
-          className="navbar__theme-btn"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.span
-              key={theme}
-              initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
-              animate={{ rotate: 0,   opacity: 1, scale: 1   }}
-              exit={{    rotate:  90, opacity: 0, scale: 0.6 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              style={{ display: 'flex' }}
-            >
-              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-            </motion.span>
-          </AnimatePresence>
-        </button>
+        {/* Theme select — light / dark / dev */}
+        <div className="navbar__themes" role="group" aria-label="Color theme">
+          {THEMES.map(t => {
+            const Icon = themeIcons[t]
+            return (
+              <button
+                key={t}
+                className={['navbar__theme-btn', theme === t ? 'navbar__theme-btn--active' : ''].filter(Boolean).join(' ')}
+                onClick={() => setTheme(t)}
+                aria-label={`${t} theme`}
+                aria-pressed={theme === t}
+                title={`${t} theme`}
+              >
+                <Icon size={14} />
+              </button>
+            )
+          })}
+        </div>
 
         {/* Mobile hamburger */}
         <button
