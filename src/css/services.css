@@ -1,0 +1,149 @@
+/* ============================================
+   SERVICES — What I Can Build For You
+   ============================================ */
+.services {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.services__subtitle {
+  max-width: 520px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* ── Grid ── */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+}
+
+/* ── Card ── */
+.services__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow   var(--duration-base) var(--ease-out),
+    transform    var(--duration-base) var(--ease-out);
+}
+
+.services__card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* ── Featured cards (enterprise-scale solutions) ── */
+.services__card--featured {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background:
+    radial-gradient(420px 180px at 0% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+    var(--bg-elevated);
+}
+
+.services__card--featured .services__card-top {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.services__card--featured h3 {
+  font-size: 1.15rem;
+}
+
+.services__badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--radius-full);
+}
+
+.services__card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 0.85rem;
+}
+
+.services__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+}
+
+.services__card-top h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.services__desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.services__tags {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.services__tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.services__card:hover .services__tag {
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

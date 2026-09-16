@@ -1,4 +1,5 @@
 import Expertise from './Expertise'
+import Services from './Services'
 import Project from './Project'
 import '../css/home.css'
 
@@ -23,7 +24,7 @@ const education = [
     degree:     'BS — Software Engineering',
     school:     'Virtual University of Pakistan',
     period:     '2023 — Present',
-    highlights: ['Completed 5 semesters', 'CGPA: 3.93 / 4.0'],
+    highlights: ['Completed 6 semesters', 'CGPA: 3.88 / 4.0'],
   },
   {
     degree:     'FSC Pre-Engineering',
@@ -87,11 +88,11 @@ export default function HomeContent () {
           </motion.div>
         </motion.div>
 
-        {/* Decorative background text */}
-        <div className='hero__bg-text' aria-hidden='true'>HA</div>
         {/* my picture on right side */}
-        <div className='hero__image'>
-          <img src={myPic} width="300" height="300" alt="Huraira Arshad's portrait" />
+        <div className='hero__image-wrap'>
+          <div className='hero__image'>
+            <img src={myPic} alt="Huraira Arshad's portrait" />
+          </div>
         </div>
       </section>
 
@@ -148,6 +149,12 @@ export default function HomeContent () {
       </section>
 
       <div className='divider' />
+
+      {/* ── Services ─────────────────────────────────────── */}
+      <Services />
+
+      <div className='divider' />
+
     {/* ── Project ────────────────────────────────────── */}
       <Project/>
 
