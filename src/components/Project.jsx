@@ -17,6 +17,16 @@ import '../css/project.css'
 const projects = [
   {
     id:           '01',
+    name:         'DaisyEMR — Clinical EMR & Telemedicine Platform',
+    technologies: 'React · Redux Toolkit · Socket.io · FullCalendar · FastAPI · PostgreSQL · MinIO · Stripe',
+    description:
+      `A HIPAA-grade hospital management platform with role-based access for superadmins, hospital admins, doctors, and patients. Appointments & availability, clinical notes, lab orders and results, medications, encrypted file storage (AES-256-GCM on MinIO), billing with Stripe and PDF invoices, real-time secure messaging, and telemedicine — all on a FastAPI backend.`,
+    images:  [],
+    github:  'https://github.com/Huraira-Arshad-Abbasi/DaisyEMR-Frontend',
+    live:    'https://github.com/Huraira-Arshad-Abbasi/DaisyEMR-backend',
+  },
+  {
+    id:           '02',
     name:         'Full-Stack Agency Platform',
     technologies: 'Next.js · Express.js · MongoDB Atlas · Cloudinary',
     description:
@@ -26,7 +36,7 @@ const projects = [
     live:    'https://developers-hub-corporation-agency-p.vercel.app/',
   },
   {
-    id:           '02',
+    id:           '03',
     name:         'PakStats — Pakistan Indicator Dashboard',
     technologies: 'React · Vite · World Bank API',
     description:
@@ -36,7 +46,7 @@ const projects = [
     live:    'https://pak-stats.vercel.app/',
   },
   {
-    id:           '03',
+    id:           '04',
     name:         'TodoSync — Task Management App',
     technologies: 'React · Node.js · Express · MongoDB',
     description:
@@ -46,7 +56,7 @@ const projects = [
     live:    'https://todo-sync-jet.vercel.app/',
   },
   {
-    id:           '04',
+    id:           '05',
     name:         'MediaHub — Multimedia Search & Download',
     technologies: 'React · Vite · Axios · Pexels API',
     description:
@@ -56,7 +66,7 @@ const projects = [
     live:    'https://media-hub-huraira-project.vercel.app/',
   },
   {
-    id:           '05',
+    id:           '06',
     name:         'Website Clones & UI Practice',
     technologies: 'HTML · CSS · JavaScript',
     description:
