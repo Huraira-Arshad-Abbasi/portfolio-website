@@ -57,23 +57,24 @@ export default function HomeContent () {
           animate='visible'
         >
           <motion.p className='hero__greeting' variants={fadeUp}>
-            Hello, I&apos;m
+            Full Stack Developer
           </motion.p>
 
           <motion.h1 className='hero__name' variants={fadeUp}>
-            Huraira<br />
-            <span className='hero__name--accent'>Arshad</span>
+            Turning your ideas into
+            <br />
+            <span className='hero__name--accent'>working solutions.</span>
           </motion.h1>
 
           <motion.p className='hero__role' variants={fadeUp}>
-            Full Stack Developer — MERN Stack
+            Share your requirement — I&apos;ll handle everything else.
           </motion.p>
 
           <motion.p className='hero__bio' variants={fadeUp}>
-            Skilled in building dynamic, user-friendly web applications with
-            HTML, CSS, JavaScript, and modern frameworks. I deliver clean,
-            efficient, and scalable code — from pixel-perfect interfaces to
-            robust back-end APIs.
+            From a rough idea to a deployed product — I design, build, and ship
+            full-stack web applications end to end. Fast, clean, and
+            production-ready. Just tell me what you need, and I&apos;ll take it
+            from there.
           </motion.p>
 
           <motion.div className='hero__actions' variants={fadeUp}>
