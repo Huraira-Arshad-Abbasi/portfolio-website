@@ -120,6 +120,45 @@
   margin: 0;
 }
 
+/* Direct-contact fallback shown when the form fails */
+.contact__fallback {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.35rem;
+}
+
+.contact__fallback-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.contact__fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    color        0.2s ease,
+    transform    0.15s ease;
+}
+
+.contact__fallback-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
 /* Success state */
 .contact__success {
   display: flex;

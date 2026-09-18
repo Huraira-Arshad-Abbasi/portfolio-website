@@ -39,13 +39,25 @@ const contactInfo = [
 ]
 
 export default function Contact() {
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [status, setStatus]   = useState('idle')   // idle | sending | sent | error
+  const [fallback, setFallback] = useState(null)   // pre-built direct links
+
+  const guideDirect = (subject, message) => {
+    setFallback({
+      mailto:   `mailto:hurairaabbasi647@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`,
+      whatsapp: `https://wa.me/+923167714957?text=${encodeURIComponent(message)}`,
+      linkedin: 'https://linkedin.com/in/huraira-arshad-abbasi/',
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const form    = e.target
+    const data    = new FormData(form)
+    const subject = data.get('subject') || ''
+    const message = data.get('message') || ''
+
     setStatus('sending')
-    const form = e.target
-    const data = new FormData(form)
 
     try {
       const res = await fetch('https://formspree.io/f/mnnvjnbl', {
@@ -55,12 +67,15 @@ export default function Contact() {
       })
       if (res.ok) {
         setStatus('sent')
+        setFallback(null)
         form.reset()
       } else {
         setStatus('error')
+        guideDirect(subject, message)
       }
     } catch {
       setStatus('error')
+      guideDirect(subject, message)
     }
   }
 
@@ -150,10 +165,37 @@ export default function Contact() {
                 )}
               </button>
 
-              {status === 'error' && (
-                <p className='contact__error'>
-                  Something went wrong. Please try again or email me directly.
-                </p>
+              {status === 'error' && fallback && (
+                <div className='contact__fallback'>
+                  <p className='contact__error'>
+                    The form didn&apos;t go through. No worries — reach me
+                    directly, it&apos;s usually quicker anyway:
+                  </p>
+                  <div className='contact__fallback-links'>
+                    <a className='contact__fallback-btn' href={fallback.mailto}>
+                      <Mail size={15} />
+                      Email me
+                    </a>
+                    <a
+                      className='contact__fallback-btn'
+                      href={fallback.whatsapp}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <MessageCircle size={15} />
+                      WhatsApp
+                    </a>
+                    <a
+                      className='contact__fallback-btn'
+                      href={fallback.linkedin}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <FaLinkedin size={15} />
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
               )}
             </form>
           )}
