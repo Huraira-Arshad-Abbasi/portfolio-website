@@ -11,6 +11,7 @@ import { MHCover, MH1, MH2, MH3, MH4, MH5 }       from '../assets/imges'
 import { PSCover, PS1, PS2, PS3, PS4, PS5, PS6, PS7 } from '../assets/imges'
 import { TodoCover, TS1, TS2 }                     from '../assets/imges'
 import ProjectDetails                              from './ProjectDetails'
+import ContactCTA                                  from './ContactCTA'
 import '../css/project.css'
 
 // ── Data ──────────────────────────────────────────────────────
@@ -195,6 +196,8 @@ export default function Project() {
       >
         More projects coming soon
       </motion.p>
+
+      <ContactCTA />
 
       <AnimatePresence>
         {selectedProject && (

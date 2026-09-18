@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import Layout from './components/Layout'
 import HomeContent from './components/HomeContent'
 import About from './components/About'
+import ServicesPage from './components/ServicesPage'
 import Project from './components/Project'
 import Reviews from './components/Reviews'
 import Contact from './components/Contact'
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true,          element: <HomeContent /> },
       { path: '/About',       element: <About /> },
+      { path: '/Services',    element: <ServicesPage /> },
       { path: '/Project',     element: <Project /> },
       { path: '/Reviews',     element: <Reviews /> },
       { path: '/Contact',     element: <Contact /> },

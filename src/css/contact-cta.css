@@ -1,0 +1,58 @@
+/* ============================================
+   CONTACT CTA — banner that directs to /Contact
+   ============================================ */
+.contact-cta {
+  margin: 0 clamp(1.5rem, 6vw, 5rem) 2.5rem;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  text-align: center;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  background:
+    radial-gradient(600px 180px at 50% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%),
+    var(--bg-elevated);
+}
+
+.contact-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin: 0;
+}
+
+.contact-cta__text {
+  max-width: 480px;
+  margin: 0.5rem auto 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.contact-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    transform  var(--duration-fast) var(--ease-out);
+}
+
+.contact-cta__btn:hover {
+  background: var(--accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.contact-cta__btn:active {
+  transform: scale(0.97);
+}
