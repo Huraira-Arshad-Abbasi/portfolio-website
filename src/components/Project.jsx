@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -85,7 +86,7 @@ const cardVariants = {
 }
 
 // ── Component ──────────────────────────────────────────────────
-export default function Project() {
+export default function Project({ showContactCTA = true }) {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
@@ -197,7 +198,7 @@ export default function Project() {
         More projects coming soon
       </motion.p>
 
-      <ContactCTA />
+      {showContactCTA && <ContactCTA />}
 
       <AnimatePresence>
         {selectedProject && (
@@ -210,4 +211,8 @@ export default function Project() {
 
     </section>
   )
+}
+
+Project.propTypes = {
+  showContactCTA: PropTypes.bool,
 }

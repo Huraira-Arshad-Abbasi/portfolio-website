@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react'
+import { Mail, Send, MessageCircle } from 'lucide-react'
 import { FaLinkedin } from 'react-icons/fa6'
+import ContactRows from './ContactRows'
 import '../css/contact.css'
 
 const fadeUp = {
@@ -30,12 +31,6 @@ const contactLinks = [
     href:  'https://linkedin.com/in/huraira-arshad-abbasi/',
     icon:  FaLinkedin,
   },
-]
-
-const contactInfo = [
-  { icon: Mail,    text: 'hurairaabbasi647@gmail.com' },
-  { icon: Phone,   text: '+92 316 7714 957'           },
-  { icon: MapPin,  text: 'Rawalpindi, Pakistan'       },
 ]
 
 export default function Contact() {
@@ -93,10 +88,10 @@ export default function Contact() {
         <motion.span className='section-label' variants={fadeUp}>
           <Mail size={14} /> Get in touch
         </motion.span>
-        <motion.h2 variants={fadeUp}>Contact Me</motion.h2>
+        <motion.h2 variants={fadeUp}>Let&apos;s talk</motion.h2>
         <motion.p className='contact__tagline' variants={fadeUp}>
-          Open to new opportunities in web development — whether it&apos;s a
-          role, a project, or a collaboration. I&apos;d love to connect.
+          Have an opportunity or a project in mind? Send me a message and
+          I&apos;ll get back to you.
         </motion.p>
       </motion.div>
 
@@ -117,7 +112,7 @@ export default function Contact() {
               <h3>Message sent!</h3>
               <p>Thanks for reaching out — I&apos;ll get back to you soon.</p>
               <button
-                className='pcard-btn'
+                className='contact__submit'
                 onClick={() => setStatus('idle')}
               >
                 Send another
@@ -129,7 +124,7 @@ export default function Contact() {
               onSubmit={handleSubmit}
             >
               <div className='contact__field'>
-                <label htmlFor='subject'>Subject</label>
+                <label htmlFor='subject'>subject</label>
                 <input
                   id='subject'
                   name='subject'
@@ -140,7 +135,7 @@ export default function Contact() {
               </div>
 
               <div className='contact__field'>
-                <label htmlFor='message'>Message</label>
+                <label htmlFor='message'>message</label>
                 <textarea
                   id='message'
                   name='message'
@@ -201,7 +196,7 @@ export default function Contact() {
           )}
         </motion.div>
 
-        {/* ── Right: Info ── */}
+        {/* ── Right: Direct channels ── */}
         <motion.div
           className='contact__info-wrap'
           initial='hidden'
@@ -209,23 +204,14 @@ export default function Contact() {
           variants={stagger}
           viewport={{ once: true }}
         >
-          {/* Info rows */}
-          <div className='contact__info-list'>
-            {contactInfo.map(({ icon: Icon, text }) => (
-              <motion.div
-                key={text}
-                className='contact__info-row'
-                variants={fadeUp}
-              >
-                <span className='contact__info-icon'>
-                  <Icon size={15} strokeWidth={1.75} />
-                </span>
-                <span>{text}</span>
-              </motion.div>
-            ))}
-          </div>
+          <motion.h3 className='contact__info-title' variants={fadeUp}>
+            Reach me directly
+          </motion.h3>
 
-          {/* Social links */}
+          <motion.div variants={fadeUp}>
+            <ContactRows />
+          </motion.div>
+
           <motion.div className='contact__socials' variants={fadeUp}>
             {contactLinks.map(({ label, href, icon: Icon }) => (
               <a

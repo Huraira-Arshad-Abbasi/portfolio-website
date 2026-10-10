@@ -12,12 +12,16 @@ export default function ContactCTA() {
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true, margin: '-60px' }}
     >
-      <h3 className='contact-cta__title'>Have a project in mind?</h3>
-      <p className='contact-cta__text'>
-        From landing pages to enterprise-scale platforms — I can build it for
-        you. Tell me what you&apos;re working on and let&apos;s turn the idea into a
-        real product.
-      </p>
+      <div className='contact-cta__text-block'>
+        <span className='contact-cta__label'>Let&apos;s work together</span>
+        <h3 className='contact-cta__title'>Have a project in mind?</h3>
+        <p className='contact-cta__text'>
+          From landing pages to enterprise-scale platforms — I can build it for
+          you. Tell me what you&apos;re working on and let&apos;s turn the idea
+          into a real product.
+        </p>
+      </div>
+
       <Link to='/Contact' className='contact-cta__btn'>
         Let&apos;s talk
         <ArrowRight size={16} />
