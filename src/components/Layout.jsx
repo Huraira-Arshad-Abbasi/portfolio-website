@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Scroll from './Scroll'
+import ThemePicker from './ThemePicker'
+import RequirementToast from './RequirementToast'
 
 const pageVariants = {
   initial: { opacity: 0, y: 18 },
@@ -37,6 +39,8 @@ export default function Layout() {
         </motion.main>
       </AnimatePresence>
       <Footer />
+      <RequirementToast />
+      <ThemePicker />
     </>
   )
 }

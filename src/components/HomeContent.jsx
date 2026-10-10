@@ -68,10 +68,6 @@ export default function HomeContent () {
             <span className='hero__name--accent'>working solutions.</span>
           </motion.h1>
 
-          <motion.p className='hero__role' variants={fadeUp}>
-            Share your requirement — I&apos;ll handle everything else.
-          </motion.p>
-
           <motion.p className='hero__bio' variants={fadeUp}>
             From a rough idea to a deployed product — I design, build, and ship
             full-stack web applications end to end. Fast, clean, and

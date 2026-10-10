@@ -1,0 +1,237 @@
+/* ============================================
+   THEME PICKER — classic "early web" dialog
+   Windows 98 bevels, system fonts, radio list,
+   blinking cursor & marquee. Timeless.
+   ============================================ */
+
+/* Classic UI palette (fixed — theme independent) */
+.theme-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.theme-picker__backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+/* Win98 window — raised bevel frame */
+.theme-picker__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080;
+}
+
+/* Title bar */
+.theme-picker__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 6px 8px;
+  background: linear-gradient(90deg, #000080, #1084d0);
+}
+
+.theme-picker__title {
+  font-family: Arial, Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.theme-picker__close {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+  cursor: pointer;
+}
+
+.theme-picker__close:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+/* Body */
+.theme-picker__body {
+  margin: 10px;
+  padding: 14px 14px 10px;
+  background: #fffff0;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.theme-picker__hello {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.theme-picker__intro {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+/* Blinking terminal cursor */
+.theme-picker__cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: theme-picker-blink 1s step-start infinite;
+}
+
+@keyframes theme-picker-blink {
+  50% { opacity: 0; }
+}
+
+/* Classic radio list */
+.theme-picker__options {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.theme-picker__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-family: Arial, Tahoma, sans-serif;
+}
+
+.theme-picker__option input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-picker__radio {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #808080;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #ffffff;
+}
+
+.theme-picker__option input[type='radio']:checked + .theme-picker__radio::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.theme-picker__option:focus-within {
+  outline: 1px dotted #000000;
+  outline-offset: -2px;
+}
+
+/* Classic navy highlight on selection */
+.theme-picker__option--selected {
+  background: #000080;
+}
+
+.theme-picker__option--selected .theme-picker__name,
+.theme-picker__option--selected .theme-picker__desc {
+  color: #ffffff;
+}
+
+.theme-picker__option-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-picker__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.theme-picker__desc {
+  font-size: 11px;
+  color: #404040;
+}
+
+/* Win98 push buttons */
+.theme-picker__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.theme-picker__btn {
+  padding: 5px 18px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.theme-picker__btn:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+.theme-picker__btn:disabled {
+  color: #808080;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+/* Marquee footer */
+.theme-picker__marquee {
+  margin: 0 -4px -4px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffcc;
+  border-top: 1px solid #808080;
+}
+
+.theme-picker__marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  font-family: Arial, Tahoma, sans-serif;
+  font-size: 11px;
+  color: #000080;
+  animation: theme-picker-marquee 16s linear infinite;
+}
+
+@keyframes theme-picker-marquee {
+  to { transform: translateX(-100%); }
+}
