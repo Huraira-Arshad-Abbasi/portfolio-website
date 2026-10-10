@@ -8,8 +8,8 @@
    ============================================ */
 :root {
   /* Surfaces */
-  --bg:              #F7F5F2;
-  --bg-secondary:    #EDEBE7;
+  --bg:              #F5F5F5;   /* whitesmoke */
+  --bg-secondary:    #ECECEC;
   --bg-elevated:     #FFFFFF;
 
   /* Brand */
@@ -17,6 +17,10 @@
   --secondary:       #0F4C35;
   --accent:          #C8392B;
   --accent-alt:      #2C6FBF;
+
+  /* Neon rim (hero portrait) — warm, low-key for light surfaces */
+  --neon-a:          #E0603F;
+  --neon-b:          #E9A94D;
 
   /* Text */
   --text:            #1A1A1A;
@@ -35,6 +39,7 @@
   /* Typography */
   --font-display:    'Cormorant Garamond', Georgia, serif;
   --font-body:       'DM Sans', system-ui, sans-serif;
+  --font-mono:       'SF Mono', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
   /* new font */
   --font-display: "Lobster Two", sans-serif;
 
@@ -68,6 +73,10 @@
   --accent:          #F4845F;
   --accent-alt:      #60A5FA;
 
+  /* Neon rim (hero portrait) — warm glow for dark surfaces */
+  --neon-a:          #F4845F;
+  --neon-b:          #FFC978;
+
   /* Text */
   --text:            #E8E6E0;
   --text-secondary:  #9090A0;
@@ -98,6 +107,10 @@
   --secondary:       #00ffff;
   --accent:          #ffd900;
   --accent-alt:      #00ff55;
+
+  /* Neon rim (hero portrait) */
+  --neon-a:          #00ffff;
+  --neon-b:          #ffd900;
 
   /* Text */
   --text:            #FFFFFF;
@@ -166,17 +179,17 @@
   box-shadow: var(--shadow-md), inset 0 0 0 1px var(--border), 0 0 24px rgba(0, 255, 255, 0.12);
 }
 
-/* Section headers get an editor rule under the heading */
-[data-theme="dev"] .section-header {
-  border-bottom: 1px solid var(--border-strong);
-  padding-bottom: 1.25rem;
-  margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
+/* Labels become neon classified headings */
+[data-theme="dev"] .section-label {
+  color: #00ffff;
 }
 
-/* Labels become bracket-style annotations */
-[data-theme="dev"] .section-label {
-  border-left: 2px solid #00ffff;
-  padding-left: 0.6rem;
+[data-theme="dev"] .section-label::before,
+[data-theme="dev"] .section-label::after,
+[data-theme="dev"] .hero__greeting::before,
+[data-theme="dev"] .hero__greeting::after {
+  background: linear-gradient(90deg, #00ffff, #ffd900, #00ffff);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.35);
 }
 
 /* Cards — flat, crisp, thin outlines
@@ -289,17 +302,24 @@
   background: var(--bg-secondary);
 }
 
-/* Portrait — thin crisp outline instead of thick frame */
-[data-theme="dev"] .hero__image img {
-  border-width: 1px;
-  border-color: var(--border-strong);
+/* Hero grid — keep the full editor grid in dev mode */
+[data-theme="dev"] .hero::before {
+  background-image:
+    linear-gradient(var(--grid-hero) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-hero) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* CTA wrapped in a dashed code-block frame */
-[data-theme="dev"] .contact-cta__inner {
-  border: 1px dashed var(--border-strong);
-  border-radius: var(--radius-md);
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+/* Portrait — deep-ocean frame with a Neon beam */
+[data-theme="dev"] .hero__image {
+  background: #010033;
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.20);
+}
+
+/* Let's talk card — neon hairline frame */
+[data-theme="dev"] .lets-talk__card {
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.08);
 }
 
 /* ── Heavier JellyFish accents ── */
@@ -357,14 +377,10 @@
   box-shadow: 0 0 16px rgba(0, 255, 255, 0.18);
 }
 
-/* Portrait — neon plate & glow */
-[data-theme="dev"] .hero__image::before {
-  background: linear-gradient(135deg, rgba(0, 255, 255, 0.55), rgba(255, 217, 0, 0.35));
-}
-
+/* Portrait — jelly neon halo */
 [data-theme="dev"] .hero__image-wrap::after {
-  background: radial-gradient(circle, rgba(255, 217, 0, 0.35) 0%, transparent 70%);
-  filter: blur(24px);
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.22) 0%, transparent 70%);
+  filter: blur(18px);
 }
 
 /* Expertise icon tiles — cyan tint */
@@ -418,9 +434,8 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 
-  /* Subtle editor-grid backdrop (all themes) */
+  /* Subtle editor-grid backdrop — vertical rules only */
   background-image:
-    linear-gradient(rgba(26, 26, 46, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(26, 26, 46, 0.035) 1px, transparent 1px);
   background-size: 24px 24px;
 
@@ -430,10 +445,9 @@ body {
     color var(--duration-slow) var(--ease-out);
 }
 
-/* Dark theme grid — faint light hairlines */
+/* Dark theme grid — faint light vertical rules only */
 [data-theme="dark"] body {
   background-image:
-    linear-gradient(rgba(232, 230, 224, 0.022) 1px, transparent 1px),
     linear-gradient(90deg, rgba(232, 230, 224, 0.022) 1px, transparent 1px);
   background-size: 24px 24px;
 }

@@ -1,10 +1,11 @@
 import Expertise from './Expertise'
 import Services from './Services'
 import Project from './Project'
+import ContactRows from './ContactRows'
 import '../css/home.css'
 
 import { motion } from 'framer-motion'
-import { ArrowDownToLine, Mail, GraduationCap, MapPin } from 'lucide-react'
+import { ArrowDownToLine, Mail, GraduationCap, MapPin, Code2 } from 'lucide-react'
 import { cv, myPic } from '../assets/imges'
 import { Link } from 'react-router-dom'
 
@@ -57,6 +58,7 @@ export default function HomeContent () {
           animate='visible'
         >
           <motion.p className='hero__greeting' variants={fadeUp}>
+            <Code2 size={14} strokeWidth={1.75} />
             Full Stack Developer
           </motion.p>
 
@@ -157,23 +159,31 @@ export default function HomeContent () {
       <div className='divider' />
 
     {/* ── Project ────────────────────────────────────── */}
-      <Project/>
+      <Project showContactCTA={false} />
 
       {/* ── Contact CTA ──────────────────────────────────── */}
-      <section className='contact-cta' id='contact-section'>
+      <section className='lets-talk' id='contact-section'>
         <motion.div
+          className='lets-talk__card'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='contact-cta__inner'
         >
-          <h2>Let&apos;s build something<br /><em>amazing</em> together.</h2>
-          <p>Open to freelance projects, collaborations, and full-time roles.</p>
-          <Link to='/Contact' className='btn btn--primary btn--lg'>
-            Get in touch
-            <Mail size={16} />
-          </Link>
+          <div className='lets-talk__intro'>
+            <span className='lets-talk__label'>Get in touch</span>
+            <h2 className='lets-talk__title'>Let&apos;s talk</h2>
+            <p className='lets-talk__text'>
+              Have an opportunity or a project in mind? Send me a message and
+              I&apos;ll get back to you.
+            </p>
+            <Link to='/Contact' className='btn btn--primary btn--lg'>
+              Send a message
+              <Mail size={16} />
+            </Link>
+          </div>
+
+          <ContactRows className='lets-talk__rows' />
         </motion.div>
       </section>
 
